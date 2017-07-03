@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="RC Suite" parallel="methods" verbose="2">
+    <listeners>
+        <listener class-name="Test.EnvReaderListener"/>
+    </listeners>
+    
+    <parameter name="browser" value="Sample url"/>
+    <test name="RC Test" verbose="2">
+        <classes>
+            <class name="Test.New"/>
+        </classes>
+    </test>
+    
+</suite>
