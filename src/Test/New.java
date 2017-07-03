@@ -18,7 +18,7 @@ public class New {
 		
 		System.out.println("Browser that is passed as parameter from Jenkins is :"+br);
 		//changes for testing
-		//Testing Integration
+		//Testing Integration - 2
 		if(br.matches("FF"))
 		{
 			BrowserFactory f1 = new BrowserFactory();			
