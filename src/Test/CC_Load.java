@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
-public class New {
+public class CC_Load {
 
 		
 	@SuppressWarnings("static-access")
