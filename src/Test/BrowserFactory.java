@@ -65,7 +65,7 @@ public class BrowserFactory {
 		} else {
 			System.setProperty("webdriver.gecko.driver", "C:\\CI_CD_CT\\Browser_Executables\\geckodriver.exe");
 		    browser  = new FirefoxDriver();	
-		    SAIB_Register chkLogin = new SAIB_Register();
+		    LogIn_Register chkLogin = new LogIn_Register();
 		    chkLogin.chkLogin(url);
 		}
 		return remoteDriver;
@@ -87,7 +87,7 @@ public class BrowserFactory {
 				"C:\\CI_CD_CT\\Browser_Executables\\IEDriverServer.exe");
 		remoteDriver = new InternetExplorerDriver(capabilities);
 			
-	    SAIB_Register chkLogin = new SAIB_Register();
+	    LogIn_Register chkLogin = new LogIn_Register();
 	    chkLogin.chkLogin(url);
 		
 		return remoteDriver;
@@ -114,7 +114,7 @@ public class BrowserFactory {
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options); 
 		remoteDriver = new ChromeDriver(capabilities);
 					
-	    SAIB_Register chkLogin = new SAIB_Register();
+	    LogIn_Register chkLogin = new LogIn_Register();
 	    chkLogin.chkLogin(url);
 		return remoteDriver;
 	}

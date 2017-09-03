@@ -23,7 +23,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.Test;
 
 
-public class SAIB_Register extends BrowserFactory
+public class LogIn_Register extends BrowserFactory
 {
 		
 	  @SuppressWarnings("static-access")
