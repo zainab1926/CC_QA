@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="RC Suite" duration-ms="19782" started-at="2017-09-03T14:30:49Z" finished-at="2017-09-03T14:31:09Z">
+  <suite name="RC Suite" duration-ms="20213" started-at="2017-09-03T23:17:41Z" finished-at="2017-09-03T23:18:01Z">
     <groups>
     </groups>
-    <test name="RC Test" duration-ms="19782" started-at="2017-09-03T14:30:49Z" finished-at="2017-09-03T14:31:09Z">
-      <class name="Test.New">
-        <test-method status="PASS" signature="chk(java.lang.String, java.lang.String)[pri:0, instance:Test.New@4b9e13df]" name="chk" duration-ms="19740" started-at="2017-09-03T09:30:50Z" finished-at="2017-09-03T09:31:09Z">
+    <test name="RC Test" duration-ms="20213" started-at="2017-09-03T23:17:41Z" finished-at="2017-09-03T23:18:01Z">
+      <class name="Test.CC_Load">
+        <test-method status="PASS" signature="chk(java.lang.String, java.lang.String)[pri:0, instance:Test.CC_Load@3532ec19]" name="chk" duration-ms="20175" started-at="2017-09-03T18:17:41Z" finished-at="2017-09-03T18:18:01Z">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- chk -->
-      </class> <!-- Test.New -->
+      </class> <!-- Test.CC_Load -->
     </test> <!-- RC Test -->
   </suite> <!-- RC Suite -->
 </testng-results>

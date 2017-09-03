@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 public class CC_Load {
 
 		
+	static Report rpt;
 	@SuppressWarnings("static-access")
 	@Parameters({"browser","url"})
 	@Test
@@ -24,6 +25,7 @@ public class CC_Load {
 		{
 			BrowserFactory f1 = new BrowserFactory();			
 			f1.getBrowser(br,url);
+			
 		}
 		else if(br.matches("IE"))
 		{
