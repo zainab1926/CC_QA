@@ -15,6 +15,7 @@ public class CC_Load {
 	@Test
 	public static void chk(String br,String url)throws Exception
 	{
+		//Loads Browser and URL
 		
 		System.out.println("Browser that is passed as parameter from Jenkins is :"+br);
 		//changes for testing
