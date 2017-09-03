@@ -43,7 +43,7 @@ import static Test.TestConstants.WAIT_SLEEP;
 
 public class Browser {
 
-	public static WebDriver browser = BrowserFactory.getBrowser("Browser");
+	public static WebDriver browser = BrowserFactory.getBrowser("Browser","url");
 	public static Logger log = Logger.getLogger(Browser.class);
 
 	/**

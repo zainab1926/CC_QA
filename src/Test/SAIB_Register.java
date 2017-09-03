@@ -27,13 +27,13 @@ public class SAIB_Register extends BrowserFactory
 {
 		
 	  @SuppressWarnings("static-access")
-	public  void chkLogin() throws Exception
+	public  void chkLogin(String url) throws Exception
 	  {   		  	
 		  //adding new lines to check invocation 
 		  //adding new changes for checking purpose
-			String URL = CommonUtils.readFromConfig("BaseURL");
+			//String URL = CommonUtils.readFromConfig("BaseURL");
 			Browser br = new Browser();
-			br.go(URL);	    
+			br.go(url);	    
 			String appTitle = br.getTitle();
 			System.out.println("Application title is : "+appTitle);
 			br.click("xpath=//*[@id='block-block-2']/div/div[2]/a");

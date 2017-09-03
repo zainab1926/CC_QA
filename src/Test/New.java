@@ -11,9 +11,9 @@ public class New {
 
 		
 	@SuppressWarnings("static-access")
-	@Parameters({"browser"})
+	@Parameters({"browser","url"})
 	@Test
-	public static void chk(String br)throws Exception
+	public static void chk(String br,String url)throws Exception
 	{
 		
 		System.out.println("Browser that is passed as parameter from Jenkins is :"+br);
@@ -22,18 +22,18 @@ public class New {
 		if(br.matches("FF"))
 		{
 			BrowserFactory f1 = new BrowserFactory();			
-			f1.getBrowser(br);
+			f1.getBrowser(br,url);
 		}
 		else if(br.matches("IE"))
 		{
 			BrowserFactory f1 = new BrowserFactory();
-			f1.getBrowser(br);
+			f1.getBrowser(br,url);
 		}
 		else if(br.matches("chrome"))
 		{
 			//for chrome browser
 			BrowserFactory f1 = new BrowserFactory();
-			f1.getBrowser(br);
+			f1.getBrowser(br,url);
 		}
 			
 

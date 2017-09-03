@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="RC Suite" duration-ms="19782" started-at="2017-09-03T14:30:49Z" finished-at="2017-09-03T14:31:09Z">
+    <groups>
+    </groups>
+    <test name="RC Test" duration-ms="19782" started-at="2017-09-03T14:30:49Z" finished-at="2017-09-03T14:31:09Z">
+      <class name="Test.New">
+        <test-method status="PASS" signature="chk(java.lang.String, java.lang.String)[pri:0, instance:Test.New@4b9e13df]" name="chk" duration-ms="19740" started-at="2017-09-03T09:30:50Z" finished-at="2017-09-03T09:31:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FF]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- chk -->
+      </class> <!-- Test.New -->
+    </test> <!-- RC Test -->
+  </suite> <!-- RC Suite -->
+</testng-results>

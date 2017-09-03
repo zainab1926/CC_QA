@@ -22,7 +22,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class BrowserFactory {
 	public static WebDriver browser = null;
 	
-	public static WebDriver getBrowser(String browserName) {
+	public static WebDriver getBrowser(String browserName,String url) {
 
 		if (browser == null) {
 			try {
@@ -31,11 +31,11 @@ public class BrowserFactory {
 
 				if ("FF".equalsIgnoreCase(browserName)) {
 					
-					browser = loadFireFoxDriver();
+					browser = loadFireFoxDriver(url);
 				} else if ("IE".equalsIgnoreCase(browserName)) {
-					browser = loadIEDriver();
+					browser = loadIEDriver(url);
 				} else if ("chrome".equalsIgnoreCase(browserName)) {
-					browser = loadChromeDriver();
+					browser = loadChromeDriver(url);
 				}				
 			} catch (Exception exception) {
 			}
@@ -46,7 +46,7 @@ public class BrowserFactory {
 	}
 
 	
-	private static RemoteWebDriver loadFireFoxDriver() throws Exception {
+	private static RemoteWebDriver loadFireFoxDriver(String url) throws Exception {
 
 		String loadffProfile = CommonUtils.readFromConfig("loadffProfile");
 		RemoteWebDriver remoteDriver = null;
@@ -66,14 +66,14 @@ public class BrowserFactory {
 			System.setProperty("webdriver.gecko.driver", "C:\\CI_CD_CT\\Browser_Executables\\geckodriver.exe");
 		    browser  = new FirefoxDriver();	
 		    SAIB_Register chkLogin = new SAIB_Register();
-		    chkLogin.chkLogin();
+		    chkLogin.chkLogin(url);
 		}
 		return remoteDriver;
 
 	}
 
 	
-	private static RemoteWebDriver loadIEDriver() throws Exception {
+	private static RemoteWebDriver loadIEDriver(String url) throws Exception {
 
 		RemoteWebDriver remoteDriver = null;
 		DesiredCapabilities capabilities = DesiredCapabilities
@@ -88,7 +88,7 @@ public class BrowserFactory {
 		remoteDriver = new InternetExplorerDriver(capabilities);
 			
 	    SAIB_Register chkLogin = new SAIB_Register();
-	    chkLogin.chkLogin();
+	    chkLogin.chkLogin(url);
 		
 		return remoteDriver;
 
@@ -96,7 +96,7 @@ public class BrowserFactory {
 
 	
 
-	private static RemoteWebDriver loadChromeDriver() throws Exception {
+	private static RemoteWebDriver loadChromeDriver(String url) throws Exception {
 
 		RemoteWebDriver remoteDriver = null;
 		String hostOS = CommonUtils.getHostOperatingSystem();
@@ -115,7 +115,7 @@ public class BrowserFactory {
 		remoteDriver = new ChromeDriver(capabilities);
 					
 	    SAIB_Register chkLogin = new SAIB_Register();
-	    chkLogin.chkLogin();
+	    chkLogin.chkLogin(url);
 		return remoteDriver;
 	}
 
