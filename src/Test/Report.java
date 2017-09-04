@@ -11,8 +11,10 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -23,28 +25,14 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class Report {
 
-	static ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("C:\\Users\\madhusudhan\\workspace\\CC\\test-output\\myReport.html");
-	static ExtentReports report = new ExtentReports();
-	static ExtentTest test;
+	private static ExtentReports extent;
+	private static ExtentTest test;
+	private static ExtentHtmlReporter htmlReporter;
+	
+	
+	private static String filePath = "C:\\Users\\madhusudhan\\workspace\\CC\\test-output\\myReport.html";
 	public static WebDriver browser = BrowserFactory.getBrowser("Browser","url");
-	
-	@BeforeTest
-	public void startReport()
-	{
 		
-	report.attachReporter(htmlReporter);
-	report.setSystemInfo("OS", "Windows 10");
-	report.setSystemInfo("UserName", "Mahesh");	
-		
-	
-	htmlReporter.config().setDocumentTitle("ContinuosTesting - CircuitCity");
-	htmlReporter.config().setReportName("Circuit-City");
-	htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
-	htmlReporter.config().setTheme(Theme.STANDARD);
-		
-	}
-	
-	
 	public void takeScreenShot(String str)throws Exception
 	{
 		DateFormat df = new SimpleDateFormat("yyyy_MMM_dd HH_mm_ss");
@@ -58,6 +46,35 @@ public class Report {
 	
 	}
 	
+	public static ExtentReports GetExtent(){
+		if (extent != null)
+                    return extent; //avoid creating new instance of html file
+                extent = new ExtentReports();		
+		extent.attachReporter(getHtmlReporter());
+//		extent.setSystemInfo("OS", "Windows 10");
+//		extent.setSystemInfo("UserName", "Mahesh");
+		return extent;
+	}
+ 
+	private static ExtentHtmlReporter getHtmlReporter() {
+	
+        htmlReporter = new ExtentHtmlReporter(filePath);
+		
+	// make the charts visible on report open
+        htmlReporter.config().setChartVisibilityOnOpen(true);
+		
+        htmlReporter.config().setDocumentTitle("CIRCUIT-CITY");
+        htmlReporter.config().setReportName("CIRCUIT-CITY : Regression cycle");
+        
+        return htmlReporter;
+        
+	}
+	
+	public static ExtentTest createTest(String name, String description){
+		test = extent.createTest(name, description);
+		return test;
+		
+	}
 	
 	
 	

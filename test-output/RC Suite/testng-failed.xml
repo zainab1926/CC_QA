@@ -8,11 +8,13 @@
   </listeners>
   <test name="RC Test(failed)" parallel="methods">
     <classes>
-      <class name="Test.CC_Load">
+      <class name="Test.Initiate">
         <methods>
-          <include name="chk" invocation-numbers="0"/>
+          <include name="Ini"/>
+          <include name="checkHome" invocation-numbers="0"/>
+          <include name="tear"/>
         </methods>
-      </class> <!-- Test.CC_Load -->
+      </class> <!-- Test.Initiate -->
     </classes>
   </test> <!-- RC Test(failed) -->
 </suite> <!-- Failed suite [RC Suite] -->

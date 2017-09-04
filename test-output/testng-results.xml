@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="RC Suite" duration-ms="20213" started-at="2017-09-03T23:17:41Z" finished-at="2017-09-03T23:18:01Z">
+  <suite name="RC Suite" duration-ms="36731" started-at="2017-09-04T08:34:20Z" finished-at="2017-09-04T08:34:57Z">
     <groups>
     </groups>
-    <test name="RC Test" duration-ms="20213" started-at="2017-09-03T23:17:41Z" finished-at="2017-09-03T23:18:01Z">
-      <class name="Test.CC_Load">
-        <test-method status="PASS" signature="chk(java.lang.String, java.lang.String)[pri:0, instance:Test.CC_Load@3532ec19]" name="chk" duration-ms="20175" started-at="2017-09-03T18:17:41Z" finished-at="2017-09-03T18:18:01Z">
+    <test name="RC Test" duration-ms="36731" started-at="2017-09-04T08:34:20Z" finished-at="2017-09-04T08:34:57Z">
+      <class name="Test.Initiate">
+        <test-method status="PASS" signature="Ini()[pri:0, instance:Test.Initiate@76508ed1]" name="Ini" is-config="true" duration-ms="389" started-at="2017-09-04T03:34:20Z" finished-at="2017-09-04T03:34:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Ini -->
+        <test-method status="FAIL" signature="checkHome(java.lang.String, java.lang.String)[pri:0, instance:Test.Initiate@76508ed1]" name="checkHome" duration-ms="35603" started-at="2017-09-04T03:34:21Z" finished-at="2017-09-04T03:34:56Z">
           <params>
             <param index="0">
               <value>
@@ -20,10 +24,61 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at Test.Registration.checkFields(Registration.java:59)
+	at Test.Registration.executeAllTest(Registration.java:21)
+	at Test.Initiate.checkRegistration(Initiate.java:44)
+	at Test.Initiate.checkHome(Initiate.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- chk -->
-      </class> <!-- Test.CC_Load -->
+        </test-method> <!-- checkHome -->
+        <test-method status="PASS" signature="checkFail()[pri:0, instance:Test.Initiate@76508ed1]" name="checkFail" duration-ms="37" started-at="2017-09-04T03:34:21Z" finished-at="2017-09-04T03:34:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkFail -->
+        <test-method status="FAIL" signature="tear()[pri:0, instance:Test.Initiate@76508ed1]" name="tear" is-config="true" duration-ms="0" started-at="2017-09-04T03:34:56Z" finished-at="2017-09-04T03:34:56Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at Test.Initiate.tear(Initiate.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:225)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tear -->
+      </class> <!-- Test.Initiate -->
     </test> <!-- RC Test -->
   </suite> <!-- RC Suite -->
 </testng-results>

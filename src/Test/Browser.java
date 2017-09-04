@@ -2,6 +2,7 @@ package Test;
 
 
 import static org.openqa.selenium.OutputType.FILE;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -29,6 +31,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.log4testng.Logger;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
 import static Test.TestConstants.ALERT_ACTION_TYPE_ACCEPT;
 import static Test.TestConstants.ALERT_ACTION_TYPE_DISMISS;
 import static Test.TestConstants.DESELECT_ALL;
@@ -45,7 +50,9 @@ public class Browser {
 
 	public static WebDriver browser = BrowserFactory.getBrowser("Browser","url");
 	public static Logger log = Logger.getLogger(Browser.class);
-
+	ExtentReports extent;
+	ExtentTest test;
+	WebDriver driver;
 	/**
 	 * Wrapper method for Webdriver get, basically opens a URL in the browser.
 	 * Handles IE issue for non protected mode URLS to run with IP

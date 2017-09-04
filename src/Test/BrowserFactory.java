@@ -19,18 +19,30 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
+
 public class BrowserFactory {
+	
+	static ExtentReports extent;
+	static ExtentTest test;
+	static WebDriver driver;
 	public static WebDriver browser = null;
 	
+	
 	public static WebDriver getBrowser(String browserName,String url) {
-
 		if (browser == null) {
 			try {
 
 //				String browserName = CommonUtils.readFromConfig("Browser");
 
 				if ("FF".equalsIgnoreCase(browserName)) {
-					
 					browser = loadFireFoxDriver(url);
 				} else if ("IE".equalsIgnoreCase(browserName)) {
 					browser = loadIEDriver(url);
@@ -63,10 +75,28 @@ public class BrowserFactory {
 		if ("true".equalsIgnoreCase(loadffProfile)) {
 			remoteDriver = new FirefoxDriver(profile);
 		} else {
+			extent = Report.GetExtent();
 			System.setProperty("webdriver.gecko.driver", "C:\\CI_CD_CT\\Browser_Executables\\geckodriver.exe");
-		    browser  = new FirefoxDriver();	
-		    LogIn_Register chkLogin = new LogIn_Register();
-		    chkLogin.chkLogin(url);
+			DesiredCapabilities dc = new DesiredCapabilities();
+			dc.setAcceptInsecureCerts(true);
+		    browser  = new FirefoxDriver(dc);	
+		    Browser br = new Browser();
+		    br.go(url);
+		    String appTitle = br.getTitle();
+			System.out.println("Application Title is :"+appTitle);
+			test=extent.createTest("Checking Application Title");
+			if(br.getTitle().contains(appTitle))
+			{
+				test.pass("Application Title is Matching");
+			}
+			else
+			{
+			test.fail("Application Title Not Matching");
+			}
+			
+			
+		    
+		    
 		}
 		return remoteDriver;
 
@@ -86,9 +116,11 @@ public class BrowserFactory {
 		System.setProperty("webdriver.ie.driver",
 				"C:\\CI_CD_CT\\Browser_Executables\\IEDriverServer.exe");
 		remoteDriver = new InternetExplorerDriver(capabilities);
-			
-	    LogIn_Register chkLogin = new LogIn_Register();
-	    chkLogin.chkLogin(url);
+		DesiredCapabilities dc = new DesiredCapabilities();
+		dc.setAcceptInsecureCerts(true);
+		 browser  = new FirefoxDriver(dc);	
+		    Browser br = new Browser();
+		    br.go(url);
 		
 		return remoteDriver;
 
@@ -113,9 +145,11 @@ public class BrowserFactory {
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options); 
 		remoteDriver = new ChromeDriver(capabilities);
-					
-	    LogIn_Register chkLogin = new LogIn_Register();
-	    chkLogin.chkLogin(url);
+		DesiredCapabilities dc = new DesiredCapabilities();
+		dc.setAcceptInsecureCerts(true);
+		 	browser  = new FirefoxDriver(dc);	
+		    Browser br = new Browser();
+		    br.go(url);
 		return remoteDriver;
 	}
 
