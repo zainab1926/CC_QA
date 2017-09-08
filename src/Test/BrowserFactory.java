@@ -71,8 +71,7 @@ public class BrowserFactory {
 		FirefoxProfile profile = null;
 
 		if ("true".equalsIgnoreCase(loadffProfile)) {
-			String profilePath = CommonUtils
-					.readFromConfig("FIREFOXPROFILEDIR");
+			String profilePath = CommonUtils.readFromConfig("FIREFOXPROFILEDIR");
 			File profileDir = new File(profilePath);
 			profile = new FirefoxProfile(profileDir);
 			profile.setAcceptUntrustedCertificates(false);

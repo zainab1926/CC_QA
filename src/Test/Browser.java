@@ -41,6 +41,8 @@ import static Test.TestConstants.LONG_WAIT;
 import static Test.TestConstants.SELECT_BY_INDEX;
 import static Test.TestConstants.SELECT_BY_VALUE;
 import static Test.TestConstants.SELECT_BY_VISIBLE_TEXT;
+
+
 import static Test.TestConstants.SELECT_INFO_TYPE_ALL_SELECTED_OPTIONS;
 import static Test.TestConstants.SELECT_INFO_TYPE_FIRST_SELECTED_OPTION;
 import static Test.TestConstants.SELECT_INFO_TYPE_OPTIONS;
