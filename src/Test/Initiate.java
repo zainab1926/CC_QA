@@ -37,6 +37,7 @@ public class Initiate {
 		extent = Report.GetExtent();
 //		System.setProperty("webdriver.gecko.driver", "C:\\CI_CD_CT\\Browser_Executables\\geckodriver.exe");
 //		driver = new FirefoxDriver();
+		//adding new content to check Reporting
 		
 	}
 	@SuppressWarnings("static-access")
