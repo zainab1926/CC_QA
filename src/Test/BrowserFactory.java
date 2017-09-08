@@ -8,8 +8,14 @@ package Test;
  */
 import java.io.File;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -32,7 +38,7 @@ public class BrowserFactory {
 	
 	static ExtentReports extent;
 	static ExtentTest test;
-	static WebDriver driver;
+//	static WebDriver driver;
 	public static WebDriver browser = null;
 	
 	
@@ -84,15 +90,17 @@ public class BrowserFactory {
 		    br.go(url);
 		    String appTitle = br.getTitle();
 			System.out.println("Application Title is :"+appTitle);
-			test=extent.createTest("Checking Application Title");
+			test=extent.createTest("Checking Application Title - HomePage");
 			if(br.getTitle().contains(appTitle))
 			{
 				test.pass("Application Title is Matching");
+				
 			}
 			else
 			{
 			test.fail("Application Title Not Matching");
 			}
+			
 			
 			
 		    
@@ -126,7 +134,6 @@ public class BrowserFactory {
 
 	}
 
-	
 
 	private static RemoteWebDriver loadChromeDriver(String url) throws Exception {
 
@@ -152,5 +159,7 @@ public class BrowserFactory {
 		    br.go(url);
 		return remoteDriver;
 	}
+	
+	
 
 }

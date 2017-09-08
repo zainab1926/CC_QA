@@ -1,8 +1,19 @@
 package Test;
 
+import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
+import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -15,9 +26,12 @@ public class Initiate {
 
 	ExtentReports extent;
 	ExtentTest test;
-	WebDriver driver;
 	public static WebDriver browser = BrowserFactory.getBrowser("Browser","url");
 	BrowserFactory br = new BrowserFactory();
+	Report rpt = new Report();
+	
+	WebDriver wb;
+	
 	@BeforeClass
 	public void Ini(){
 		extent = Report.GetExtent();
@@ -30,11 +44,15 @@ public class Initiate {
 	@Test
 	public void checkHome(String Browser, String Url)throws Exception
 	{
-		test = extent.createTest("CIRCUIT CITY", "Verify HomePage");
+		rpt.createTest("CIRCUIT CITY", "Verify HomePage");
 		br.getBrowser(Browser, Url);
 		System.out.println("Browser that is passed as parameter from Jenkins is :"+Browser); 
-		test.pass("Browser Opened As Expected");
+		//test.log(Status.PASS,"Browser Opened As Expected");
+		//br.captureScreenShot("HomePage");
 		checkRegistration();
+		skipTest();
+		checkFail();
+		extent.flush();
 	}
 	
 		
@@ -43,17 +61,26 @@ public class Initiate {
 		Registration reg  = new Registration();
 		reg.executeAllTest();
 	}
-	@Test
-	public void checkFail(){
-		test = extent.createTest("Testing - Fail Criteria");
-		//test.log(Status.INFO, "fail check started");
-		test.fail("Test fail");
-	}
-	@AfterClass
-	public void tear()
+	
+	public void checkFail()throws Exception
 	{
-		//extent.endTest(test);//earlier version
-		extent.flush();
-		driver.quit();
+		rpt.createTest("Testing - Fail Criteria for Circuit City","Checked");
+//		test.log(Status.FAIL, "fail check started");
+		rpt.Fail("Testing Fail - CIRCUIT CITY");
+	
 	}
+	
+	public void skipTest()
+	{	
+		rpt.createTest("SkipTest","Skipped");
+//		throw new SkipException("Skipping Test");
+		rpt.Skip("Test Skipped");
+	}
+		
+//	@AfterClass
+//	public void tear(ITestResult result)
+//	{
+//		extent.flush();
+//		browser.quit();
+////	}
 }

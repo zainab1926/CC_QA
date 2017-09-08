@@ -12,21 +12,21 @@ import com.aventstack.extentreports.ExtentTest;
 
 public class Registration extends Browser
 {
-	ExtentReports extent;
-	ExtentTest test;
-	WebDriver driver;
+	WebDriver wd;
+	Report rpt  = new Report();
+	
 	public void executeAllTest()throws Exception
 	{
 //		chk_Login();
 		checkFields();
-		validFields();
-		validName();
-		invalidName();
-		invalidEmail();
-		validPassword();
-		InvalidPassword();
-		Invalid_Cnfm_Pwd();
-		Reg_Success();
+		//validFields();
+		//validName();
+		//invalidName();
+//		invalidEmail();
+//		validPassword();
+//		InvalidPassword();
+//		Invalid_Cnfm_Pwd();
+//		Reg_Success();
 	}
 	 
 //	public  void chk_Login() throws Exception
@@ -36,7 +36,7 @@ public class Registration extends Browser
 //		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_3']/span");//register
 //	}
 	
-	public void checkFields() throws InterruptedException
+	public void checkFields() throws InterruptedException,Exception
 	{
 		Thread.sleep(2000);
 		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']"); ///signin
@@ -53,16 +53,23 @@ public class Registration extends Browser
 		                   
 		 for(Map.Entry<String, String> id : ids.entrySet() )
 		 {
+			 
 			 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
 			 {
-				 //System.out.println(id.getKey() + " is displayed ");
-				 test = extent.createTest("CIRCUIT CITY-Registration :Message"+id.getKey()+ " is displayed ");
+				 rpt.createTest("Circuit_City-Registration", "Message : "+id.getKey()+ " is displayed ");
+				 rpt.Pass("Message"+id.getKey()+ " is Displayed ");
+				 String path = rpt.CaptureScreen(browser, id.getKey());
+				 System.out.println(path);
+				 rpt.Pass(path);
 			 }
 			 else
 			 {
 				 //System.out.println(id.getKey() + " is not displayed ");
-				 test = extent.createTest("CIRCUIT CITY-Registration :Message"+id.getKey()+ " is NOT displayed ");
+				 rpt.createTest("CIRCUIT-CITY - Registration", "Message "+id.getKey()+ " is NOT displayed ");
+				 rpt.Fail("Message"+id.getKey()+ " is NOT Displayed ");
+				 
 			 }
+			 
 		 }
 
 	}
@@ -74,14 +81,16 @@ public class Registration extends Browser
 		 Boolean ErrorMsgReg = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//For Error MEssage
 		 if(ErrorMsgReg)
 		 {
-			// System.out.println("Error Message DIsplayed - For Filed Validations - " + strError );
-			 test = extent.createTest("CIRCUIT CITY - Registration :Error Message displayed - For Field Validations -", strError);
-
+			 rpt.createTest("Checking ValidFields ", "CIRCUIT CITY - Registration : "+strError+" Message displayed - For Field Validations -");
+			 rpt.Info("Message"+strError+ "properly displayed");
+			 rpt.Pass("CIRCUIT CITY - Registration : "+strError+" Message displayed - For Field Validations");
 		 }
 		 else
 		 {
-			 //System.out.println("NoError Message DIsplayed");
-			 test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT displayed - For Field Validations");
+			 rpt.createTest("Checking ValidFields ", "CIRCUIT CITY - Registration : "+strError+" Message displayed - For Field Validations -");
+			 rpt.Info("Message");
+			 rpt.Fail("CIRCUIT CITY - Registration : "+strError+" Message  NOT displayed - For Field Validations");
+			
 		 }
 
 		
@@ -94,14 +103,15 @@ public class Registration extends Browser
 		 String eMsgReg = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
 		 if(ErrorMsgReg)
 		 {
-			 //System.out.println("Error Message DIsplayed - For Valid Name" + eMsgReg );
-			 test = extent.createTest("CIRCUIT CITY - Registration :Error Message Displayed - For Valid Name :", eMsgReg);
+			 rpt.createTest("CC-Registration-name Validation", "Error Message"+eMsgReg+" Displayed - For Valid Name :");
+			 rpt.Pass("Error Message"+eMsgReg+" Displayed - For Valid Name");
 		 }
 		 else
 		 {
-			 //System.out.println("NoError Message DIsplayed");
+			 
 			 test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT displayed- For valid name");
-
+			 rpt.createTest("CC-Registration-name Validation", "Error Message"+eMsgReg+" Displayed - For Valid Name :");
+			 rpt.Fail("Error Message"+eMsgReg+" NOT ;Displayed - For Valid Name");
 		 }
 	}
 
@@ -119,17 +129,20 @@ public class Registration extends Browser
 			sendKeys("xpath=//*[@id='"+id+"']", value);
 			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']/div[2]");//create acc
 			Boolean strMessage = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//error msg
-			String strMsg = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
-			if(strMessage)
-			{
-				//System.out.println("Message Displayed: For Invalid Name"+ strMsg);
-				test = extent.createTest("CIRCUIT CITY - Registration :Message Displayed- For Invalid Name:",strMsg);
+			
+			String Actual = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
+			String Expected = "Invalid Name";
+			if(Actual == Expected)
+			{	
+				rpt.createTest("CC-Registration-Ivalid Name", "Message"+Expected+" Displayed- For Invalid Name:");
+				rpt.Info("Expected Message"+Expected+"Is Matching with "+Actual +"Message");
+				rpt.Pass("Message"+Expected+" Displayed- For Invalid Name:");
 			}
 			else
 			{
-				//System.out.println("Error Message NOT Displayed");
-				test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT Displayed -For Invalid Name");
-
+				rpt.createTest("CC-Registration-Ivalid Name", "Message"+Actual+" Displayed- For Invalid Name:");
+				rpt.Info("Expected Message"+Expected+ "Not Matching with "+Actual +"Message");
+				rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name:");
 			}
 
 		}

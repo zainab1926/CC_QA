@@ -1,6 +1,8 @@
 package Test;
 
+import java.awt.Image;
 import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Protocol;
@@ -28,24 +31,12 @@ public class Report {
 	private static ExtentReports extent;
 	private static ExtentTest test;
 	private static ExtentHtmlReporter htmlReporter;
-	
-	
-	private static String filePath = "C:\\Users\\madhusudhan\\workspace\\CC\\test-output\\myReport.html";
-	public static WebDriver browser = BrowserFactory.getBrowser("Browser","url");
 		
-	public void takeScreenShot(String str)throws Exception
-	{
-		DateFormat df = new SimpleDateFormat("yyyy_MMM_dd HH_mm_ss");
-		Date date = new Date();
-		String time=df.format(date);
-		System.out.println(time);
-		File f = ((TakesScreenshot)browser).getScreenshotAs(OutputType.FILE);
-		String dest = "C:\\Users\\madhusudhan\\workspace\\CC\\Screenshots\\"+str+time+".png";
-		FileUtils.copyFile(f, new File(dest));
-//		test.addScreenCaptureFromPath(dest);
+	private static String filePath = "C:\\Users\\madhusudhan\\workspace\\CC\\test-output\\myReport.html";
+	public static WebDriver browser = BrowserFactory.getBrowser("Browser","URL");
+	static String imagePath="C:\\Users\\madhusudhan\\workspace\\CC\\Screenshots\\";
 	
-	}
-	
+	BrowserFactory br = new BrowserFactory();
 	public static ExtentReports GetExtent(){
 		if (extent != null)
                     return extent; //avoid creating new instance of html file
@@ -62,22 +53,55 @@ public class Report {
 		
 	// make the charts visible on report open
         htmlReporter.config().setChartVisibilityOnOpen(true);
-		
         htmlReporter.config().setDocumentTitle("CIRCUIT-CITY");
-        htmlReporter.config().setReportName("CIRCUIT-CITY : Regression cycle");
-        
+        htmlReporter.config().setReportName("CIRCUIT-CITY : Regression Suite");
         return htmlReporter;
         
 	}
-	
+		
 	public static ExtentTest createTest(String name, String description){
 		test = extent.createTest(name, description);
+		return test;	
+	}
+	public static ExtentTest Pass(String Message)
+	{
+		test.pass(Message);
+		return test;
+	}
+	public static  ExtentTest Fail(String FailMessage)
+	{
+		test.fail(FailMessage);
 		return test;
 		
+		
+	}
+	public static ExtentTest Skip(String SkipMessage)
+	{
+		test.skip(SkipMessage);
+		return test;
+	}
+
+	public static ExtentTest Info(String InfoMessage)throws Exception
+	{
+		test.info(InfoMessage);
+		return test;
+	}
+	public static ExtentTest imgPath(String path)throws Exception
+	{
+		test.addScreenCaptureFromPath(path);
+		return test;
 	}
 	
 	
-	
 		
-
+	public static String CaptureScreen(WebDriver driver,String imgName)
+	{
+	    TakesScreenshot oScn = (TakesScreenshot) driver;
+	    File oScnShot = oScn.getScreenshotAs(OutputType.FILE);
+	 File oDest = new File(imagePath+imgName+".png");
+	 try {
+	      FileUtils.copyFile(oScnShot, oDest);
+	 } catch (IOException e) {System.out.println(e.getMessage());}
+	 return imagePath+imgName+".png";
+	        }
 }

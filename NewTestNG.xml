@@ -5,8 +5,10 @@
         <listener class-name="Test.EnvReaderListener"/>
     </listeners>
     
-    <parameter name="browser" value="FF"/>
-    <parameter name="url" value="http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c" />
+    <parameter name="browser" value="sample browser"/>
+    <parameter name="url" value="sample url" />
+    <!--  <parameter name="browser" value="FF"/>
+    <parameter name="url" value="http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c" />-->
     <test name="RC Test" verbose="2">
         <classes>
             <class name="Test.Initiate"/>
