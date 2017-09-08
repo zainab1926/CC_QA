@@ -18,13 +18,19 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Protocol;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.aventstack.extentreports.MediaEntityModelProvider;
+
 
 public class Report {
 
@@ -35,6 +41,8 @@ public class Report {
 	private static String filePath = "C:\\Users\\madhusudhan\\workspace\\CC\\test-output\\myReport.html";
 	public static WebDriver browser = BrowserFactory.getBrowser("Browser","URL");
 	static String imagePath="C:\\Users\\madhusudhan\\workspace\\CC\\Screenshots\\";
+	
+		
 	
 	BrowserFactory br = new BrowserFactory();
 	public static ExtentReports GetExtent(){
@@ -55,6 +63,8 @@ public class Report {
         htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setDocumentTitle("CIRCUIT-CITY");
         htmlReporter.config().setReportName("CIRCUIT-CITY : Regression Suite");
+        
+        htmlReporter.loadXMLConfig("C:\\Users\\madhusudhan\\workspace\\CC\\extent-config.xml");
         return htmlReporter;
         
 	}
@@ -66,11 +76,15 @@ public class Report {
 	public static ExtentTest Pass(String Message)
 	{
 		test.pass(Message);
+		test.assignCategory("CIRCUIT_CITY : Regression");
 		return test;
 	}
 	public static  ExtentTest Fail(String FailMessage)
 	{
 		test.fail(FailMessage);
+		test.assignCategory("CIRCUIT_CITY : Regression");
+		test.warning(FailMessage);
+		test.error(FailMessage);
 		return test;
 		
 		
@@ -78,6 +92,8 @@ public class Report {
 	public static ExtentTest Skip(String SkipMessage)
 	{
 		test.skip(SkipMessage);
+		test.assignCategory("CIRCUIT_CITY : Regression");
+		
 		return test;
 	}
 
@@ -86,11 +102,35 @@ public class Report {
 		test.info(InfoMessage);
 		return test;
 	}
-	public static ExtentTest imgPath(String path)throws Exception
+	public static ExtentTest imgPathPass(String path)throws Exception
 	{
-		test.addScreenCaptureFromPath(path);
+		test.pass("ScreenShot", MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+		return test;
+		
+	}
+	public static ExtentTest imgPathFail(String path)throws Exception
+	{
+		test.fail("ScreenShot", MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+		return test;
+		
+	}
+	
+	public static ExtentTest Category(String Category)throws Exception
+	{
+		test.assignCategory(Category);
 		return test;
 	}
+	
+	
+	
+//	public static ExtentTest vdoPath()throws Exception,ATUTestRecorderException
+//	{
+////		ATUTestRecorder rec;
+////		//String rec = new ATUTestRecorder("C:\\CI_CD_CT\\Test_Videos\\","Test_Video",false);
+////		test.addScreencastFromPath(rec);
+////		return test;
+//	}
+	
 	
 	
 		

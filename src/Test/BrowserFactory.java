@@ -88,11 +88,10 @@ public class BrowserFactory {
 		    Browser br = new Browser();
 		    br.go(url);
 		    String appTitle = br.getTitle();
-			System.out.println("Application Title is :"+appTitle);
 			test=extent.createTest("Checking Application Title - HomePage");
 			if(br.getTitle().contains(appTitle))
 			{
-				test.pass("Application Title is Matching");
+				test.pass("Application Title :"+appTitle+" is Matching");
 				
 			}
 			else

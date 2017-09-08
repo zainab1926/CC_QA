@@ -21,9 +21,9 @@ public class Registration extends Browser
 //		chk_Login();
 		checkFields();
 		validFields();
-		//validName();
-		//invalidName();
-//		invalidEmail();
+		validName();
+		invalidName();
+		//invalidEmail();
 //		validPassword();
 //		InvalidPassword();
 //		Invalid_Cnfm_Pwd();
@@ -39,6 +39,7 @@ public class Registration extends Browser
 	
 	public void checkFields() throws InterruptedException,Exception
 	{
+		
 		Thread.sleep(2000);
 		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']"); ///signin
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_3']");//create acc
@@ -57,22 +58,23 @@ public class Registration extends Browser
 			 
 			 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
 			 {
-				 rpt.createTest("Circuit_City-Registration", "Message : "+id.getKey()+ " is displayed ");
+				 rpt.createTest("Circuit_City-Registration :"+id.getKey(), "Message : "+id.getKey()+ " is displayed ");
 				 rpt.Pass("Message"+id.getKey()+ " is Displayed ");
+				 rpt.Category("CC_Registration_Check Fields Existence");
 				 String path = rpt.CaptureScreen(browser, id.getKey());
-				 System.out.println(path);
-				 rpt.Pass(path);
+				 rpt.imgPathPass(path);
 			 }
 			 else
 			 {
 				 //System.out.println(id.getKey() + " is not displayed ");
-				 rpt.createTest("CIRCUIT-CITY - Registration", "Message "+id.getKey()+ " is NOT displayed ");
+				 rpt.createTest("Circuit_City-Registration :"+id.getKey(), "Message "+id.getKey()+ " is NOT displayed ");
 				 rpt.Fail("Message"+id.getKey()+ " is NOT Displayed ");
-				 
+				 rpt.Category("CC_Registration_Check Fields Existence");
+				 String path = rpt.CaptureScreen(browser, id.getKey());
+				 rpt.imgPathFail(path); 
 			 }
-			 
 		 }
-
+		 
 	}
 	public void validFields() throws Exception
 	{
@@ -85,13 +87,18 @@ public class Registration extends Browser
 			 rpt.createTest("Checking ValidFields ", "CIRCUIT CITY - Registration : "+strError+" Message displayed - For Field Validations -");
 			 rpt.Info("Message"+strError+ "properly displayed");
 			 rpt.Pass("CIRCUIT CITY - Registration : "+strError+" Message displayed - For Field Validations");
+			 rpt.Category("CC_Registration_Validate Fields");
+			 String path = rpt.CaptureScreen(browser, "ValidMessage");
+			 rpt.imgPathPass(path);
 		 }
 		 else
 		 {
 			 rpt.createTest("Checking ValidFields ", "CIRCUIT CITY - Registration : "+strError+" Message displayed - For Field Validations -");
 			 rpt.Info("Message");
 			 rpt.Fail("CIRCUIT CITY - Registration : "+strError+" Message  NOT displayed - For Field Validations");
-			
+			 rpt.Category("CC_Registration_Validate Fields");
+			 String path = rpt.CaptureScreen(browser, "InvalidMessage");
+			 rpt.imgPathFail(path);
 		 }
 
 		
@@ -106,13 +113,18 @@ public class Registration extends Browser
 		 {
 			 rpt.createTest("CC-Registration-name Validation", "Error Message"+eMsgReg+" Displayed - For Valid Name :");
 			 rpt.Pass("Error Message"+eMsgReg+" Displayed - For Valid Name");
+			 rpt.Category("CC_Registration_Check_Name Field");
+			 String path = rpt.CaptureScreen(browser, "ValidMessage");
+			 rpt.imgPathPass(path);
 		 }
 		 else
 		 {
-			 
 			 test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT displayed- For valid name");
 			 rpt.createTest("CC-Registration-name Validation", "Error Message"+eMsgReg+" Displayed - For Valid Name :");
 			 rpt.Fail("Error Message"+eMsgReg+" NOT ;Displayed - For Valid Name");
+			 rpt.Category("CC_Registration_Check_Name Field");
+			 String path = rpt.CaptureScreen(browser, "InvalidMessage");
+			 rpt.imgPathFail(path);
 		 }
 	}
 
@@ -135,15 +147,21 @@ public class Registration extends Browser
 			String Expected = "Invalid Name";
 			if(Actual == Expected)
 			{	
-				rpt.createTest("CC-Registration-Ivalid Name", "Message"+Expected+" Displayed- For Invalid Name:");
+				rpt.createTest("CC-Registration-Invalid Name", "Message"+Expected+" Displayed- For Invalid Name:");
 				rpt.Info("Expected Message"+Expected+"Is Matching with "+Actual +"Message");
 				rpt.Pass("Message"+Expected+" Displayed- For Invalid Name:");
+				rpt.Category("CC_Registration_Check_Invalid Name");
+				String path = rpt.CaptureScreen(browser, "Valid Message");
+				 rpt.imgPathPass(path);
 			}
 			else
 			{
-				rpt.createTest("CC-Registration-Ivalid Name", "Message"+Actual+" Displayed- For Invalid Name:");
+				rpt.createTest("CC-Registration-Invalid Name", "Message"+Actual+" Displayed- For Invalid Name:");
 				rpt.Info("Expected Message"+Expected+ "Not Matching with "+Actual +"Message");
 				rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name:");
+				rpt.Category("CC_Registration_Check_Invalid Name");
+				String path = rpt.CaptureScreen(browser, "Invalid Message");
+				rpt.imgPathFail(path);
 			}
 
 		}
@@ -165,12 +183,23 @@ public class Registration extends Browser
 			{
 				//System.out.println("Message Displayed: For Email - "+ strMsg);
 				test = extent.createTest("CIRCUIT CITY - Registration :Message Displayed- For Invalid Email : ",strMsg);
+				rpt.createTest("CC-Registration-Invalid Name", "Message"+strMsg+" Displayed- For Invalid Email:");
+				rpt.Info("Expected Message"+strMsg+"Is Matching with "+strMsg +"Message");
+				rpt.Pass("Message"+strMsg+" Displayed- For Invalid Name");
+				rpt.Category("CC_Registration_Check_Invalid Email");
+				String path = rpt.CaptureScreen(browser, strMsg);
+				 rpt.imgPathPass(path);
 			}
 			else
 			{
 				//System.out.println("Error Message NOT Displayed");
-				test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT Displayed- For Invalid Email ");
-
+				//test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT Displayed- For Invalid Email ");
+				rpt.createTest("CC-Registration-Invalid Name", "Message"+strMsg+" NOT Displayed- For Invalid Email:");
+				rpt.Info("Expected Message"+strMsg+"Is NOT Matching with "+strMsg +"Message");
+				rpt.Fail("Message"+strMsg+" Displayed- For Invalid Email");
+				rpt.Category("CC_Registration_Check_Invalid Email");
+				String path = rpt.CaptureScreen(browser, strMsg);
+				 rpt.imgPathPass(path);
 			}
 
 		}

@@ -18,6 +18,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -31,6 +32,8 @@ public class Initiate {
 	Report rpt = new Report();
 	
 	WebDriver wb;
+	
+	
 	
 	@BeforeClass
 	public void Ini(){
@@ -47,7 +50,8 @@ public class Initiate {
 	{
 		rpt.createTest("CIRCUIT CITY", "Verify HomePage");
 		br.getBrowser(Browser, Url);
-		System.out.println("Browser that is passed as parameter from Jenkins is :"+Browser); 
+		rpt.Pass("Browser that is passed as parameter from Jenkins is :"+Browser);
+		rpt.Pass("URL that is passed as parameter from Jenkins is :"+Url);
 		//test.log(Status.PASS,"Browser Opened As Expected");
 		//br.captureScreenShot("HomePage");
 		checkRegistration();
@@ -78,10 +82,6 @@ public class Initiate {
 		rpt.Skip("Test Skipped");
 	}
 		
-//	@AfterClass
-//	public void tear(ITestResult result)
-//	{
-//		extent.flush();
-//		browser.quit();
-////	}
+	
+
 }
