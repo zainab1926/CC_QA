@@ -17,7 +17,7 @@ public class Registration extends Browser
 	
 	public void executeAllTest()throws Exception
 	{
-		//making changes for Testing purpose
+		//Added new Line to test Report
 //		chk_Login();
 		checkFields();
 		validFields();
