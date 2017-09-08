@@ -17,9 +17,10 @@ public class Registration extends Browser
 	
 	public void executeAllTest()throws Exception
 	{
+		//making changes for Testing purpose
 //		chk_Login();
 		checkFields();
-		//validFields();
+		validFields();
 		//validName();
 		//invalidName();
 //		invalidEmail();
