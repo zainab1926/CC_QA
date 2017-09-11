@@ -125,10 +125,11 @@ public class Report {
 	
 //	public static ExtentTest vdoPath()throws Exception,ATUTestRecorderException
 //	{
-////		ATUTestRecorder rec;
-////		//String rec = new ATUTestRecorder("C:\\CI_CD_CT\\Test_Videos\\","Test_Video",false);
-////		test.addScreencastFromPath(rec);
-////		return test;
+//		ATUTestRecorder rec;
+//		rec = new ATUTestRecorder("C:\\CI_CD_CT\\Test_Videos\\","Test_Video",false);
+//		rec.start();
+//		test.log(Status.PASS, test.addScreencastFromPath(rec));
+//		return test;
 //	}
 	
 	

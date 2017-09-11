@@ -62,6 +62,11 @@
 			    <version>3.0.6</version>
 				</dependency>
 				<dependency>
+			    <groupId>com.sikulix</groupId>
+			    <artifactId>sikulixapi</artifactId>
+			    <version>1.1.0</version>
+				</dependency>
+				<dependency>
             <groupId>atu.testng.reports.ATUReports</groupId>
             <artifactId>atu-reports</artifactId>
             <version>2.1</version>

@@ -30,10 +30,8 @@ public class Initiate {
 	public static WebDriver browser = BrowserFactory.getBrowser("Browser","url");
 	BrowserFactory br = new BrowserFactory();
 	Report rpt = new Report();
-	
 	WebDriver wb;
-	
-	
+		
 	
 	@BeforeClass
 	public void Ini(){
@@ -55,6 +53,10 @@ public class Initiate {
 		//test.log(Status.PASS,"Browser Opened As Expected");
 		//br.captureScreenShot("HomePage");
 		checkRegistration();
+		chkAddress_Book();
+		//chkPersonalInfo();
+		//chkSearch();
+		
 		skipTest();
 		checkFail();
 		extent.flush();
@@ -65,6 +67,23 @@ public class Initiate {
 	{
 		Registration reg  = new Registration();
 		reg.executeAllTest();
+	}
+	
+	public void chkPersonalInfo()throws Exception
+	{
+		PERSONAL_INFO pi = new PERSONAL_INFO();
+		pi.executeAllTestcase();
+	}
+	
+	public void chkAddress_Book()throws Exception
+	{
+		ADDRESS_BOOK add = new ADDRESS_BOOK();
+		add.executeAllTest();
+	}
+	public void chkSearch()throws Exception
+	{
+		SEARCH srch = new SEARCH();
+		srch.execute_Alltestcases();
 	}
 	
 	public void checkFail()throws Exception
