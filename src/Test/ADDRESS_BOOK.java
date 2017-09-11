@@ -18,19 +18,14 @@ public class ADDRESS_BOOK extends Browser
 	public WebDriver browser = BrowserFactory.getBrowser("Browser","url");
 //	Browser br  = new Browser();
 	Report rpt = new Report();
-	
+	WebDriver wd;
 
 	
 	
-	public void first(String browserName)throws Exception
+	public void first()throws Exception
 	{
-		/*browser = BrowserFactory.getBrowser(browserName);
-		browser.get("http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c");*/
-		
 		chkLogin("zzz@gmail.com","zainab123");
 		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a"); //my acc
-		
-		
 	}
 	
 	public void chkLogin(String Username,String Password)throws Exception
@@ -49,6 +44,7 @@ public class ADDRESS_BOOK extends Browser
 	
 	public void executeAllTest()throws Exception
 	{
+		first();
 		chk_details();
 		chk_AccSection();
 		chk_Sections();
@@ -67,7 +63,7 @@ public class ADDRESS_BOOK extends Browser
  {
 	//CC_ACC_001
 	 			
-	click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a");
+	//click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a");
 	
     
 	String Actual  = findTheElement("xpath=//*[@id='container_MyAccountDisplayB2B']").getText();
@@ -92,7 +88,7 @@ public class ADDRESS_BOOK extends Browser
           	          rpt.Fail("Message"+Expected+" NOT Displayed- For Welcome Message:");  
           	          rpt.Category("CC_Address Book_Check_Details");
       		          String path = rpt.CaptureScreen(browser, "InvalidMessage");
-      		          rpt.imgPathPass(path);
+      		          rpt.imgPathFail(path);
                      }
      
      
@@ -116,7 +112,7 @@ public class ADDRESS_BOOK extends Browser
  	          rpt.Fail("Message"+Expected_pInfo+" NOT Displayed- For Personal Information:");  
  	         rpt.Category("CC_Address Book_Check_Details");
 		      String path = rpt.CaptureScreen(browser, "InvalidMessage");
-		      rpt.imgPathPass(path);
+		      rpt.imgPathFail(path);
         }
  }
      
@@ -225,7 +221,7 @@ public class ADDRESS_BOOK extends Browser
 	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Account Section:");
 	         rpt.Category("CC_Address Book-Check Account Section");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-	         rpt.imgPathPass(path);
+	         rpt.imgPathFail(path);
 
 		 }
 	 }
@@ -267,7 +263,7 @@ public class ADDRESS_BOOK extends Browser
 	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Settings Section:");
 	         rpt.Category("CC_Address Book-Check Settings Section");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-	         rpt.imgPathPass(path);
+	         rpt.imgPathFail(path);
 		 }
 	 }
     }
@@ -300,7 +296,7 @@ public class ADDRESS_BOOK extends Browser
     	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account:");
     	         rpt.Category("CC_Address Book-Verify My Account");
     	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-    	         rpt.imgPathPass(path);
+    	         rpt.imgPathFail(path);
     		 }
     	 }		 
     }
@@ -339,7 +335,7 @@ public class ADDRESS_BOOK extends Browser
     	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account Page:");
     	         rpt.Category("CC_Address Book-Verify My Account Page");
     	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-    	         rpt.imgPathPass(path);
+    	         rpt.imgPathFail(path);
 			 }
 		 }
 	}
@@ -393,7 +389,7 @@ public class ADDRESS_BOOK extends Browser
 	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify Add New Page:");
 	         rpt.Category("CC_Address Book-Verify Add New Page");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-	         rpt.imgPathPass(path);
+	         rpt.imgPathFail(path);
 		 }
 	 }
     }
@@ -442,7 +438,7 @@ public class ADDRESS_BOOK extends Browser
 			    rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name:");
 			    rpt.Category("CC_Address Book-Invalid Name");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-		         rpt.imgPathPass(path);
+		         rpt.imgPathFail(path);
 			}
 
 		}
@@ -481,7 +477,7 @@ public class ADDRESS_BOOK extends Browser
 					 rpt.Fail("Message"+expectedAdd+" NOT Displayed- For Invalid Address:");
 					 rpt.Category("CC_Address Book-Invalid Address");
 			         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-			         rpt.imgPathPass(path);
+			         rpt.imgPathFail(path);
 				    
 				}
 
@@ -522,7 +518,7 @@ public class ADDRESS_BOOK extends Browser
 						 rpt.Fail("Message"+expectedCity+" NOT Displayed- For Invalid City:");
 						 rpt.Category("CC_Address Book-Invalid City");
 				         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-				         rpt.imgPathPass(path);
+				         rpt.imgPathFail(path);
 
 					}
 
@@ -563,7 +559,7 @@ public class ADDRESS_BOOK extends Browser
 							 rpt.Fail("Message"+expectedState+" NOT Displayed- For Invalid State:");
 							 rpt.Category("CC_Address Book-Invalid State");
 					         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-					         rpt.imgPathPass(path);
+					         rpt.imgPathFail(path);
 						}
 
 					}
@@ -610,7 +606,7 @@ public class ADDRESS_BOOK extends Browser
 								 rpt.Fail("Message"+expectedZcode+" NOT Displayed- For Invalid Zip code:");
 								 rpt.Category("CC_Address Book-Invalid Zip code");
 						         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-						         rpt.imgPathPass(path);
+						         rpt.imgPathFail(path);
 
 							}
 
@@ -651,7 +647,7 @@ public class ADDRESS_BOOK extends Browser
 									 rpt.Fail("Message"+expectedNname+" NOT Displayed- For Invalid Address nick name:");
 									 rpt.Category("CC_Address Book-Invalid Address Nick name");
 							         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-							         rpt.imgPathPass(path);
+							         rpt.imgPathFail(path);
 
 								}
 
@@ -772,7 +768,7 @@ public class ADDRESS_BOOK extends Browser
 		    rpt.Fail("Message"+expectedRadd+" NOT Displayed- For removing address :");
 		    rpt.Category("CC_Address Book-Remove Address");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-	         rpt.imgPathPass(path);
+	         rpt.imgPathFail(path);
 		}
 	  
 	  

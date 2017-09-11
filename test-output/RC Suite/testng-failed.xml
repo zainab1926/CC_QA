@@ -12,6 +12,7 @@
         <methods>
           <include name="Ini"/>
           <include name="checkHome" invocation-numbers="0"/>
+          <include name="publishReport"/>
         </methods>
       </class> <!-- Test.Initiate -->
     </classes>

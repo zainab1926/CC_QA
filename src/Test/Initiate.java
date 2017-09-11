@@ -14,9 +14,11 @@ import org.testng.ITestResult;
 import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 
 
 import com.aventstack.extentreports.ExtentReports;
@@ -53,13 +55,12 @@ public class Initiate {
 		//test.log(Status.PASS,"Browser Opened As Expected");
 		//br.captureScreenShot("HomePage");
 		checkRegistration();
-		chkAddress_Book();
+		//chkAddress_Book();
 		//chkPersonalInfo();
 		//chkSearch();
-		
 		skipTest();
 		checkFail();
-		extent.flush();
+//		extent.flush();
 	}
 	
 		
@@ -101,6 +102,11 @@ public class Initiate {
 		rpt.Skip("Test Skipped");
 	}
 		
-	
+	@AfterTest
+	public void publishReport()throws Exception
+	{
+		extent.flush();
+		browser.close();
+	}
 
 }

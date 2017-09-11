@@ -86,7 +86,7 @@ public class PERSONAL_INFO extends Browser
 		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account:");
 		         rpt.Category("CC_Personal Information-Verify My Account");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-		         rpt.imgPathPass(path);
+		         rpt.imgPathFail(path);
 			 }
 		 }
 		 
@@ -182,7 +182,7 @@ public class PERSONAL_INFO extends Browser
 		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify Displayed Information:");
 		         rpt.Category("CC_Personal Information-Verify Displayed Information");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-		         rpt.imgPathPass(path);
+		         rpt.imgPathFail(path);
 			 }
 		 }     
 	}
@@ -315,7 +315,7 @@ public class PERSONAL_INFO extends Browser
 							   rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name:");
 							   rpt.Category("CC_Personal Information-Invalid Name");
 						         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-						         rpt.imgPathPass(path);
+						         rpt.imgPathFail(path);
 
 						}
 	                 }
@@ -378,7 +378,7 @@ public class PERSONAL_INFO extends Browser
 									 rpt.Fail("Message"+expectedCity+" NOT Displayed- For Invalid City:");
 									 rpt.Category("CC_Personal Information-Invalid City");
 							         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-							         rpt.imgPathPass(path);
+							         rpt.imgPathFail(path);
 
 								}
 			                 }
@@ -445,7 +445,7 @@ public class PERSONAL_INFO extends Browser
 										 rpt.Fail("Message"+expectedZcode+" NOT Displayed- For Invalid Zip code:");
 										 rpt.Category("CC_Personal Information-Invalid Zip code");
 								         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-								         rpt.imgPathPass(path);
+								         rpt.imgPathFail(path);
 
 
 									}
@@ -485,7 +485,7 @@ public class PERSONAL_INFO extends Browser
 											 rpt.Fail("Message"+expectedEid+" NOT Displayed- For Invalid Email id:");
 											 rpt.Category("CC_Personal Information-Invalid Email id");
 									         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-									         rpt.imgPathPass(path);
+									         rpt.imgPathFail(path);
 
 										}
 					                 }
@@ -519,7 +519,7 @@ public class PERSONAL_INFO extends Browser
 		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account:");
 		         rpt.Category("CC_Personal Information-Verify My Account");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-		         rpt.imgPathPass(path);
+		         rpt.imgPathFail(path);
     		 }
     	 }		 
 		
@@ -553,7 +553,7 @@ public class PERSONAL_INFO extends Browser
 		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify Settings:");
 		         rpt.Category("CC_Personal Information-Verify Settings");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-		         rpt.imgPathPass(path);
+		         rpt.imgPathFail(path);
 			 }
 	}
 }
