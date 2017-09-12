@@ -42,6 +42,8 @@ public class Initiate {
 //		driver = new FirefoxDriver();
 		//adding new content to check Reporting
 		
+		//adding a new line for testing
+		
 	}
 	@SuppressWarnings("static-access")
 	@Parameters({"browser","url"})
