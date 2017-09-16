@@ -24,7 +24,7 @@ public class ADDRESS_BOOK extends Browser
 	
 	public void first()throws Exception
 	{
-		//new commit done to check JIRA Issues: DA-5 status
+		//changing again to check the status of issue -DA-5
 		chkLogin("zzz@gmail.com","zainab123");
 		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a"); //my acc
 	}
