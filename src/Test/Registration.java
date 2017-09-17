@@ -17,7 +17,7 @@ public class Registration extends Browser
 	
 	public void executeAllTest()throws Exception
 	{
-		//Added new Line to test Report
+		//Adding new changes for Testing JIRA - Stauts change
 //		chk_Login();
 		checkFields();
 		validFields();
