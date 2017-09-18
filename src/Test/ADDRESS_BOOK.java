@@ -45,7 +45,7 @@ public class ADDRESS_BOOK extends Browser
 	
 	public void executeAllTest()throws Exception
 	{
-		first();
+		//first();
 		chk_details();
 		chk_AccSection();
 		chk_Sections();

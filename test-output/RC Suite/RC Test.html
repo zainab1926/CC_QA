@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Sep 18 05:14:41 CDT 2017</td>
+<td>Started on:</td><td>Mon Sep 18 05:36:25 CDT 2017</td>
 </tr>
-<tr><td>Total time:</td><td>221 seconds (221956 ms)</td>
+<tr><td>Total time:</td><td>159 seconds (159070 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -138,21 +138,10 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='Test.Initiate.checkHome()'><b>checkHome</b><br>Test class: Test.Initiate<br>Parameters: FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@76ecb6a (tried for 60 second(s) with 5 MILLISECONDS interval)
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;WIN-JENKINST81S&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_112&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.JqjM0hSY9t0n, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=13504.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: fbf8220d-323b-48ea-99c8-430472b88ca7
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1103)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1085)
-	at Test.Browser.findTheElement(Browser.java:229)
-	at Test.Browser.click(Browser.java:265)
-	at Test.ADDRESS_BOOK.chkLogin(ADDRESS_BOOK.java:35)
-	at Test.ADDRESS_BOOK.first(ADDRESS_BOOK.java:28)
-	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:48)
+<td><div><pre>java.lang.NullPointerException
+	at Test.Report.CaptureScreen(Report.java:141)
+	at Test.ADDRESS_BOOK.chk_details(ADDRESS_BOOK.java:91)
+	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:49)
 	at Test.Initiate.chkAddress_Book(Initiate.java:82)
 	at Test.Initiate.checkHome(Initiate.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -168,22 +157,11 @@ Session ID: fbf8220d-323b-48ea-99c8-430472b88ca7
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1868050452", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1868050452'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@76ecb6a (tried for 60 second(s) with 5 MILLISECONDS interval)
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;WIN-JENKINST81S&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_112&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.JqjM0hSY9t0n, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=13504.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: fbf8220d-323b-48ea-99c8-430472b88ca7
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1103)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1085)
-	at Test.Browser.findTheElement(Browser.java:229)
-	at Test.Browser.click(Browser.java:265)
-	at Test.ADDRESS_BOOK.chkLogin(ADDRESS_BOOK.java:35)
-	at Test.ADDRESS_BOOK.first(ADDRESS_BOOK.java:28)
-	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:48)
+</pre></div><a href='#' onClick='toggleBox("stack-trace358150091", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace358150091'><pre>java.lang.NullPointerException
+	at Test.Report.CaptureScreen(Report.java:141)
+	at Test.ADDRESS_BOOK.chk_details(ADDRESS_BOOK.java:91)
+	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:49)
 	at Test.Initiate.chkAddress_Book(Initiate.java:82)
 	at Test.Initiate.checkHome(Initiate.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -200,7 +178,7 @@ Session ID: fbf8220d-323b-48ea-99c8-430472b88ca7
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
 </pre></div></td>
-<td>220</td>
+<td>157</td>
 <td>Test.Initiate@5700d6b1</td></tr>
 </table><p>
 </body>

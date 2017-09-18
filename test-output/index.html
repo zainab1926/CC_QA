@@ -128,21 +128,10 @@
                   </a> <!-- checkHome(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c) -->
                   <span class="method-name">checkHome</span>
                   <span class="parameters">(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c)</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@76ecb6a (tried for 60 second(s) with 5 MILLISECONDS interval)
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;WIN-JENKINST81S&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_112&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.JqjM0hSY9t0n, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=13504.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: fbf8220d-323b-48ea-99c8-430472b88ca7
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1103)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1085)
-	at Test.Browser.findTheElement(Browser.java:229)
-	at Test.Browser.click(Browser.java:265)
-	at Test.ADDRESS_BOOK.chkLogin(ADDRESS_BOOK.java:35)
-	at Test.ADDRESS_BOOK.first(ADDRESS_BOOK.java:28)
-	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:48)
+                  <div class="stack-trace">java.lang.NullPointerException
+	at Test.Report.CaptureScreen(Report.java:141)
+	at Test.ADDRESS_BOOK.chk_details(ADDRESS_BOOK.java:91)
+	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:49)
 	at Test.Initiate.chkAddress_Book(Initiate.java:82)
 	at Test.Initiate.checkHome(Initiate.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -225,12 +214,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkHome')
 data.setCell(0, 2, 'Test.Initiate')
-data.setCell(0, 3, 220956);
+data.setCell(0, 3, 157809);
 window.suiteTableData['RC_Suite']= { tableData: data, tableDiv: 'times-div-RC_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-RC_Suite">
               </div> <!-- times-div-RC_Suite -->
             </div> <!-- times-div -->
@@ -265,13 +254,13 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">checkHome(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c)</span>
-                <span class="method-start">439 ms</span>
+                <span class="method-start">511 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">publishReport</span>
-                <span class="method-start">221403 ms</span>
+                <span class="method-start">158335 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
