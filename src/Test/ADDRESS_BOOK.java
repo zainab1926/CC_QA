@@ -67,8 +67,8 @@ public class ADDRESS_BOOK extends Browser
 	//click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a");
 	
     
-	String Actual  = findTheElement("xpath=//*[@id='container_MyAccountDisplayB2B']").getText();
-	Boolean welcmMsg = findTheElement("xpath=//*[@id='container_MyAccountDisplayB2B']").isDisplayed();
+	String Actual  = findTheElement("xpath=//*[@id='container_MyAccountDisplayB2B']/div/div[2]/div/div[1]/div[1]/div").getText();
+	Boolean welcmMsg = findTheElement("xpath=//*[@id='container_MyAccountDisplayB2B']/div/div[2]/div/div[1]/div[1]/div").isDisplayed();
 	String Expected="Welcome Message";
      if(Actual == Expected)
                    {
@@ -91,9 +91,9 @@ public class ADDRESS_BOOK extends Browser
       		          String path = rpt.CaptureScreen(browser, "InvalidMessage");
       		          rpt.imgPathFail(path);
                      }
+ }
      
-     
-     String Actual_pInfo  = findTheElement("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_0']").getText();
+    /* String Actual_pInfo  = findTheElement("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_0']").getText();
      Boolean personalInfo = findTheElement("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_0']").isDisplayed();
      String Expected_pInfo="Personal Information";
      if(Actual_pInfo == Expected_pInfo)
