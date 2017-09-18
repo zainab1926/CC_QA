@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-RC_Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RC_Suite" title="Test.Initiate" hash-for-method="checkHome(FF, 172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/)">checkHome(FF, 172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-RC_Suite" title="Test.Initiate" hash-for-method="checkHome(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c)">checkHome(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-RC_Suite -->
@@ -124,24 +124,13 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="checkHome(FF, 172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/)">
-                  </a> <!-- checkHome(FF, 172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/) -->
+                  <a name="checkHome(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c)">
+                  </a> <!-- checkHome(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c) -->
                   <span class="method-name">checkHome</span>
-                  <span class="parameters">(FF, 172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/)</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@42337db7 (tried for 60 second(s) with 5 MILLISECONDS interval)
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;WIN-JENKINST81S&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_112&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.SeysG5dydAxW, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=11964.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: d3281fa1-550f-42a1-bcc2-3cf330b1caf4
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1103)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1085)
-	at Test.Browser.findTheElement(Browser.java:229)
-	at Test.Browser.click(Browser.java:265)
-	at Test.Registration.checkFields(Registration.java:44)
-	at Test.Registration.executeAllTest(Registration.java:22)
+                  <span class="parameters">(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c)</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at Test.Registration.checkFields(Registration.java:47)
+	at Test.Registration.executeAllTest(Registration.java:26)
 	at Test.Initiate.checkRegistration(Initiate.java:72)
 	at Test.Initiate.checkHome(Initiate.java:59)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -174,7 +163,7 @@ Session ID: d3281fa1-550f-42a1-bcc2-3cf330b1caf4
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite verbose=&quot;2&quot; name=&quot;RC Suite&quot; parallel=&quot;methods&quot;&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;FF&quot;/&gt;
-  &lt;parameter name=&quot;url&quot; value=&quot;172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/&quot;/&gt;
+  &lt;parameter name=&quot;url&quot; value=&quot;http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;Test.EnvReaderListener&quot;/&gt;
   &lt;/listeners&gt;
@@ -224,12 +213,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkHome')
 data.setCell(0, 2, 'Test.Initiate')
-data.setCell(0, 3, 69543);
+data.setCell(0, 3, 37794);
 window.suiteTableData['RC_Suite']= { tableData: data, tableDiv: 'times-div-RC_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 37 seconds</span>
               <div id="times-div-RC_Suite">
               </div> <!-- times-div-RC_Suite -->
             </div> <!-- times-div -->
@@ -263,14 +252,14 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">checkHome(FF, 172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/)</span>
-                <span class="method-start">547 ms</span>
+                <span class="method-name">checkHome(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c)</span>
+                <span class="method-start">489 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">publishReport</span>
-                <span class="method-start">70095 ms</span>
+                <span class="method-start">38285 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

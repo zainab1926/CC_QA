@@ -5,29 +5,34 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
+import org.testng.annotations.Test;
+import org.testng.annotations.Parameters;
 
 public class Registration extends Browser
 {
-	WebDriver wd;
-	Report rpt  = new Report();
-	
+	Report rpt = new Report();
+	public static WebDriver browser = BrowserFactory.getBrowser("FF","http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c");
+	Browser br  = new Browser();
+
+	@SuppressWarnings("static-access")
+	@Parameters({"browser"})
+	@Test
 	public void executeAllTest()throws Exception
 	{
-		//Adding new changes for Testing JIRA - Stauts change
+		
 //		chk_Login();
 		checkFields();
 		validFields();
 		validName();
 		invalidName();
-		//invalidEmail();
-//		validPassword();
-//		InvalidPassword();
-//		Invalid_Cnfm_Pwd();
-//		Reg_Success();
+		invalidEmail();
+		validPassword();
+		InvalidPassword();
+		Invalid_Cnfm_Pwd();
+		Reg_Success();
+		verifyEmailid();
 	}
 	 
 //	public  void chk_Login() throws Exception
@@ -39,11 +44,13 @@ public class Registration extends Browser
 	
 	public void checkFields() throws InterruptedException,Exception
 	{
-		
-		Thread.sleep(2000);
+		browser.get("http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c");
+        //(By.xpath("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']")).click()
+		Browser.browser=browser;
+		Thread.sleep(3000);
 		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']"); ///signin
-		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_3']");//create acc
-		
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_3']/span");//create acc
+		                  
 		Map<String,String> ids= new HashMap<String,String>();
 		 ids.put("First Name", "WC__NameEntryForm_FormInput_firstName_1"); 
 		 ids.put("Last Name", "WC__NameEntryForm_FormInput_lastName_1");
@@ -55,51 +62,46 @@ public class Registration extends Browser
 		                   
 		 for(Map.Entry<String, String> id : ids.entrySet() )
 		 {
-			 
 			 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
 			 {
-				 rpt.createTest("Circuit_City-Registration :"+id.getKey(), "Message : "+id.getKey()+ " is displayed ");
-				 rpt.Pass("Message"+id.getKey()+ " is Displayed ");
-				 rpt.Category("CC_Registration_Check Fields Existence");
-				 String path = rpt.CaptureScreen(browser, id.getKey());
-				 rpt.imgPathPass(path);
+				
+		         rpt.createTest("CC-Registration-Field Validation", "Error Message :"+id.getKey()+" Displayed - For Field Validation");
+		         rpt.Pass("Error Message :"+id.getKey()+" Displayed - For Field Validation");
+		         rpt.Category("CC_Registration_Validation Fields");
+		         String path = rpt.CaptureScreen(browser, "ValidMessage");
+		         rpt.imgPathPass(path);
+		         
 			 }
 			 else
 			 {
-				 //System.out.println(id.getKey() + " is not displayed ");
-				 rpt.createTest("Circuit_City-Registration :"+id.getKey(), "Message "+id.getKey()+ " is NOT displayed ");
-				 rpt.Fail("Message"+id.getKey()+ " is NOT Displayed ");
-				 rpt.Category("CC_Registration_Check Fields Existence");
-				 String path = rpt.CaptureScreen(browser, id.getKey());
-				 rpt.imgPathFail(path); 
+				
+		         rpt.createTest("CC-Registration-name Validation", "Error Message"+id.getKey()+" Displayed - For Valid Name :");
+		         rpt.Fail("Error Message"+id.getKey()+" NOT ;Displayed - For Field Validation");
+		         rpt.Category("CC_Registration_Validation Fields");
+		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
+		         rpt.imgPathFail(path);
 			 }
 		 }
-		 
+
 	}
 	public void validFields() throws Exception
 	{
 		User_Registration();
 		Thread.sleep(5000);
-		String strError  = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
+		
+		/*String strError  = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
 		 Boolean ErrorMsgReg = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//For Error MEssage
 		 if(ErrorMsgReg)
 		 {
-			 rpt.createTest("Checking ValidFields ", "CIRCUIT CITY - Registration : "+strError+" Message displayed - For Field Validations -");
-			 rpt.Info("Message"+strError+ "properly displayed");
-			 rpt.Pass("CIRCUIT CITY - Registration : "+strError+" Message displayed - For Field Validations");
-			 rpt.Category("CC_Registration_Validate Fields");
-			 String path = rpt.CaptureScreen(browser, "ValidMessage");
-			 rpt.imgPathPass(path);
+			 //System.out.println("Error Message DIsplayed - For Field Validations - " + strError );
+		    rpt.createTest("Circuit_City-Registration, CIRCUIT CITY - Registration :Error Message displayed - For Field Validations -", strError);
+
 		 }
 		 else
 		 {
-			 rpt.createTest("Checking ValidFields ", "CIRCUIT CITY - Registration : "+strError+" Message displayed - For Field Validations -");
-			 rpt.Info("Message");
-			 rpt.Fail("CIRCUIT CITY - Registration : "+strError+" Message  NOT displayed - For Field Validations");
-			 rpt.Category("CC_Registration_Validate Fields");
-			 String path = rpt.CaptureScreen(browser, "InvalidMessage");
-			 rpt.imgPathFail(path);
-		 }
+			 //System.out.println("NoError Message Displayed");
+			 rpt.createTest("Circuit_City-Registration, CIRCUIT CITY - Registration :Error Message NOT displayed - For Field Validations",strError);
+		 }*/
 
 		
 	}
@@ -107,25 +109,20 @@ public class Registration extends Browser
 	public void validName() throws Exception
 	{
 		User_Registration();
-		 Boolean ErrorMsgReg = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//For Error MEssage
-		 String eMsgReg = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
+		 /*Boolean ErrorMsgReg = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//For Error MEssage
+		 String aMsgReg = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
+		 String eMsgReg = 
 		 if(ErrorMsgReg)
 		 {
-			 rpt.createTest("CC-Registration-name Validation", "Error Message"+eMsgReg+" Displayed - For Valid Name :");
-			 rpt.Pass("Error Message"+eMsgReg+" Displayed - For Valid Name");
-			 rpt.Category("CC_Registration_Check_Name Field");
-			 String path = rpt.CaptureScreen(browser, "ValidMessage");
-			 rpt.imgPathPass(path);
+			 //System.out.println("Error Message DIsplayed - For Valid Name" + eMsgReg );
+			 rpt.createTest("Circuit_City-Registration- Valid Name", "Error Message Displayed: " +eMsgReg+ "For Valid Name :");
 		 }
 		 else
 		 {
-			 test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT displayed- For valid name");
-			 rpt.createTest("CC-Registration-name Validation", "Error Message"+eMsgReg+" Displayed - For Valid Name :");
-			 rpt.Fail("Error Message"+eMsgReg+" NOT ;Displayed - For Valid Name");
-			 rpt.Category("CC_Registration_Check_Name Field");
-			 String path = rpt.CaptureScreen(browser, "InvalidMessage");
-			 rpt.imgPathFail(path);
-		 }
+			// System.out.println("NoError Message DIsplayed");
+			 rpt.createTest("Circuit_City-Registration- Valid Name", "Error Message NOT Displayed: " +eMsgReg+ "For Valid Name :");
+
+		 }*/
 	}
 
 	public void invalidName() throws Exception
@@ -140,28 +137,29 @@ public class Registration extends Browser
 		for(String value :invalidName)
 		{
 			sendKeys("xpath=//*[@id='"+id+"']", value);
-			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']/div[2]");//create acc
-			Boolean strMessage = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//error msg
-			
+			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']");//create acc
 			String Actual = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
-			String Expected = "Invalid Name";
+			Boolean strMessage = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//error msg
+			String Expected="Invalid name";
 			if(Actual == Expected)
-			{	
+			{
+				//System.out.println("Message Displayed: For Invalid Name"+ strMsg);
 				rpt.createTest("CC-Registration-Invalid Name", "Message"+Expected+" Displayed- For Invalid Name:");
-				rpt.Info("Expected Message"+Expected+"Is Matching with "+Actual +"Message");
-				rpt.Pass("Message"+Expected+" Displayed- For Invalid Name:");
-				rpt.Category("CC_Registration_Check_Invalid Name");
-				String path = rpt.CaptureScreen(browser, "Valid Message");
-				 rpt.imgPathPass(path);
+			    rpt.Info("Expected Message"+Expected+"Is Matching with "+Actual +"Message");
+			    rpt.Pass("Message"+Expected+" Displayed- For Invalid Name:");
+			    rpt.Category("CC_Registration-Invalid Name");
+		         String path = rpt.CaptureScreen(browser, "ValidMessage");
+		         rpt.imgPathPass(path);
 			}
 			else
 			{
+				//System.out.println("Error Message NOT Displayed");
 				rpt.createTest("CC-Registration-Invalid Name", "Message"+Actual+" Displayed- For Invalid Name:");
-				rpt.Info("Expected Message"+Expected+ "Not Matching with "+Actual +"Message");
-				rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name:");
-				rpt.Category("CC_Registration_Check_Invalid Name");
-				String path = rpt.CaptureScreen(browser, "Invalid Message");
-				rpt.imgPathFail(path);
+			    rpt.Info("Expected Message"+Expected+ "Not Matching with "+Actual +"Message");
+			    rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name:");
+			    rpt.Category("CC_Registration-Invalid Name");
+		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
+		         rpt.imgPathFail(path);
 			}
 
 		}
@@ -176,35 +174,37 @@ public class Registration extends Browser
 		for(String value :invalidEmail)
 		{
 			sendKeys("xpath=//*[@id='"+"WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1"+"']", value);
-			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']/div[2]");  
+			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']");  
 			Boolean strMessage = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//error msg
-			String strMsg = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
-			if(strMessage)
+			String actual = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
+			String expected="Invalid Email Id";
+			if(actual == expected)
 			{
 				//System.out.println("Message Displayed: For Email - "+ strMsg);
-				test = extent.createTest("CIRCUIT CITY - Registration :Message Displayed- For Invalid Email : ",strMsg);
-				rpt.createTest("CC-Registration-Invalid Name", "Message"+strMsg+" Displayed- For Invalid Email:");
-				rpt.Info("Expected Message"+strMsg+"Is Matching with "+strMsg +"Message");
-				rpt.Pass("Message"+strMsg+" Displayed- For Invalid Name");
-				rpt.Category("CC_Registration_Check_Invalid Email");
-				String path = rpt.CaptureScreen(browser, strMsg);
-				 rpt.imgPathPass(path);
-			}
+				rpt.createTest("CC-Registration-Invalid Email Id", "Message"+expected+" Displayed- For Invalid Email Id:");
+			    rpt.Info("Expected Message"+expected+"Is Matching with "+actual +"Message");
+			    rpt.Pass("Message"+expected+" Displayed- For Invalid Email Id:");
+			    rpt.Category("CC_Registration-Invalid Email Id");
+		         String path = rpt.CaptureScreen(browser, "ValidMessage");
+		         rpt.imgPathPass(path);
+			 }
 			else
 			{
 				//System.out.println("Error Message NOT Displayed");
-				//test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT Displayed- For Invalid Email ");
-				rpt.createTest("CC-Registration-Invalid Name", "Message"+strMsg+" NOT Displayed- For Invalid Email:");
-				rpt.Info("Expected Message"+strMsg+"Is NOT Matching with "+strMsg +"Message");
-				rpt.Fail("Message"+strMsg+" Displayed- For Invalid Email");
-				rpt.Category("CC_Registration_Check_Invalid Email");
-				String path = rpt.CaptureScreen(browser, strMsg);
-				 rpt.imgPathPass(path);
-			}
+				rpt.createTest("CC-Registration-Invalid Email Id", "Message"+actual+" Displayed- For Invalid Email Id:");
+			    rpt.Info("Expected Message"+expected+ "Not Matching with "+actual +"Message");
+			    rpt.Fail("Message"+expected+" NOT Displayed- For Invalid Email Id:");
+			    rpt.Category("CC_Registration-Invalid Email Id");
+		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
+		         rpt.imgPathFail(path);
 
+			}
+			
+			sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']", "zainab.fff@royalcyber.com");
+			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']");
 		}
 		
-		browser.switchTo().alert().accept();
+		//browser.switchTo().alert().accept();
 	}
 	public void validPassword() throws Exception
 	{
@@ -221,24 +221,33 @@ public class Registration extends Browser
 		{
 
 			sendKeys("xpath=//*[@id='"+"WC_UserRegistrationAddForm_FormInput_logonPassword_In_Register_1"+"']", value);
-			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']/div[2]");//submit
+			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']");//submit
 			Boolean strMessage = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//error msg
-			String strRegMessage = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
-			if(strMessage)
+			String actualPass = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
+			String expectedPass="Invalid Password";
+			if(actualPass == expectedPass)
 			{
 				//System.out.println("Message Displayed: For InvalidPassword"+ strRegMessage);
-				test = extent.createTest("CIRCUIT CITY - Registration :Message Displayed- For InvalidPassword",strRegMessage);
-
+				rpt.createTest("CC-Registration-Invalid Password", "Message"+expectedPass+" Displayed- For Invalid Password:");
+			    rpt.Info("Expected Message"+expectedPass+"Is Matching with "+actualPass +"Message");
+			    rpt.Pass("Message"+expectedPass+" Displayed- For Invalid Password:");	
+			    rpt.Category("CC_Registration-Invalid Password");
+		         String path = rpt.CaptureScreen(browser, "ValidMessage");
+		         rpt.imgPathPass(path);
 			}
 			else
 			{
 				//System.out.println("Error Message NOT Displayed");
-				test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT Displayed-For InvalidPassword");
-
+				rpt.createTest("CC-Registration-Invalid Password", "Message"+actualPass+" Displayed- For Invalid Password:");
+			    rpt.Info("Expected Message"+expectedPass+ "Not Matching with "+actualPass +"Message");
+			    rpt.Fail("Message"+expectedPass+" NOT Displayed- For Invalid Password:");
+			    rpt.Category("CC_Registration-Invalid Password");
+		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
+		         rpt.imgPathFail(path);
 			}
 
 		}
-		browser.switchTo().alert().accept();
+		//browser.switchTo().alert().accept();
 	}
 		
 	public void Invalid_Cnfm_Pwd() throws Exception
@@ -248,28 +257,38 @@ public class Registration extends Browser
 		for(String value :invalidCPassword)
 		{
 			sendKeys("xpath=//*[@id='"+"WC_UserRegistrationAddForm_FormInput_logonPasswordVerify_In_Register_1"+"']", value);			
-			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']/div[2]");//submit
+			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']");//submit
 			Boolean strMessage = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").isDisplayed();//error msg
-			String strCnfm_Pwd = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
-			if(strMessage)
+			String actualCpass = findTheElement("xpath=//*[@id='UserRegistrationErrorMessage']").getText();
+			String expectedCpass="Invalid confirm password";
+			if(actualCpass == expectedCpass)
 			{
 				//System.out.println("Message Displayed:Invalid Confrm_Password"+ strCnfm_Pwd);
-				test = extent.createTest("CIRCUIT CITY - Registration :Message Displayed- Invalid Confirm Password",strCnfm_Pwd);
-
+				rpt.createTest("CC-Registration-Invalid Confirm Password", "Message"+expectedCpass+" Displayed- For Invalid Confirm Password:");
+			    rpt.Info("Expected Message"+expectedCpass+"Is Matching with "+actualCpass +"Message");
+			    rpt.Pass("Message"+expectedCpass+" Displayed- For Invalid Confirm Password:");	
+			    rpt.Category("CC_Registration-Invalid Confirm Password");
+		         String path = rpt.CaptureScreen(browser, "ValidMessage");
+		         rpt.imgPathPass(path);
 			}
 			else
 			{
 				//System.out.println("Error Message NOT Displayed");
-				test = extent.createTest("CIRCUIT CITY - Registration :Error Message NOT Displayed for- Invalid Confirm Password");
-
+				rpt.createTest("CC-Registration-Invalid Confirm Password", "Message"+actualCpass+" Displayed- For Invalid  Confirm Password:");
+			    rpt.Info("Expected Message"+expectedCpass+ "Not Matching with "+actualCpass +"Message");
+			    rpt.Fail("Message"+expectedCpass+" NOT Displayed- For Invalid Confirm Password:");
+			    rpt.Category("CC_Registration-Invalid Confirm Password");
+		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
+		         rpt.imgPathFail(path);
 			}
 
 		}
-		browser.switchTo().alert().accept();
+		//browser.switchTo().alert().accept();
 	}
 	
 	public void Reg_Success() throws Exception
 	{
+		System.out.println("in reg_success");
 		User_Registration();
         
 	}
@@ -279,7 +298,7 @@ public class Registration extends Browser
 		Thread.sleep(5000);
 //		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']");
 //		Thread.sleep(5000);
-//		click("//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_3']/span");
+//		click("//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_3']");
 		
 		//first name
 		click("xpath=//*[@id='WC__NameEntryForm_FormInput_firstName_1']");
@@ -292,7 +311,7 @@ public class Registration extends Browser
 		
 		//email id
 		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']");
-		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']", "zainab.ss@royalcyber.com");
+		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']", "zainab.fff@royalcyber.com");
 		
 		//password
 		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonPassword_In_Register_1']");
@@ -307,60 +326,26 @@ public class Registration extends Browser
 		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']", "9123456780");
 		
 		//create account button
-		click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']/div[2]");
+		click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']");
 		
 		
 		//logout
-//		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown_SignOut']/span");
+		//click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown_SignOut']");
 		
 	}
 	
- public  void  chkValidation() throws Exception
+ public  void  verifyEmailid() throws Exception
  {
 
 		Thread.sleep(3000);
-		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']"); ///signin
-		click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']");//create acc
+		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']/span");
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']");
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.fff@royalcyber.com");
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']");
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab123");
 		
-		String[] ids={"username","password"};
-		Map<String,List<String>> values=new HashMap<>();
-     List <String> list = new ArrayList<>();
-     list.add("");
-     list.add("!@#$%^&*()");
-     list.add("1234567890");
-     values.put("Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1",list);// to chck
-     values.put("Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']",list); //to chck
-     values.put("emailid",list);
-	
-		for(String id:ids)
-		{
-			for(String value : values.get(id))
-			{
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
+		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a"); //my acc
 
-				click("xpath=//*[@id='"+id+  "']");
-
-				sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']", value);
-
-				String msgError = findTheElement("xpath=//*[@id='WC__NameEntryForm_FormInput_firstName_1']").getText();
-				System.out.println(msgError);
-				Boolean strMessage =findTheElement("xpath=//*[@id='Header_GlobalLogin_logonErrorMessage_GL']").isDisplayed();
-				if(strMessage)
-				{
-					//System.out.println("Message Displayed:"+ msgError);
-					test = extent.createTest("CIRCUIT CITY - Registration :Message Displayed-",msgError);
-
-				}
-				else
-				{
-					//System.out.println("Error Message NOT Displayed");
-					test = extent.createTest("CIRCUIT CITY - Registration :Message NOT Displayed");
-
-				}
-
-			}
-		}
-		
-		
-	 
  }
 }
