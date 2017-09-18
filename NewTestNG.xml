@@ -10,7 +10,6 @@
    <parameter name="browser" value="FF"/>
    <parameter name="url" value="http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c" /> 
     <!-- <parameter name="url" value="172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/" />-->
-    
     <test name="RC Test" verbose="2">
         <classes>
             <class name="Test.Initiate"/>

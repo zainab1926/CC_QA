@@ -54,8 +54,8 @@ public class Initiate {
 		rpt.Pass("URL that is passed as parameter from Jenkins is :"+Url);
 		//test.log(Status.PASS,"Browser Opened As Expected");
 		//br.captureScreenShot("HomePage");
-		//checkRegistration();
-		//chkAddress_Book();
+		checkRegistration();
+		chkAddress_Book();
 		//chkPersonalInfo();
 		//chkSearch();
 		//skipTest();

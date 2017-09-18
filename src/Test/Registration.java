@@ -13,7 +13,7 @@ import org.testng.annotations.Parameters;
 public class Registration extends Browser
 {
 	Report rpt = new Report();
-	public static WebDriver browser = BrowserFactory.getBrowser("FF","http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c");
+	//public static WebDriver browser = BrowserFactory.getBrowser("FF","http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c");
 	Browser br  = new Browser();
 
 	@SuppressWarnings("static-access")
