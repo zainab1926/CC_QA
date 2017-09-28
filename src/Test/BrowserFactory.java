@@ -40,7 +40,9 @@ public class BrowserFactory {
 	static ExtentTest test;
 //	static WebDriver driver;
 	public static WebDriver browser = null;
-	
+	final static String BS_USERNAME = "swathin1";
+	final static String BS_AUTOMATE_KEY = "sgw2vEWegpwtM6txvfSr";
+	final static String BrowserStackURL = null;
 	
 	public static WebDriver getBrowser(String browserName,String url) {
 		if (browser == null) {
@@ -54,7 +56,11 @@ public class BrowserFactory {
 					browser = loadIEDriver(url);
 				} else if ("chrome".equalsIgnoreCase(browserName)) {
 					browser = loadChromeDriver(url);
-				}				
+				} 
+				//else if("Android".equalsIgnoreCase(browserName)){
+//					browser = loadAndroid(url);
+//				}
+				
 			} catch (Exception exception) {
 			}
 
@@ -158,6 +164,20 @@ public class BrowserFactory {
 		return remoteDriver;
 	}
 	
-	
+//	private static RemoteWebDriver loadAndroid(String url)throws Exception
+//	{
+//		
+//		DesiredCapabilities capabilities = new DesiredCapabilities();
+//		//capabilities setting for Samsung S8 - Browser stack
+//		capabilities.setCapability("browserstack.debug", "true");
+//		capabilities.setCapability("device", "Samsung Galaxy S8");
+//		capabilities.setCapability("realMobile", "true");
+//		capabilities.setCapability("os_version", "7.0");
+//		System.out.println("Executing test on Samsung S8(Android) on Browser Stack cloud!");
+//		BrowserStackURL= "https://" + BS_USERNAME + ":" + BS_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+//		Drive     r = new RemoteWebDriver(new URL(BrowserStackURL), capabilities);
+//		break;
+//
+//	}
 
 }

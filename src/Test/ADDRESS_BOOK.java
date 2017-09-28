@@ -9,20 +9,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
+import org.sikuli.script.Pattern;
+import org.sikuli.script.Screen;
 
 
 public class ADDRESS_BOOK extends Browser
 {
    //adding content for checking purpose-JIRA Issue DA-5
-	public WebDriver browser = BrowserFactory.getBrowser("Browser","url");
+	//public WebDriver browser = BrowserFactory.getBrowser("Browser","url");
 //	Browser br  = new Browser();
 	Report rpt = new Report();
 	WebDriver wd;
 
 	
 	
-	public void first()throws Exception
+	/*public void first()throws Exception
 	{
 		//changing again to check the status of issue -DA-5
 		chkLogin("zzz@gmail.com","zainab123");
@@ -41,12 +42,23 @@ public class ADDRESS_BOOK extends Browser
 		
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
 					
-	}
+	}*/
 	
 	public void executeAllTest()throws Exception
 	{
 		//first();
-		chk_details();
+		//chk_details();
+		//lines added
+		/*  click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']");
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']");
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.fff@royalcyber.com");
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']");
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab123");
+		
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
+		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a"); //my acc
+	*/
+		 
 		chk_AccSection();
 		chk_Sections();
 		verify_myAcc();
@@ -69,7 +81,7 @@ public class ADDRESS_BOOK extends Browser
     
 	String Actual  = findTheElement("xpath=//*[@id='container_MyAccountDisplayB2B']/div/div[2]/div/div[1]/div[1]/div").getText();
 	Boolean welcmMsg = findTheElement("xpath=//*[@id='container_MyAccountDisplayB2B']/div/div[2]/div/div[1]/div[1]/div").isDisplayed();
-	String Expected="Welcome Message";
+	String Expected="GOOD Morning";
      if(Actual == Expected)
                    {
 	                
@@ -205,8 +217,8 @@ public class ADDRESS_BOOK extends Browser
 			 //System.out.println(id.getKey() + " is displayed ");
 	         //rpt.createTest("CC-Address Book-Check Account section", "Message"+id.getKey()+" Displayed For Account Section:");
 	         
-	         rpt.createTest("CC-Address Book-Check Account Section", "Message :"+id.getKey()+" Displayed - For Account Section:");
-	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Account Section:");
+	         rpt.createTest("CC-Address Book-Check Account Section", "Message :"+id.getKey()+" Displayed - For Account Section");
+	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Account Section");
 	         rpt.Category("CC_Address Book-Check Account Section");
 	         String path = rpt.CaptureScreen(browser, "ValidMessage");
 	         rpt.imgPathPass(path);
@@ -218,8 +230,8 @@ public class ADDRESS_BOOK extends Browser
 			 //System.out.println(id.getKey() + " is not displayed ");
 	         //rpt.createTest("CC-Address Book-Check Account section", "Message"+id.getKey()+" is NOT Displayed For Account Section:");
 	         
-	         rpt.createTest("CC-Address Book-Check Account Section", "Message :"+id.getKey()+"is NOT Displayed - For Account Section:");
-	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Account Section:");
+	         rpt.createTest("CC-Address Book-Check Account Section", "Message :"+id.getKey()+"is NOT Displayed - For Account Section");
+	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Account Section");
 	         rpt.Category("CC_Address Book-Check Account Section");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 	         rpt.imgPathFail(path);
@@ -249,9 +261,9 @@ public class ADDRESS_BOOK extends Browser
 			 //System.out.println(id.getKey() + " is displayed ");
 	         //rpt.createTest("CC-Address Book-Check Section", "Message"+id.getKey()+" Displayed For Settings Section:");
 	         
-	         rpt.createTest("CC-Address Book-Check Settings Section", "Message :"+id.getKey()+" Displayed - For Settings Section:");
-	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Settings Section:");
-	         rpt.Category("CC_Address Book-Check Settings Section:");
+	         rpt.createTest("CC-Address Book-Check Settings Section", "Message :"+id.getKey()+" Displayed - For Settings Section");
+	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Settings Section");
+	         rpt.Category("CC_Address Book-Check Settings Section");
 	         String path = rpt.CaptureScreen(browser, "ValidMessage");
 	         rpt.imgPathPass(path);
 
@@ -260,8 +272,8 @@ public class ADDRESS_BOOK extends Browser
 		 {
 			 //System.out.println(id.getKey() + " is not displayed ");
 			 
-			 rpt.createTest("CC-Address Book-Check Settings Section", "Message :"+id.getKey()+"is NOT Displayed - For Settings Section:");
-	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Settings Section:");
+			 rpt.createTest("CC-Address Book-Check Settings Section", "Message :"+id.getKey()+"is NOT Displayed - For Settings Section");
+	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Settings Section");
 	         rpt.Category("CC_Address Book-Check Settings Section");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 	         rpt.imgPathFail(path);
@@ -283,9 +295,9 @@ public class ADDRESS_BOOK extends Browser
     		 {
     			 //System.out.println(id.getKey() + " is displayed ");
     	         
-    	         rpt.createTest("CC-Address Book-Verify My Account", "Message :"+id.getKey()+" Displayed - For Verify My Account:");
-    	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify My Account:");
-    	         rpt.Category("CC_Address Book-Verify My Account:");
+    	         rpt.createTest("CC-Address Book-Verify My Account", "Message :"+id.getKey()+" Displayed - For Verify My Account");
+    	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify My Account");
+    	         rpt.Category("CC_Address Book-Verify My Account");
     	         String path = rpt.CaptureScreen(browser, "ValidMessage");
     	         rpt.imgPathPass(path);
 
@@ -293,8 +305,8 @@ public class ADDRESS_BOOK extends Browser
     		 else
     		 {
     			//System.out.println(id.getKey() + " is not displayed ");
-    			 rpt.createTest("CC-Address Book-Verify My Account", "Message :"+id.getKey()+"is NOT Displayed - For Verify My Account:");
-    	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account:");
+    			 rpt.createTest("CC-Address Book-Verify My Account", "Message :"+id.getKey()+"is NOT Displayed - For Verify My Account");
+    	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account");
     	         rpt.Category("CC_Address Book-Verify My Account");
     	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
     	         rpt.imgPathFail(path);
@@ -320,9 +332,9 @@ public class ADDRESS_BOOK extends Browser
 				 //System.out.println(id.getKey() + " is displayed ");
 				 
     	         
-    	         rpt.createTest("CC-Address Book-Verify My Account Page", "Message :"+id.getKey()+" Displayed - For Verify My Account Page:");
-    	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify My Account Page:");
-    	         rpt.Category("CC_Address Book-Verify My Account Page:");
+    	         rpt.createTest("CC-Address Book-Verify My Account Page", "Message :"+id.getKey()+" Displayed - For Verify My Account Page");
+    	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify My Account Page");
+    	         rpt.Category("CC_Address Book-Verify My Account Page");
     	         String path = rpt.CaptureScreen(browser, "ValidMessage");
     	         rpt.imgPathPass(path);
 
@@ -332,8 +344,8 @@ public class ADDRESS_BOOK extends Browser
 			 {
 				 //System.out.println(id.getKey() + " is not displayed ");
 				 
-				 rpt.createTest("CC-Address Book-Verify My Account Page", "Message :"+id.getKey()+"is NOT Displayed - For Verify My Account Page:");
-    	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account Page:");
+				 rpt.createTest("CC-Address Book-Verify My Account Page", "Message :"+id.getKey()+"is NOT Displayed - For Verify My Account Page");
+    	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account Page");
     	         rpt.Category("CC_Address Book-Verify My Account Page");
     	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
     	         rpt.imgPathFail(path);
@@ -367,16 +379,17 @@ public class ADDRESS_BOOK extends Browser
 	 ids.put("Address Nickname", "nickName");
 	 ids.put("Phone No", "WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1");
      ids.put("Save","WC_AjaxAddressBookForm_links_4a");
-     ids.put("Cancel","WC_AjaxAddressBookForm_links_2c");
-
+     ids.put("Cancel","WC_MyAccountSidebarDisplayf_links_2");
+     Thread.sleep(2000);
 	 for(Map.Entry<String, String> id : ids.entrySet() )
 	 {
+		 //Thread.sleep(8000);
 		 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
 		 {
 			 //System.out.println(id.getKey() + " is displayed ");
-	         
-	         rpt.createTest("CC-Address Book-Verify Add New Page", "Message :"+id.getKey()+" Displayed - For Verify Add New Page:");
-	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify Add New Page:");
+			 Thread.sleep(2000);
+	         rpt.createTest("CC-Address Book-Verify Add New Page", "Message :"+id.getKey()+" Displayed - For Verify Add New Page");
+	         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify Add New Page");
 	         rpt.Category("CC_Address Book-Verify Add New Page:");
 	         String path = rpt.CaptureScreen(browser, "ValidMessage");
 	         rpt.imgPathPass(path);
@@ -386,8 +399,8 @@ public class ADDRESS_BOOK extends Browser
 		 {
 			//System.out.println(id.getKey() + " is not displayed ");
 			 
-			 rpt.createTest("CC-Address Book-Verify Add New Page", "Message :"+id.getKey()+"is NOT Displayed - For Verify Add New Page:");
-	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify Add New Page:");
+			 rpt.createTest("CC-Address Book-Verify Add New Page", "Message :"+id.getKey()+"is NOT Displayed - For Verify Add New Page");
+	         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify Add New Page");
 	         rpt.Category("CC_Address Book-Verify Add New Page");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 	         rpt.imgPathFail(path);
@@ -425,18 +438,18 @@ public class ADDRESS_BOOK extends Browser
 			if(Actual == Expected)
 			{
 
-			    rpt.createTest("CC-Address Book-Invalid Name", "Message"+Expected+" Displayed- For Invalid Name:");
-			    rpt.Info("Expected Message"+Expected+"Is Matching with "+Actual +"Message");
-			    rpt.Pass("Message"+Expected+" Displayed- For Invalid Name:");
+			    rpt.createTest("CC-Address Book-Invalid Name", "Message"+Expected+" Displayed- For Invalid Name");
+			    rpt.Info("Expected Message "+Expected+"  Is Matching with "+Actual +"Message");
+			    rpt.Pass("Message "+Expected+" Displayed- For Invalid Name");
 			    rpt.Category("CC_Address Book-Invalid Name:");
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
 			}
 			else
 			{
-               rpt.createTest("CC-Address Book-Invalid Name", "Message"+Actual+" Displayed- For Invalid Name:");
-			    rpt.Info("Expected Message"+Expected+ "Not Matching with "+Actual +"Message");
-			    rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name:");
+               rpt.createTest("CC-Address Book-Invalid Name", "Message"+Actual+" Displayed- For Invalid Name");
+			    rpt.Info("Expected Message "+Expected+ " Not Matching with "+Actual +"Message");
+			    rpt.Fail("Message "+Expected+" NOT Displayed- For Invalid Name");
 			    rpt.Category("CC_Address Book-Invalid Name");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 		         rpt.imgPathFail(path);
@@ -462,9 +475,9 @@ public class ADDRESS_BOOK extends Browser
 				if(actualAdd == expectedAdd)
 				{
 
-				    rpt.createTest("CC-Address Book-Invalid Address", "Message"+expectedAdd+" Displayed- For Invalid Address:");
-				    rpt.Info("Expected Message"+expectedAdd+"Is Matching with "+actualAdd +"Message");
-				    rpt.Pass("Message"+expectedAdd+" Displayed- For Invalid Address:");
+				    rpt.createTest("CC-Address Book-Invalid Address", "Message"+expectedAdd+" Displayed- For Invalid Address");
+				    rpt.Info("Expected Message "+expectedAdd+" Is Matching with "+actualAdd +"Message");
+				    rpt.Pass("Message "+expectedAdd+" Displayed- For Invalid Address");
 				    rpt.Category("CC_Address Book-Invalid Address");
 			         String path = rpt.CaptureScreen(browser, "ValidMessage");
 			         rpt.imgPathPass(path);
@@ -473,9 +486,9 @@ public class ADDRESS_BOOK extends Browser
 				{
 					//System.out.println("Error Message NOT Displayed");
 
-		             rpt.createTest("CC-Address Book-Invalid Address", "Message"+actualAdd+" Displayed- For Invalid Address:");
-					 rpt.Info("Expected Message"+expectedAdd+ "Not Matching with "+actualAdd +"Message");
-					 rpt.Fail("Message"+expectedAdd+" NOT Displayed- For Invalid Address:");
+		             rpt.createTest("CC-Address Book-Invalid Address", "Message"+actualAdd+" Displayed- For Invalid Address");
+					 rpt.Info("Expected Message "+expectedAdd+ "Not Matching with "+actualAdd +"Message");
+					 rpt.Fail("Message "+expectedAdd+" NOT Displayed- For Invalid Address");
 					 rpt.Category("CC_Address Book-Invalid Address");
 			         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 			         rpt.imgPathFail(path);
@@ -504,9 +517,9 @@ public class ADDRESS_BOOK extends Browser
 					{
 						//System.out.println("Message Displayed for city:"+ strMessage);
 
-					    rpt.createTest("CC-Address Book-Invalid City", "Message"+expectedCity+" Displayed- For Invalid City:");
-					    rpt.Info("Expected Message"+expectedCity+"Is Matching with "+actualCity +"Message");
-					    rpt.Pass("Message"+expectedCity+" Displayed- For Invalid City:");
+					    rpt.createTest("CC-Address Book-Invalid City", "Message"+expectedCity+" Displayed- For Invalid City");
+					    rpt.Info("Expected Message "+expectedCity+"  Is Matching with "+actualCity +"Message");
+					    rpt.Pass("Message "+expectedCity+" Displayed- For Invalid City");
 					    rpt.Category("CC_Address Book-Invalid City");
 				         String path = rpt.CaptureScreen(browser, "ValidMessage");
 				         rpt.imgPathPass(path);
@@ -514,9 +527,9 @@ public class ADDRESS_BOOK extends Browser
 					else
 					{
 						//System.out.println("Error Message NOT Displayed");
-						 rpt.createTest("CC-Address Book-Invalid City", "Message"+actualCity+" Displayed- For Invalid City:");
-						 rpt.Info("Expected Message"+expectedCity+ "Not Matching with "+actualCity +"Message");
-						 rpt.Fail("Message"+expectedCity+" NOT Displayed- For Invalid City:");
+						 rpt.createTest("CC-Address Book-Invalid City", "Message"+actualCity+" Displayed- For Invalid City");
+						 rpt.Info("Expected Message "+expectedCity+ "Not Matching with "+actualCity +"Message");
+						 rpt.Fail("Message "+expectedCity+" NOT Displayed- For Invalid City");
 						 rpt.Category("CC_Address Book-Invalid City");
 				         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 				         rpt.imgPathFail(path);
@@ -544,9 +557,9 @@ public class ADDRESS_BOOK extends Browser
 						{
 							//System.out.println("Message Displayed for state:"+ strMessage);
 
-							 rpt.createTest("CC-Address Book-Invalid State", "Message"+expectedState+" Displayed- For Invalid State:");
-							    rpt.Info("Expected Message"+expectedState+"Is Matching with "+actualState +"Message");
-							    rpt.Pass("Message"+expectedState+" Displayed- For Invalid State:");
+							 rpt.createTest("CC-Address Book-Invalid State", "Message"+expectedState+" Displayed- For Invalid State");
+							    rpt.Info("Expected Message "+expectedState+" Is Matching with "+actualState +"Message");
+							    rpt.Pass("Message "+expectedState+" Displayed- For Invalid State");
 							    rpt.Category("CC_Address Book-Invalid State");
 						         String path = rpt.CaptureScreen(browser, "ValidMessage");
 						         rpt.imgPathPass(path);
@@ -555,9 +568,9 @@ public class ADDRESS_BOOK extends Browser
 						{
 							//System.out.println("Error Message NOT Displayed");
 
-							rpt.createTest("CC-Address Book-Invalid State", "Message"+actualState+" Displayed- For Invalid State:");
-							 rpt.Info("Expected Message"+expectedState+ "Not Matching with "+actualState +"Message");
-							 rpt.Fail("Message"+expectedState+" NOT Displayed- For Invalid State:");
+							rpt.createTest("CC-Address Book-Invalid State", "Message"+actualState+" Displayed- For Invalid State");
+							 rpt.Info("Expected Message "+expectedState+ "Not Matching with "+actualState +"Message");
+							 rpt.Fail("Message "+expectedState+" NOT Displayed- For Invalid State");
 							 rpt.Category("CC_Address Book-Invalid State");
 					         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 					         rpt.imgPathFail(path);
@@ -591,9 +604,9 @@ public class ADDRESS_BOOK extends Browser
 							if(actualZcode == expectedZcode)
 							{
 								//System.out.println("Message Displayed for zip:"+ strMessage);
-								rpt.createTest("CC-Address Book-Invalid Zip code", "Message"+expectedZcode+" Displayed- For Invalid Zip code:");
-							    rpt.Info("Expected Message"+expectedZcode+"Is Matching with "+actualZcode +"Message");
-							    rpt.Pass("Message"+expectedZcode+" Displayed- For Invalid Zip code:");
+								rpt.createTest("CC-Address Book-Invalid Zip code", "Message"+expectedZcode+" Displayed- For Invalid Zip code");
+							    rpt.Info("Expected Message "+expectedZcode+" Is Matching with "+actualZcode +"Message");
+							    rpt.Pass("Message "+expectedZcode+" Displayed- For Invalid Zip code");
 							    rpt.Category("CC_Address Book-Invalid Zip code");
 						         String path = rpt.CaptureScreen(browser, "ValidMessage");
 						         rpt.imgPathPass(path);
@@ -602,9 +615,9 @@ public class ADDRESS_BOOK extends Browser
 							else
 							{
 								//System.out.println("Error Message NOT Displayed");
-								rpt.createTest("CC-Address Book-Invalid Zip code", "Message"+actualZcode+" Displayed- For Invalid Zip code:");
-								 rpt.Info("Expected Message"+expectedZcode+ "Not Matching with "+actualZcode +"Message");
-								 rpt.Fail("Message"+expectedZcode+" NOT Displayed- For Invalid Zip code:");
+								rpt.createTest("CC-Address Book-Invalid Zip code", "Message"+actualZcode+" Displayed- For Invalid Zip code");
+								 rpt.Info("Expected Message "+expectedZcode+ "Not Matching with "+actualZcode +"Message");
+								 rpt.Fail("Message "+expectedZcode+" NOT Displayed- For Invalid Zip code");
 								 rpt.Category("CC_Address Book-Invalid Zip code");
 						         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 						         rpt.imgPathFail(path);
@@ -632,9 +645,9 @@ public class ADDRESS_BOOK extends Browser
 								if(actualNname == expectedNname )
 								{
 									//System.out.println("Message Displayed for niick:"+ strMessage);
-									rpt.createTest("CC-Address Book-Invalid Address Nick name", "Message"+expectedNname+" Displayed- For Invalid Address nick name :");
-								    rpt.Info("Expected Message"+expectedNname+"Is Matching with "+actualNname +"Message");
-								    rpt.Pass("Message"+expectedNname+" Displayed- For Invalid Address nick name:");
+									rpt.createTest("CC-Address Book-Invalid Address Nick name", "Message"+expectedNname+" Displayed- For Invalid Address nick name");
+								    rpt.Info("Expected Message "+expectedNname+" Is Matching with "+actualNname +"Message");
+								    rpt.Pass("Message "+expectedNname+" Displayed- For Invalid Address nick name");
 								    rpt.Category("CC_Address Book-Invalid Address Nick name");
 							         String path = rpt.CaptureScreen(browser, "ValidMessage");
 							         rpt.imgPathPass(path);
@@ -643,9 +656,9 @@ public class ADDRESS_BOOK extends Browser
 								else
 								{
 									//System.out.println("Error Message NOT Displayed");
-									rpt.createTest("CC-Address Book-Invalid Address Nick name", "Message"+actualNname+" Displayed- For Invalid Address nick name:");
-									 rpt.Info("Expected Message"+expectedNname+ "Not Matching with "+actualNname +"Message");
-									 rpt.Fail("Message"+expectedNname+" NOT Displayed- For Invalid Address nick name:");
+									rpt.createTest("CC-Address Book-Invalid Address Nick name", "Message"+actualNname+" Displayed- For Invalid Address nick name");
+									 rpt.Info("Expected Message "+expectedNname+ "Not Matching with "+actualNname +"Message");
+									 rpt.Fail("Message "+expectedNname+" NOT Displayed- For Invalid Address nick name:");
 									 rpt.Category("CC_Address Book-Invalid Address Nick name");
 							         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 							         rpt.imgPathFail(path);
@@ -653,7 +666,7 @@ public class ADDRESS_BOOK extends Browser
 								}
 
 							}
-							 Thread.sleep(2000);
+							 Thread.sleep(4000);
                           sendKeys("xpath=//*[@id='nickName']","soloquenine1");
 							
 				click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']");//phone no
@@ -666,10 +679,15 @@ public class ADDRESS_BOOK extends Browser
   public void Add_Address()throws Exception
   {
 	  click("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_2']");
-	  click("xpath=//*[@id='WC_AjaxAddressBookForm_links_1']");
-	  Thread.sleep(1000);
-	  
+	  Thread.sleep(3000);
+	 /* Screen s = new Screen();
+	  Pattern img=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\AddAddress_CC.png");
+	  //Thread.sleep(2000);
+	  s.click(img); */
+	   click("xpath=//*[@id='WC_AjaxAddressBookForm_links_1']");
+	  Thread.sleep(8000);
 	  click("xpath=//*[@id='WC_AccountForm_NameEntryForm_FormInput_firstName_1']");//first name
+	  Thread.sleep(5000);//WC_AccountForm_NameEntryForm_FormInput_firstName_1'
 	  sendKeys("xpath=//*[@id='WC_AccountForm_NameEntryForm_FormInput_firstName_1']", "mahesh");
 	  Thread.sleep(1000);
 
@@ -704,7 +722,7 @@ public class ADDRESS_BOOK extends Browser
 	  Thread.sleep(1000);
 
 	  click("xpath=//*[@id='nickName']");//address nick name
-	  sendKeys("xpath=//*[@id='nickName']","ada");
+	  sendKeys("xpath=//*[@id='nickName']","adda");
 	  Thread.sleep(1000);
 
 	  click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']");//phone no
@@ -744,7 +762,7 @@ public class ADDRESS_BOOK extends Browser
   {
 	  
 	  click("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_2']");
-	  
+	  Thread.sleep(2000);
 	  click("xpath=//*[@id='WC_AjaxAddressBookForm_links_2']");
 	  String actualRadd= findTheElement("xpath=//*[@id='ErrorMessageText']").getText();
 	  Boolean strMessage = findTheElement("xpath=//*[@id='ErrorMessageText']").isDisplayed();//remove msg

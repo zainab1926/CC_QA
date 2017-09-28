@@ -1,8 +1,12 @@
 package Test;
 
+import java.awt.Robot;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.awt.event.KeyEvent;	
+
+import javax.swing.ImageIcon;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,21 +19,20 @@ import org.sikuli.script.Screen;
 
 public class PERSONAL_INFO extends Browser
 {
-	public WebDriver browser = BrowserFactory.getBrowser("Browser","url");
-	private static final String CC_IMAGE_PATH = "C:\\Automation\\Sikuli_Images\\";
+	//public WebDriver browser = BrowserFactory.getBrowser("Browser","url");
     Report rpt  = new Report();
 	
 	
-	public void first(String browserName)throws Exception
+	/*public void first(String browserName)throws Exception
 	{
 		/*browser = BrowserFactory.getBrowser(browserName);
 		browser.get("http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c");*/
 		
-		chkLogin("zzz@gmail.com","zainab123");
+		/*chkLogin("zzz@gmail.com","zainab123");
 		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a"); //my acc
-	}
+	}*/
 	
-	public void chkLogin(String Username,String Password)throws Exception
+	/*public void chkLogin(String Username,String Password)throws Exception
 	{
 		//Thread.sleep(5000);
 		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']/span");
@@ -42,10 +45,18 @@ public class PERSONAL_INFO extends Browser
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
 		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a"); //my acc
 			
-	}
+	}*/
 	
 	public void executeAllTestcase()throws Exception
 	{
+//		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']/span");
+//		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']");
+//		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.fff@royalcyber.com");
+//		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']");
+//		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab123");
+		
+//		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
+//		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a");
 		verify_myAcc();
 		//verify_edit();
 		verify_displayedInfo();
@@ -72,8 +83,8 @@ public class PERSONAL_INFO extends Browser
 			 {
 				 //System.out.println(id.getKey() + " is displayed ");
 		         
-		         rpt.createTest("CC-Personal Information-Verify My Account", "Message :"+id.getKey()+" Displayed - For Verify My Account:");
-		         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify My Account:");
+		         rpt.createTest("CC-Personal Information-Verify My Account", "Message :"+id.getKey()+" Displayed - For Verify My Account");
+		         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify My Account");
 		         rpt.Category("CC_Personal Information-Verify My Account");
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
@@ -82,8 +93,8 @@ public class PERSONAL_INFO extends Browser
 			 {
 				 //System.out.println(id.getKey() + " is not displayed ");
 
-		         rpt.createTest("CC-Personal Information-Verify My Account", "Message :"+id.getKey()+" is NOT Displayed - For Verify My Account:");
-		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account:");
+		         rpt.createTest("CC-Personal Information-Verify My Account", "Message :"+id.getKey()+" is NOT Displayed - For Verify My Account");
+		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account");
 		         rpt.Category("CC_Personal Information-Verify My Account");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 		         rpt.imgPathFail(path);
@@ -169,8 +180,8 @@ public class PERSONAL_INFO extends Browser
 			 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
 			 {
 				 //System.out.println(id.getKey() + " is displayed ");
-		         rpt.createTest("CC-Personal Information-Verify Displayed Information", "Message :"+id.getKey()+" Displayed - For Verify Displayed Information:");
-		         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify Displayed Information:");
+		         rpt.createTest("CC-Personal Information-Verify Displayed Information", "Message :"+id.getKey()+" Displayed - For Verify Displayed Information");
+		         rpt.Pass("Message :"+ id.getKey() +" Displayed :: For Verify Displayed Information");
 		         rpt.Category("CC_Personal Information-Verify Displayed Information");
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
@@ -178,8 +189,8 @@ public class PERSONAL_INFO extends Browser
 			 else
 			 {
 				 //System.out.println(id.getKey() + " is not displayed ");
-				 rpt.createTest("CC-Personal Information-Verify Displayed Information", "Message :"+id.getKey()+" is NOT Displayed - For Verify Displayed Information:");
-		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify Displayed Information:");
+				 rpt.createTest("CC-Personal Information-Verify Displayed Information", "Message :"+id.getKey()+" is NOT Displayed - For Verify Displayed Information");
+		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify Displayed Information");
 		         rpt.Category("CC_Personal Information-Verify Displayed Information");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 		         rpt.imgPathFail(path);
@@ -229,23 +240,28 @@ public class PERSONAL_INFO extends Browser
 		
 		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_gender_In_Register_1-button']");//gender
 		Screen s  = new Screen();
-		Pattern img=new Pattern("C:\\Automation\\Sikuli_Images\\Gender_CC.png");
+		Thread.sleep(3000);
+		Pattern img=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\Gender_CC.png");
 		s.click(img);
 		
 		click("xpath=//*[@id='WC_PersonalInfoExtension_birth_year-button']");//birthday year
 		Screen scr  = new Screen();
-		Pattern i=new Pattern("C:\\Automation\\Sikuli_Images\\Birthyear_CC.png");
-		scr.click(i);
+		Pattern im=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\Birthyear_CC.png");
+		Thread.sleep(3000);
+		scr.click(im);
+		
 		
 		click("xpath=//*[@id='WC_PersonalInfoExtension_birth_month-button']");//birthday month
 		Screen sc  = new Screen();
-		Pattern im=new Pattern("C:\\Automation\\Sikuli_Images\\Birthdate_CC.png");
-		sc.click(im);	
+		Thread.sleep(3000);
+		Pattern im1=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\Birthmonth_CC.png");
+		sc.click(im1);	
 		
 		click("xpath=//*[@id='WC_PersonalInfoExtension_birth_date-button']");//birthday date
 		Screen scrr  = new Screen();
-		Pattern ima=new Pattern("C:\\Automation\\Sikuli_Images\\Birthdate_CC.png");
-		scrr.click(ima);	
+		Pattern ima=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\Birthdate_CC.png");
+		Thread.sleep(3000);
+		scrr.click(ima);
 		
 		/*click("xpath=//*[@id='WC_PersonalInfoExtension_mobile_div_mobileCountryCode']");*/ //mobile no extension
 		
@@ -299,9 +315,9 @@ public class PERSONAL_INFO extends Browser
 						if(Actual == Expected)
 						{
 							//System.out.println("Message Displayed for name :"+ strMessage);
-							  rpt.createTest("CC-Personal Information-Invalid Name", "Message"+Expected+" Displayed- For Invalid Name:");
-							  rpt.Info("Expected Message"+Expected+"Is Matching with "+Actual +"Message");
-							  rpt.Pass("Message"+Expected+" Displayed- For Invalid Name:");
+							  rpt.createTest("CC-Personal Information-Invalid Name", "Message"+Expected+" Displayed- For Invalid Name");
+							  rpt.Info("Expected Message "+Expected+" Is Matching with "+Actual +"Message");
+							  rpt.Pass("Message "+Expected+" Displayed- For Invalid Name");
 							  rpt.Category("CC_Personal Information-Invalid Name");
 						         String path = rpt.CaptureScreen(browser, "ValidMessage");
 						         rpt.imgPathPass(path);
@@ -310,9 +326,9 @@ public class PERSONAL_INFO extends Browser
 						{
 							//System.out.println("Error Message NOT Displayed");
 
-				              rpt.createTest("CC-Personal Information-Invalid Name", "Message"+Actual+" Displayed- For Invalid Name:");
-							   rpt.Info("Expected Message"+Expected+ "Not Matching with "+Actual +"Message");
-							   rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name:");
+				              rpt.createTest("CC-Personal Information-Invalid Name", "Message"+Actual+" Displayed- For Invalid Name");
+							   rpt.Info("Expected Message "+Expected+ "Not Matching with "+Actual +"Message");
+							   rpt.Fail("Message "+Expected+" NOT Displayed- For Invalid Name");
 							   rpt.Category("CC_Personal Information-Invalid Name");
 						         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 						         rpt.imgPathFail(path);
@@ -363,9 +379,9 @@ public class PERSONAL_INFO extends Browser
 								if(actualCity == expectedCity)
 								{
 									//System.out.println("Message Displayed for city :"+ strMessage);
-									 rpt.createTest("CC-Personal Information-Invalid City", "Message"+expectedCity+" Displayed- For Invalid City:");
-									    rpt.Info("Expected Message"+expectedCity+"Is Matching with "+actualCity +"Message");
-									    rpt.Pass("Message"+expectedCity+" Displayed- For Invalid City:");
+									 rpt.createTest("CC-Personal Information-Invalid City", "Message"+expectedCity+" Displayed- For Invalid City");
+									    rpt.Info("Expected Message "+expectedCity+" Is Matching with "+actualCity +"Message");
+									    rpt.Pass("Message "+expectedCity+" Displayed- For Invalid City");
 									    rpt.Category("CC_Personal Information-Invalid City");
 								         String path = rpt.CaptureScreen(browser, "ValidMessage");
 								         rpt.imgPathPass(path);
@@ -373,9 +389,9 @@ public class PERSONAL_INFO extends Browser
 								else
 								{
 									//System.out.println("Error Message NOT Displayed");
-									rpt.createTest("CC-Personal Information-Invalid City", "Message"+actualCity+" Displayed- For Invalid City:");
-									 rpt.Info("Expected Message"+expectedCity+ "Not Matching with "+actualCity +"Message");
-									 rpt.Fail("Message"+expectedCity+" NOT Displayed- For Invalid City:");
+									rpt.createTest("CC-Personal Information-Invalid City", "Message"+actualCity+" Displayed- For Invalid City");
+									 rpt.Info("Expected Message "+expectedCity+ "Not Matching with "+actualCity +"Message");
+									 rpt.Fail("Message "+expectedCity+" NOT Displayed- For Invalid City");
 									 rpt.Category("CC_Personal Information-Invalid City");
 							         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 							         rpt.imgPathFail(path);
@@ -428,9 +444,9 @@ public class PERSONAL_INFO extends Browser
 									if(actualZcode == expectedZcode)
 									{
 										//System.out.println("Message Displayed for zip code :"+ strMessage);
-										rpt.createTest("CC-Personal Information-Invalid Zip code", "Message"+expectedZcode+" Displayed- For Invalid Zip code:");
-									    rpt.Info("Expected Message"+expectedZcode+"Is Matching with "+actualZcode +"Message");
-									    rpt.Pass("Message"+expectedZcode+" Displayed- For Invalid Zip code:");
+										rpt.createTest("CC-Personal Information-Invalid Zip code", "Message"+expectedZcode+" Displayed- For Invalid Zip code");
+									    rpt.Info("Expected Message "+expectedZcode+" Is Matching with "+actualZcode +"Message");
+									    rpt.Pass("Message "+expectedZcode+" Displayed- For Invalid Zip code");
 									    rpt.Category("CC_Personal Information-Invalid Zip code");
 								         String path = rpt.CaptureScreen(browser, "ValidMessage");
 								         rpt.imgPathPass(path);
@@ -440,9 +456,9 @@ public class PERSONAL_INFO extends Browser
 									else
 									{
 										//System.out.println("Error Message NOT Displayed");
-										rpt.createTest("CC-Personal Information-Invalid Zip code", "Message"+actualZcode+" Displayed- For Invalid Zip code:");
-										 rpt.Info("Expected Message"+expectedZcode+ "Not Matching with "+actualZcode +"Message");
-										 rpt.Fail("Message"+expectedZcode+" NOT Displayed- For Invalid Zip code:");
+										rpt.createTest("CC-Personal Information-Invalid Zip code", "Message"+actualZcode+" Displayed- For Invalid Zip code");
+										 rpt.Info("Expected Message "+expectedZcode+ "Not Matching with "+actualZcode +"Message");
+										 rpt.Fail("Message "+expectedZcode+" NOT Displayed- For Invalid Zip code");
 										 rpt.Category("CC_Personal Information-Invalid Zip code");
 								         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 								         rpt.imgPathFail(path);
@@ -468,9 +484,9 @@ public class PERSONAL_INFO extends Browser
 										if(actualEid==expectedEid)
 										{
 											//System.out.println("Message Displayed for email id :"+ strMessage);
-											rpt.createTest("CC-Personal Information-Invalid Email id", "Message"+expectedEid+" Displayed- For Invalid Email id:");
-										    rpt.Info("Expected Message"+expectedEid+"Is Matching with "+actualEid +"Message");
-										    rpt.Pass("Message"+expectedEid+" Displayed- For Invalid Email id:");
+											rpt.createTest("CC-Personal Information-Invalid Email id", "Message"+expectedEid+" Displayed- For Invalid Email id");
+										    rpt.Info("Expected Message "+expectedEid+" Is Matching with "+actualEid +"Message");
+										    rpt.Pass("Message "+expectedEid+" Displayed- For Invalid Email id");
 										    rpt.Category("CC_Personal Information-Invalid Email id");
 									         String path = rpt.CaptureScreen(browser, "ValidMessage");
 									         rpt.imgPathPass(path);
@@ -480,9 +496,9 @@ public class PERSONAL_INFO extends Browser
 										else
 										{
 											//System.out.println("Error Message NOT Displayed");
-											rpt.createTest("CC-Personal Information-Invalid Email id", "Message"+actualEid+" Displayed- For Invalid Email id:");
-											 rpt.Info("Expected Message"+expectedEid+ "Not Matching with "+actualEid +"Message");
-											 rpt.Fail("Message"+expectedEid+" NOT Displayed- For Invalid Email id:");
+											rpt.createTest("CC-Personal Information-Invalid Email id", "Message"+actualEid+" Displayed- For Invalid Email id");
+											 rpt.Info("Expected Message "+expectedEid+ "Not Matching with "+actualEid +"Message");
+											 rpt.Fail("Message "+expectedEid+" NOT Displayed- For Invalid Email id");
 											 rpt.Category("CC_Personal Information-Invalid Email id");
 									         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 									         rpt.imgPathFail(path);
@@ -506,8 +522,8 @@ public class PERSONAL_INFO extends Browser
     		 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
     		 {
     			 //System.out.println(id.getKey() + " is displayed ");
-    			 rpt.createTest("CC-Personal Information-Verify My Account", "Message :"+id.getKey()+" Displayed - For Verify My Account:");
-		         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify My Account:");
+    			 rpt.createTest("CC-Personal Information-Verify My Account", "Message :"+id.getKey()+" Displayed - For Verify My Account");
+		         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify My Account");
 		         rpt.Category("CC_Personal Information-Verify My Account");
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
@@ -515,8 +531,8 @@ public class PERSONAL_INFO extends Browser
     		 else
     		 {
     			 //System.out.println(id.getKey() + " is not displayed ");
-    			 rpt.createTest("CC-Personal Information-Verify My Account", "Message :"+id.getKey()+" is NOT Displayed - For Verify My Account:");
-		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account:");
+    			 rpt.createTest("CC-Personal Information-Verify My Account", "Message :"+id.getKey()+" is NOT Displayed - For Verify My Account");
+		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify My Account");
 		         rpt.Category("CC_Personal Information-Verify My Account");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 		         rpt.imgPathFail(path);
@@ -540,8 +556,8 @@ public class PERSONAL_INFO extends Browser
 			 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
 			 {
 				 //System.out.println(id.getKey() + " is displayed ");
-				 rpt.createTest("CC-Personal Information-Verify Settings", "Message :"+id.getKey()+" Displayed - For Verify Settings:");
-		         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify Settings:");
+				 rpt.createTest("CC-Personal Information-Verify Settings", "Message :"+id.getKey()+" Displayed - For Verify Settings");
+		         rpt.Pass("Message :"+id.getKey()+" Displayed - For Verify Settings");
 		         rpt.Category("CC_Personal Information-Verify Settings");
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
@@ -549,8 +565,8 @@ public class PERSONAL_INFO extends Browser
 			 else
 			 {
 				 //System.out.println(id.getKey() + " is not displayed ");
-				 rpt.createTest("CC-Personal Information-Verify Settings", "Message :"+id.getKey()+" is NOT Displayed - For Verify Settings:");
-		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify Settings:");
+				 rpt.createTest("CC-Personal Information-Verify Settings", "Message :"+id.getKey()+" is NOT Displayed - For Verify Settings");
+		         rpt.Pass("Message :"+id.getKey()+" NOT Displayed - For Verify Settings");
 		         rpt.Category("CC_Personal Information-Verify Settings");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 		         rpt.imgPathFail(path);

@@ -44,7 +44,7 @@ public class Registration extends Browser
 	
 	public void checkFields() throws InterruptedException,Exception
 	{
-		browser.get("http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c");
+		//browser.get("http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c");
         //(By.xpath("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']")).click()
 		Browser.browser=browser;
 		Thread.sleep(3000);
@@ -68,18 +68,22 @@ public class Registration extends Browser
 		         rpt.createTest("CC-Registration-Field Validation", "Error Message :"+id.getKey()+" Displayed - For Field Validation");
 		         rpt.Pass("Error Message :"+id.getKey()+" Displayed - For Field Validation");
 		         rpt.Category("CC_Registration_Validation Fields");
+		     	
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
-		         
+		         rpt.chkBugs("Mahesh");
+		         rpt.chkdebug("CC_Registration_Validation Fields");
 			 }
 			 else
 			 {
-				
 		         rpt.createTest("CC-Registration-name Validation", "Error Message"+id.getKey()+" Displayed - For Valid Name :");
-		         rpt.Fail("Error Message"+id.getKey()+" NOT ;Displayed - For Field Validation");
+		         rpt.Fail("Error Message "+id.getKey()+" NOT Displayed - For Field Validation");
 		         rpt.Category("CC_Registration_Validation Fields");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 		         rpt.imgPathFail(path);
+		         rpt.chkBugs("Mahesh");
+		         rpt.chkdebug("CC_Registration_Validation Fields");
+		  
 			 }
 		 }
 
@@ -144,9 +148,9 @@ public class Registration extends Browser
 			if(Actual == Expected)
 			{
 				//System.out.println("Message Displayed: For Invalid Name"+ strMsg);
-				rpt.createTest("CC-Registration-Invalid Name", "Message"+Expected+" Displayed- For Invalid Name:");
-			    rpt.Info("Expected Message"+Expected+"Is Matching with "+Actual +"Message");
-			    rpt.Pass("Message"+Expected+" Displayed- For Invalid Name:");
+				rpt.createTest("CC-Registration-Invalid Name", "Message"+Expected+" Displayed- For Invalid Name");
+			    rpt.Info("Expected Message "+Expected+" Is Matching with "+Actual +" Message");
+			    rpt.Pass("Message "+Expected+" Displayed- For Invalid Name");
 			    rpt.Category("CC_Registration-Invalid Name");
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
@@ -154,11 +158,13 @@ public class Registration extends Browser
 			else
 			{
 				//System.out.println("Error Message NOT Displayed");
-				rpt.createTest("CC-Registration-Invalid Name", "Message"+Actual+" Displayed- For Invalid Name:");
-			    rpt.Info("Expected Message"+Expected+ "Not Matching with "+Actual +"Message");
-			    rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name:");
+				rpt.createTest("CC-Registration-Invalid Name", "Message "+Actual+" Displayed- For Invalid Name");
+			    rpt.Info("Expected Message  "+Expected+ "Not Matching with "+Actual +"Message");
+			    rpt.Fail("Message"+Expected+" NOT Displayed- For Invalid Name");
 			    rpt.Category("CC_Registration-Invalid Name");
+		         Thread.sleep(3000);
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
+		         Thread.sleep(3000);
 		         rpt.imgPathFail(path);
 			}
 
@@ -181,9 +187,9 @@ public class Registration extends Browser
 			if(actual == expected)
 			{
 				//System.out.println("Message Displayed: For Email - "+ strMsg);
-				rpt.createTest("CC-Registration-Invalid Email Id", "Message"+expected+" Displayed- For Invalid Email Id:");
-			    rpt.Info("Expected Message"+expected+"Is Matching with "+actual +"Message");
-			    rpt.Pass("Message"+expected+" Displayed- For Invalid Email Id:");
+				rpt.createTest("CC-Registration-Invalid Email Id", "Message "+expected+" Displayed- For Invalid Email Id");
+			    rpt.Info("Expected Message "+expected+" Is Matching with "+actual +"Message");
+			    rpt.Pass("Message "+expected+" Displayed- For Invalid Email Id");
 			    rpt.Category("CC_Registration-Invalid Email Id");
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
@@ -191,9 +197,9 @@ public class Registration extends Browser
 			else
 			{
 				//System.out.println("Error Message NOT Displayed");
-				rpt.createTest("CC-Registration-Invalid Email Id", "Message"+actual+" Displayed- For Invalid Email Id:");
-			    rpt.Info("Expected Message"+expected+ "Not Matching with "+actual +"Message");
-			    rpt.Fail("Message"+expected+" NOT Displayed- For Invalid Email Id:");
+				rpt.createTest("CC-Registration-Invalid Email Id", "Message"+actual+" Displayed- For Invalid Email Id");
+			    rpt.Info("Expected Message "+expected+ "Not Matching with "+actual +"Message");
+			    rpt.Fail("Message "+expected+" NOT Displayed- For Invalid Email Id");
 			    rpt.Category("CC_Registration-Invalid Email Id");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 		         rpt.imgPathFail(path);
@@ -228,9 +234,9 @@ public class Registration extends Browser
 			if(actualPass == expectedPass)
 			{
 				//System.out.println("Message Displayed: For InvalidPassword"+ strRegMessage);
-				rpt.createTest("CC-Registration-Invalid Password", "Message"+expectedPass+" Displayed- For Invalid Password:");
-			    rpt.Info("Expected Message"+expectedPass+"Is Matching with "+actualPass +"Message");
-			    rpt.Pass("Message"+expectedPass+" Displayed- For Invalid Password:");	
+				rpt.createTest("CC-Registration-Invalid Password", "Message"+expectedPass+" Displayed- For Invalid Password");
+			    rpt.Info("Expected Message "+expectedPass+" Is Matching with "+actualPass +"Message");
+			    rpt.Pass("Message "+expectedPass+" Displayed- For Invalid Password");	
 			    rpt.Category("CC_Registration-Invalid Password");
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
@@ -238,9 +244,9 @@ public class Registration extends Browser
 			else
 			{
 				//System.out.println("Error Message NOT Displayed");
-				rpt.createTest("CC-Registration-Invalid Password", "Message"+actualPass+" Displayed- For Invalid Password:");
-			    rpt.Info("Expected Message"+expectedPass+ "Not Matching with "+actualPass +"Message");
-			    rpt.Fail("Message"+expectedPass+" NOT Displayed- For Invalid Password:");
+				rpt.createTest("CC-Registration-Invalid Password", "Message"+actualPass+" Displayed- For Invalid Password");
+			    rpt.Info("Expected Message "+expectedPass+ "Not Matching with "+actualPass +"Message");
+			    rpt.Fail("Message "+expectedPass+" NOT Displayed- For Invalid Password");
 			    rpt.Category("CC_Registration-Invalid Password");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 		         rpt.imgPathFail(path);
@@ -264,9 +270,9 @@ public class Registration extends Browser
 			if(actualCpass == expectedCpass)
 			{
 				//System.out.println("Message Displayed:Invalid Confrm_Password"+ strCnfm_Pwd);
-				rpt.createTest("CC-Registration-Invalid Confirm Password", "Message"+expectedCpass+" Displayed- For Invalid Confirm Password:");
-			    rpt.Info("Expected Message"+expectedCpass+"Is Matching with "+actualCpass +"Message");
-			    rpt.Pass("Message"+expectedCpass+" Displayed- For Invalid Confirm Password:");	
+				rpt.createTest("CC-Registration-Invalid Confirm Password", "Message "+expectedCpass+" Displayed- For Invalid Confirm Password");
+			    rpt.Info("Expected Message "+expectedCpass+"Is Matching with "+actualCpass +"Message");
+			    rpt.Pass("Message "+expectedCpass+" Displayed- For Invalid Confirm Password");	
 			    rpt.Category("CC_Registration-Invalid Confirm Password");
 		         String path = rpt.CaptureScreen(browser, "ValidMessage");
 		         rpt.imgPathPass(path);
@@ -274,9 +280,9 @@ public class Registration extends Browser
 			else
 			{
 				//System.out.println("Error Message NOT Displayed");
-				rpt.createTest("CC-Registration-Invalid Confirm Password", "Message"+actualCpass+" Displayed- For Invalid  Confirm Password:");
-			    rpt.Info("Expected Message"+expectedCpass+ "Not Matching with "+actualCpass +"Message");
-			    rpt.Fail("Message"+expectedCpass+" NOT Displayed- For Invalid Confirm Password:");
+				rpt.createTest("CC-Registration-Invalid Confirm Password", "Message "+actualCpass+" Displayed- For Invalid  Confirm Password");
+			    rpt.Info("Expected Message "+expectedCpass+ "Not Matching with "+actualCpass +"Message");
+			    rpt.Fail("Message "+expectedCpass+" NOT Displayed- For Invalid Confirm Password");
 			    rpt.Category("CC_Registration-Invalid Confirm Password");
 		         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 		         rpt.imgPathFail(path);

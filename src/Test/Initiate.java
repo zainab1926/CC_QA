@@ -40,7 +40,7 @@ public class Initiate {
 		extent = Report.GetExtent();
 //		System.setProperty("webdriver.gecko.driver", "C:\\CI_CD_CT\\Browser_Executables\\geckodriver.exe");
 //		driver = new FirefoxDriver();
-		//checking updating JIRA issues with changes in IDE
+		//CHecking for code cosnsitency and entire workflow.
 		
 	}
 	@SuppressWarnings("static-access")
@@ -56,8 +56,9 @@ public class Initiate {
 		//br.captureScreenShot("HomePage");
 		checkRegistration();
 		chkAddress_Book();
-		//chkPersonalInfo();
-		//chkSearch();
+		Thread.sleep(3000);
+		chkPersonalInfo();
+		chkSearch();
 		//skipTest();
 		//checkFail();
 //		extent.flush();
@@ -106,7 +107,7 @@ public class Initiate {
 	public void publishReport()throws Exception
 	{
 		extent.flush();
-		browser.close();
+		
 	}
 
 }

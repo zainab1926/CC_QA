@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.imageio.ImageIO;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -18,6 +20,9 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
 
@@ -43,7 +48,7 @@ public class Report {
 	static String imagePath="C:\\Users\\madhusudhan\\workspace\\CC\\Screenshots\\";
 	
 		
-	
+	private static long counter =0;
 	BrowserFactory br = new BrowserFactory();
 	public static ExtentReports GetExtent(){
 		if (extent != null)
@@ -52,6 +57,7 @@ public class Report {
 		extent.attachReporter(getHtmlReporter());
 //		extent.setSystemInfo("OS", "Windows 10");
 //		extent.setSystemInfo("UserName", "Mahesh");
+		
 		return extent;
 	}
  
@@ -64,7 +70,7 @@ public class Report {
         htmlReporter.config().setDocumentTitle("CIRCUIT-CITY");
         htmlReporter.config().setReportName("CIRCUIT-CITY : Regression Suite");
         
-        htmlReporter.loadXMLConfig("C:\\Users\\madhusudhan\\workspace\\CC\\extent-config.xml");
+        //htmlReporter.loadXMLConfig("C:\\Users\\madhusudhan\\workspace\\CC\\extent-config.xml");
         return htmlReporter;
         
 	}
@@ -121,6 +127,18 @@ public class Report {
 		return test;
 	}
 	
+	public static ExtentTest chkBugs(String Bugs)throws Exception
+	{
+		test.assignAuthor(Bugs);
+		return test;
+	}
+	public static ExtentTest chkdebug(String dbg)throws Exception
+	{
+		//test.debug(dbg);
+		test.error(dbg);
+
+		return test;
+	}
 	
 	
 //	public static ExtentTest vdoPath()throws Exception,ATUTestRecorderException
@@ -137,12 +155,37 @@ public class Report {
 		
 	public static String CaptureScreen(WebDriver driver,String imgName)
 	{
-	    TakesScreenshot oScn = (TakesScreenshot) driver;
-	    File oScnShot = oScn.getScreenshotAs(OutputType.FILE);
-	 File oDest = new File(imagePath+imgName+".png");
-	 try {
-	      FileUtils.copyFile(oScnShot, oDest);
-	 } catch (IOException e) {System.out.println(e.getMessage());}
-	 return imagePath+imgName+".png";
-	        }
+
+		TakesScreenshot oScn = (TakesScreenshot) driver;
+		File oScnShot = oScn.getScreenshotAs(OutputType.FILE);
+		String fileName = imagePath+imgName+(++counter)+".png";
+		File oDest = new File(fileName);
+		try
+		{
+			FileUtils.copyFile(oScnShot, oDest);
+		} 
+		catch (IOException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return fileName;
+	}
+	
+  /* public static String CaptureFullScreen(WebDriver driver,String imgName)
+   { 
+	   Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+       try 
+       {
+		ImageIO.write(screenshot.getImage(),"PNG",new File(System.getProperty("user.dir") +"/ErrorScreenshots/FullPageScreenshot.png"));
+	} 
+       catch (IOException e)
+       {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+  
+
+	return imgName;
+	   
+   }*/
 }

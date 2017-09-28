@@ -11,7 +11,7 @@ import org.sikuli.script.Screen;
 
 public class SEARCH extends Browser
 {
-	public WebDriver browser = BrowserFactory.getBrowser("Browser","url");
+	//public WebDriver browser = BrowserFactory.getBrowser("Browser","url");
 	//WebDriver driver=new FirefoxDriver();
 	
 	public void execute_Alltestcases()throws Exception
@@ -224,8 +224,8 @@ public class SEARCH extends Browser
 		click("xpath=//*[@id='SimpleSearchForm_SearchTerm']");
 		sendKeys("xpath=//*[@id='SimpleSearchForm_SearchTerm']","lenovo");
 		click("xpath=//*[@id='autoSelectOption_0']");
-		click("xpath=//*[@id='orderBy_6_-3011_2310-button']");
-		click("xpath=//*[@id='orderBy_6_-3011_2310-button']");
+		//click("xpath=//*[@id='orderBy_6_-3011_2310-button']");
+		//click("xpath=//*[@id='orderBy_6_-3011_2310-button']");
         Thread.sleep(4000);
 
 	}
@@ -234,8 +234,8 @@ public class SEARCH extends Browser
 		click("xpath=//*[@id='SimpleSearchForm_SearchTerm']");
 		sendKeys("xpath=//*[@id='SimpleSearchForm_SearchTerm']","samsung");
 		click("xpath=//*[@id='autoSelectOption_0']");
-		click("xpath=//*[@id='pageSize_6_-3011_2310-button']");
-		click("xpath=//*[@id='pageSize_6_-3011_2310-button']");
+		//click("xpath=//*[@id='pageSize_6_-3011_2310-button']");
+		//click("xpath=//*[@id='pageSize_6_-3011_2310-button']");
         Thread.sleep(4000);
 
 	}
