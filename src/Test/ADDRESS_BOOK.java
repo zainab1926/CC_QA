@@ -383,7 +383,7 @@ public class ADDRESS_BOOK extends Browser
      Thread.sleep(2000);
 	 for(Map.Entry<String, String> id : ids.entrySet() )
 	 {
-		 //Thread.sleep(8000);
+		 //Thread.sleep(4000);
 		 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
 		 {
 			 //System.out.println(id.getKey() + " is displayed ");
