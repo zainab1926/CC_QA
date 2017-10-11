@@ -40,7 +40,7 @@ public class Initiate {
 		extent = Report.GetExtent();
 //		System.setProperty("webdriver.gecko.driver", "C:\\CI_CD_CT\\Browser_Executables\\geckodriver.exe");
 //		driver = new FirefoxDriver();
-		//Adding New content for Testing Again
+		//TEsting Jenkins builds  for checking purpose
 		
 	}
 	@SuppressWarnings("static-access")
