@@ -38,7 +38,7 @@ public class Initiate {
 	@BeforeClass
 	public void Ini(){
 		extent = Report.GetExtent();
-//		System.setProperty("webdriver.gecko.driver", "C:\\CI_CD_CT\\Browser_Executables\\geckodriver.exe");
+//	//	System.setProperty("webdriver.gecko.driver", "C:\\CI_CD_CT\\Browser_Executables\\geckodriver.exe");
 //		driver = new FirefoxDriver();
 		//Testing jobs in JEnkins- Testing JIRA
 		
