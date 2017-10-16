@@ -42,7 +42,6 @@ public class Initiate {
 //		driver = new FirefoxDriver();
 // Checking new changes for testing pupose - JIRA , JENKINS
 		//hello
-		System.out.print("hello");
 		
 	}
 	@SuppressWarnings("static-access")
