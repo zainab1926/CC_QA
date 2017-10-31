@@ -128,19 +128,17 @@
                   </a> <!-- checkHome(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c) -->
                   <span class="method-name">checkHome</span>
                   <span class="parameters">(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c)</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@278c5016 (tried for 60 second(s) with 5 MILLISECONDS interval)
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
 Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
 System info: host: &apos;WIN-JENKINST81S&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_112&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.a20q69eAcUNR, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=7804.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1103)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1085)
-	at Test.Browser.findTheElement(Browser.java:229)
-	at Test.ADDRESS_BOOK.verifyAddNewPage(ADDRESS_BOOK.java:387)
-	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:67)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:382)
+	at Test.Report.CaptureScreen(Report.java:160)
+	at Test.ADDRESS_BOOK.chk_AccSection(ADDRESS_BOOK.java:223)
+	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:62)
 	at Test.Initiate.chkAddress_Book(Initiate.java:83)
 	at Test.Initiate.checkHome(Initiate.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -156,6 +154,19 @@ Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:178)
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:198)
+	at org.apache.http.impl.io.ContentLengthInputStream.close(ContentLengthInputStream.java:101)
+	at org.apache.http.impl.execchain.ResponseEntityProxy.streamClosed(ResponseEntityProxy.java:143)
+	at org.apache.http.conn.EofSensorInputStream.checkClose(EofSensorInputStream.java:228)
+	at org.apache.http.conn.EofSensorInputStream.close(EofSensorInputStream.java:172)
+	at org.apache.http.util.EntityUtils.consume(EntityUtils.java:88)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.createResponse(ApacheHttpClient.java:108)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:91)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	... 21 more
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -223,12 +234,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkHome')
 data.setCell(0, 2, 'Test.Initiate')
-data.setCell(0, 3, 324089);
+data.setCell(0, 3, 206961);
 window.suiteTableData['RC_Suite']= { tableData: data, tableDiv: 'times-div-RC_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-RC_Suite">
               </div> <!-- times-div-RC_Suite -->
             </div> <!-- times-div -->
@@ -263,11 +274,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">checkHome(FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c)</span>
-                <span class="method-start">3077 ms</span>
+                <span class="method-start">416 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">publishReport</span>
-                <span class="method-start">327230 ms</span>
+                <span class="method-start">207387 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

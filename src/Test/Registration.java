@@ -49,7 +49,7 @@ public class Registration extends Browser
 		Browser.browser=browser;
 		Thread.sleep(3000);
 		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']"); ///signin
-		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_3']/span");//create acc
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_3']");//create acc
 		                  
 		Map<String,String> ids= new HashMap<String,String>();
 		 ids.put("First Name", "WC__NameEntryForm_FormInput_firstName_1"); 

@@ -19,6 +19,8 @@ import org.sikuli.script.Screen;
 
 public class PERSONAL_INFO extends Browser
 {
+	
+	//maing a change for testing JEnkins
 	//public WebDriver browser = BrowserFactory.getBrowser("Browser","url");
     Report rpt  = new Report();
 	

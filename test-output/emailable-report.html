@@ -1,17 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TestNG Report</title><style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}</style></head><body><table><tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr><tr><th colspan="7">RC Suite</th></tr><tr><td><a href="#t0">RC Test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">329,065</td><td></td><td></td></tr></table><table><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">RC Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">RC Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Test.Initiate</td><td><a href="#m0">checkHome</a></td><td rowspan="1">1507015347750</td><td rowspan="1">324089</td></tr></tbody></table><h2>RC Test</h2><h3 id="m0">Test.Initiate#checkHome</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>FF</td><td>http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@278c5016 (tried for 60 second(s) with 5 MILLISECONDS interval)
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TestNG Report</title><style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}</style></head><body><table><tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr><tr><th colspan="7">RC Suite</th></tr><tr><td><a href="#t0">RC Test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">208,328</td><td></td><td></td></tr></table><table><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">RC Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">RC Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Test.Initiate</td><td><a href="#m0">checkHome</a></td><td rowspan="1">1509442474484</td><td rowspan="1">206961</td></tr></tbody></table><h2>RC Test</h2><h3 id="m0">Test.Initiate#checkHome</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>FF</td><td>http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.WebDriverException: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
 Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
 System info: host: &apos;WIN-JENKINST81S&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_112&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.a20q69eAcUNR, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=7804.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1103)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1085)
-	at Test.Browser.findTheElement(Browser.java:229)
-	at Test.ADDRESS_BOOK.verifyAddNewPage(ADDRESS_BOOK.java:387)
-	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:67)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:382)
+	at Test.Report.CaptureScreen(Report.java:160)
+	at Test.ADDRESS_BOOK.chk_AccSection(ADDRESS_BOOK.java:223)
+	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:62)
 	at Test.Initiate.chkAddress_Book(Initiate.java:83)
 	at Test.Initiate.checkHome(Initiate.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -27,4 +25,17 @@ Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:178)
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:198)
+	at org.apache.http.impl.io.ContentLengthInputStream.close(ContentLengthInputStream.java:101)
+	at org.apache.http.impl.execchain.ResponseEntityProxy.streamClosed(ResponseEntityProxy.java:143)
+	at org.apache.http.conn.EofSensorInputStream.checkClose(EofSensorInputStream.java:228)
+	at org.apache.http.conn.EofSensorInputStream.close(EofSensorInputStream.java:172)
+	at org.apache.http.util.EntityUtils.consume(EntityUtils.java:88)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.createResponse(ApacheHttpClient.java:108)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:91)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	... 21 more
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p></body></html>

@@ -380,7 +380,7 @@ public class ADDRESS_BOOK extends Browser
 	 ids.put("Phone No", "WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1");
      ids.put("Save","WC_AjaxAddressBookForm_links_4a");
      ids.put("Cancel","WC_MyAccountSidebarDisplayf_links_2");
-     Thread.sleep(2000);
+     Thread.sleep(4000);
 	 for(Map.Entry<String, String> id : ids.entrySet() )
 	 {
 		 //Thread.sleep(4000);
@@ -680,11 +680,11 @@ public class ADDRESS_BOOK extends Browser
   {
 	  click("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_2']");
 	  Thread.sleep(3000);
-	 /* Screen s = new Screen();
+	  Screen s = new Screen();
 	  Pattern img=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\AddAddress_CC.png");
 	  //Thread.sleep(2000);
-	  s.click(img); */
-	   click("xpath=//*[@id='WC_AjaxAddressBookForm_links_1']");
+	  s.click(img);
+	  //click("xpath=//*[@id='WC_AjaxAddressBookForm_links_1']");
 	  Thread.sleep(8000);
 	  click("xpath=//*[@id='WC_AccountForm_NameEntryForm_FormInput_firstName_1']");//first name
 	  Thread.sleep(5000);//WC_AccountForm_NameEntryForm_FormInput_firstName_1'
@@ -762,8 +762,13 @@ public class ADDRESS_BOOK extends Browser
   {
 	  
 	  click("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_2']");
+	  Thread.sleep(4000);
+	  //click("xpath=//*[@id='WC_AjaxAddressBookForm_links_2']");
+	  Screen s = new Screen();
+	  Pattern img=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\RemoveAdd_CC.png");
+	  Thread.sleep(4000);
+	  s.click(img);
 	  Thread.sleep(2000);
-	  click("xpath=//*[@id='WC_AjaxAddressBookForm_links_2']");
 	  String actualRadd= findTheElement("xpath=//*[@id='ErrorMessageText']").getText();
 	  Boolean strMessage = findTheElement("xpath=//*[@id='ErrorMessageText']").isDisplayed();//remove msg
 	  String expectedRadd="The selected address has been removed from the address list";

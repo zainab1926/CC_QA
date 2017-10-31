@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Oct 03 02:22:24 CDT 2017</td>
+<td>Started on:</td><td>Tue Oct 31 04:34:34 CDT 2017</td>
 </tr>
-<tr><td>Total time:</td><td>329 seconds (329065 ms)</td>
+<tr><td>Total time:</td><td>208 seconds (208328 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,19 +76,17 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='Test.Initiate.checkHome()'><b>checkHome</b><br>Test class: Test.Initiate<br>Parameters: FF, http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@278c5016 (tried for 60 second(s) with 5 MILLISECONDS interval)
+<td><div><pre>org.openqa.selenium.WebDriverException: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
 Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
 System info: host: &apos;WIN-JENKINST81S&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_112&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.a20q69eAcUNR, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=7804.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1103)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1085)
-	at Test.Browser.findTheElement(Browser.java:229)
-	at Test.ADDRESS_BOOK.verifyAddNewPage(ADDRESS_BOOK.java:387)
-	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:67)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:382)
+	at Test.Report.CaptureScreen(Report.java:160)
+	at Test.ADDRESS_BOOK.chk_AccSection(ADDRESS_BOOK.java:223)
+	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:62)
 	at Test.Initiate.chkAddress_Book(Initiate.java:83)
 	at Test.Initiate.checkHome(Initiate.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -104,20 +102,31 @@ Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-</pre></div><a href='#' onClick='toggleBox("stack-trace569739328", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace569739328'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@278c5016 (tried for 60 second(s) with 5 MILLISECONDS interval)
+Caused by: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:178)
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:198)
+	at org.apache.http.impl.io.ContentLengthInputStream.close(ContentLengthInputStream.java:101)
+	at org.apache.http.impl.execchain.ResponseEntityProxy.streamClosed(ResponseEntityProxy.java:143)
+	at org.apache.http.conn.EofSensorInputStream.checkClose(EofSensorInputStream.java:228)
+	at org.apache.http.conn.EofSensorInputStream.close(EofSensorInputStream.java:172)
+	at org.apache.http.util.EntityUtils.consume(EntityUtils.java:88)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.createResponse(ApacheHttpClient.java:108)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:91)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	... 21 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace1002722938", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1002722938'><pre>org.openqa.selenium.WebDriverException: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
 Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
 System info: host: &apos;WIN-JENKINST81S&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_112&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.a20q69eAcUNR, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=7804.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1103)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1085)
-	at Test.Browser.findTheElement(Browser.java:229)
-	at Test.ADDRESS_BOOK.verifyAddNewPage(ADDRESS_BOOK.java:387)
-	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:67)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:382)
+	at Test.Report.CaptureScreen(Report.java:160)
+	at Test.ADDRESS_BOOK.chk_AccSection(ADDRESS_BOOK.java:223)
+	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:62)
 	at Test.Initiate.chkAddress_Book(Initiate.java:83)
 	at Test.Initiate.checkHome(Initiate.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -133,9 +142,22 @@ Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:178)
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:198)
+	at org.apache.http.impl.io.ContentLengthInputStream.close(ContentLengthInputStream.java:101)
+	at org.apache.http.impl.execchain.ResponseEntityProxy.streamClosed(ResponseEntityProxy.java:143)
+	at org.apache.http.conn.EofSensorInputStream.checkClose(EofSensorInputStream.java:228)
+	at org.apache.http.conn.EofSensorInputStream.close(EofSensorInputStream.java:172)
+	at org.apache.http.util.EntityUtils.consume(EntityUtils.java:88)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.createResponse(ApacheHttpClient.java:108)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:91)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	... 21 more
 </pre></div></td>
-<td>324</td>
-<td>Test.Initiate@5bcab519</td></tr>
+<td>206</td>
+<td>Test.Initiate@7ed7259e</td></tr>
 </table><p>
 </body>
 </html>

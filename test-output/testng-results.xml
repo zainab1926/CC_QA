@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="RC Suite" duration-ms="329065" started-at="2017-10-03T07:22:24Z" finished-at="2017-10-03T07:27:53Z">
+  <suite name="RC Suite" duration-ms="208328" started-at="2017-10-31T09:34:34Z" finished-at="2017-10-31T09:38:02Z">
     <groups>
     </groups>
-    <test name="RC Test" duration-ms="329065" started-at="2017-10-03T07:22:24Z" finished-at="2017-10-03T07:27:53Z">
+    <test name="RC Test" duration-ms="208328" started-at="2017-10-31T09:34:34Z" finished-at="2017-10-31T09:38:02Z">
       <class name="Test.Initiate">
-        <test-method status="PASS" signature="Ini()[pri:0, instance:Test.Initiate@5bcab519]" name="Ini" is-config="true" duration-ms="3070" started-at="2017-10-03T02:22:24Z" finished-at="2017-10-03T02:22:27Z">
+        <test-method status="PASS" signature="Ini()[pri:0, instance:Test.Initiate@7ed7259e]" name="Ini" is-config="true" duration-ms="409" started-at="2017-10-31T04:34:34Z" finished-at="2017-10-31T04:34:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Ini -->
-        <test-method status="FAIL" signature="checkHome(java.lang.String, java.lang.String)[pri:0, instance:Test.Initiate@5bcab519]" name="checkHome" duration-ms="324089" started-at="2017-10-03T02:22:27Z" finished-at="2017-10-03T02:27:51Z">
+        <test-method status="FAIL" signature="checkHome(java.lang.String, java.lang.String)[pri:0, instance:Test.Initiate@7ed7259e]" name="checkHome" duration-ms="206961" started-at="2017-10-31T04:34:34Z" finished-at="2017-10-31T04:38:01Z">
           <params>
             <param index="0">
               <value>
@@ -24,29 +24,25 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[Expected condition failed: waiting for Test.Browser$4@278c5016 (tried for 60 second(s) with 5 MILLISECONDS interval)
+              <![CDATA[org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'WIN-JENKINST81S', ip: '192.168.56.1', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_112'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.a20q69eAcUNR, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=7804.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b]]>
+Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@278c5016 (tried for 60 second(s) with 5 MILLISECONDS interval)
+              <![CDATA[org.openqa.selenium.WebDriverException: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'WIN-JENKINST81S', ip: '192.168.56.1', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_112'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\MADHUS~1\AppData\Local\Temp\2\rust_mozprofile.a20q69eAcUNR, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=55.0.3, platformVersion=6.3, moz:processID=7804.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1103)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1085)
-	at Test.Browser.findTheElement(Browser.java:229)
-	at Test.ADDRESS_BOOK.verifyAddNewPage(ADDRESS_BOOK.java:387)
-	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:67)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:382)
+	at Test.Report.CaptureScreen(Report.java:160)
+	at Test.ADDRESS_BOOK.chk_AccSection(ADDRESS_BOOK.java:223)
+	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:62)
 	at Test.Initiate.chkAddress_Book(Initiate.java:83)
 	at Test.Initiate.checkHome(Initiate.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -62,13 +58,26 @@ Session ID: 63cbd807-04cb-42d6-b9e4-227c2e6f178b
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:178)
+	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:198)
+	at org.apache.http.impl.io.ContentLengthInputStream.close(ContentLengthInputStream.java:101)
+	at org.apache.http.impl.execchain.ResponseEntityProxy.streamClosed(ResponseEntityProxy.java:143)
+	at org.apache.http.conn.EofSensorInputStream.checkClose(EofSensorInputStream.java:228)
+	at org.apache.http.conn.EofSensorInputStream.close(EofSensorInputStream.java:172)
+	at org.apache.http.util.EntityUtils.consume(EntityUtils.java:88)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.createResponse(ApacheHttpClient.java:108)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:91)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	... 21 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkHome -->
-        <test-method status="PASS" signature="publishReport()[pri:0, instance:Test.Initiate@5bcab519]" name="publishReport" is-config="true" duration-ms="1570" started-at="2017-10-03T02:27:51Z" finished-at="2017-10-03T02:27:53Z">
+        <test-method status="PASS" signature="publishReport()[pri:0, instance:Test.Initiate@7ed7259e]" name="publishReport" is-config="true" duration-ms="911" started-at="2017-10-31T04:38:01Z" finished-at="2017-10-31T04:38:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- publishReport -->
