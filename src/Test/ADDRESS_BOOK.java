@@ -682,7 +682,7 @@ public class ADDRESS_BOOK extends Browser
 	  Thread.sleep(3000);
 	  Screen s = new Screen();
 	  Pattern img=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\AddAddress_CC.png");
-	  //Thread.sleep(2000);
+	  Thread.sleep(2000);
 	  s.click(img);
 	  //click("xpath=//*[@id='WC_AjaxAddressBookForm_links_1']");
 	  Thread.sleep(8000);

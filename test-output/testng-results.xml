@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="RC Suite" duration-ms="208328" started-at="2017-10-31T09:34:34Z" finished-at="2017-10-31T09:38:02Z">
+  <suite name="RC Suite" duration-ms="379864" started-at="2017-11-01T05:53:21Z" finished-at="2017-11-01T05:59:41Z">
     <groups>
     </groups>
-    <test name="RC Test" duration-ms="208328" started-at="2017-10-31T09:34:34Z" finished-at="2017-10-31T09:38:02Z">
+    <test name="RC Test" duration-ms="379864" started-at="2017-11-01T05:53:21Z" finished-at="2017-11-01T05:59:41Z">
       <class name="Test.Initiate">
-        <test-method status="PASS" signature="Ini()[pri:0, instance:Test.Initiate@7ed7259e]" name="Ini" is-config="true" duration-ms="409" started-at="2017-10-31T04:34:34Z" finished-at="2017-10-31T04:34:34Z">
+        <test-method status="PASS" signature="Ini()[pri:0, instance:Test.Initiate@5bcab519]" name="Ini" is-config="true" duration-ms="356" started-at="2017-11-01T00:53:21Z" finished-at="2017-11-01T00:53:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Ini -->
-        <test-method status="FAIL" signature="checkHome(java.lang.String, java.lang.String)[pri:0, instance:Test.Initiate@7ed7259e]" name="checkHome" duration-ms="206961" started-at="2017-10-31T04:34:34Z" finished-at="2017-10-31T04:38:01Z">
+        <test-method status="FAIL" signature="checkHome(java.lang.String, java.lang.String)[pri:0, instance:Test.Initiate@5bcab519]" name="checkHome" duration-ms="378228" started-at="2017-11-01T00:53:22Z" finished-at="2017-11-01T00:59:40Z">
           <params>
             <param index="0">
               <value>
@@ -24,25 +24,23 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
+          <exception class="org.sikuli.script.FindFailed">
             <message>
-              <![CDATA[org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'WIN-JENKINST81S', ip: '192.168.56.1', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_112'
-Driver info: driver.version: RemoteWebDriver]]>
+              <![CDATA[can not find P(C:/CI_CD_CT/Sikuli/Images/AddAddress_CC.png) S: 0.7 in S(0)[0,0 1366x768]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'WIN-JENKINST81S', ip: '192.168.56.1', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_112'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:382)
-	at Test.Report.CaptureScreen(Report.java:160)
-	at Test.ADDRESS_BOOK.chk_AccSection(ADDRESS_BOOK.java:223)
-	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:62)
+              <![CDATA[FindFailed: can not find P(C:/CI_CD_CT/Sikuli/Images/AddAddress_CC.png) S: 0.7 in S(0)[0,0 1366x768]
+  Line 2189, in file Region.java
+
+	at org.sikuli.script.Region.handleFindFailedShowDialog(Region.java:2189)
+	at org.sikuli.script.Region.handleFindFailed(Region.java:2134)
+	at org.sikuli.script.Region.wait(Region.java:2546)
+	at org.sikuli.script.Region.find(Region.java:2205)
+	at org.sikuli.script.Region.getLocationFromTarget(Region.java:3067)
+	at org.sikuli.script.Region.click(Region.java:3534)
+	at org.sikuli.script.Region.click(Region.java:3519)
+	at Test.ADDRESS_BOOK.Add_Address(ADDRESS_BOOK.java:686)
+	at Test.ADDRESS_BOOK.executeAllTest(ADDRESS_BOOK.java:69)
 	at Test.Initiate.chkAddress_Book(Initiate.java:83)
 	at Test.Initiate.checkHome(Initiate.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -58,26 +56,13 @@ Driver info: driver.version: RemoteWebDriver
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.http.ConnectionClosedException: Premature end of Content-Length delimited message body (expected: 134424; received: 32024
-	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:178)
-	at org.apache.http.impl.io.ContentLengthInputStream.read(ContentLengthInputStream.java:198)
-	at org.apache.http.impl.io.ContentLengthInputStream.close(ContentLengthInputStream.java:101)
-	at org.apache.http.impl.execchain.ResponseEntityProxy.streamClosed(ResponseEntityProxy.java:143)
-	at org.apache.http.conn.EofSensorInputStream.checkClose(EofSensorInputStream.java:228)
-	at org.apache.http.conn.EofSensorInputStream.close(EofSensorInputStream.java:172)
-	at org.apache.http.util.EntityUtils.consume(EntityUtils.java:88)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.createResponse(ApacheHttpClient.java:108)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:91)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	... 21 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.sikuli.script.FindFailed -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkHome -->
-        <test-method status="PASS" signature="publishReport()[pri:0, instance:Test.Initiate@7ed7259e]" name="publishReport" is-config="true" duration-ms="911" started-at="2017-10-31T04:38:01Z" finished-at="2017-10-31T04:38:02Z">
+        <test-method status="PASS" signature="publishReport()[pri:0, instance:Test.Initiate@5bcab519]" name="publishReport" is-config="true" duration-ms="1237" started-at="2017-11-01T00:59:40Z" finished-at="2017-11-01T00:59:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- publishReport -->

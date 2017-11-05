@@ -40,9 +40,7 @@ public class BrowserFactory {
 	static ExtentTest test;
 //	static WebDriver driver;
 	public static WebDriver browser = null;
-	final static String BS_USERNAME = "swathin1";
-	final static String BS_AUTOMATE_KEY = "sgw2vEWegpwtM6txvfSr";
-	final static String BrowserStackURL = null;
+	
 	
 	public static WebDriver getBrowser(String browserName,String url) {
 		if (browser == null) {
