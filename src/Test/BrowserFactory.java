@@ -156,7 +156,7 @@ public class BrowserFactory {
 		remoteDriver = new ChromeDriver(capabilities);
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setAcceptInsecureCerts(true);
-		 	browser  = new FirefoxDriver(dc);	
+		 	browser  = new ChromeDriver(dc);	
 		    Browser br = new Browser();
 		    br.go(url);
 		return remoteDriver;
