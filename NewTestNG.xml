@@ -11,7 +11,7 @@
     <parameter name="browser" value="sample browser"/>
     <parameter name="url" value="sample url" />
   
-  <!-- DA-2 Move ahead in JIRA workflow next state to Review state to next transition-->
+  <!-- DA-2 MOVE aHEAD FOR NEXT TRANSITION-->
   <!--   <parameter name="browser" value="FF"/>  
    <parameter name="url" value="https://qalive.circuitcity.com/ " /> -->
     <!-- <parameter name="url" value="172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/" />-->
