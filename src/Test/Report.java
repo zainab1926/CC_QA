@@ -119,6 +119,7 @@ public class Report {
 		test.fail("ScreenShot", MediaEntityBuilder.createScreenCaptureFromPath(path).build());
 		return test;
 		
+		
 	}
 	
 	public static ExtentTest Category(String Category)throws Exception
