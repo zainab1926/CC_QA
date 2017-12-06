@@ -14,7 +14,7 @@
   
   <!-- DA-3 InProgress to Dev Started  - CI_CD_CT :DA-3-->
   
-   <!-- DA-15 Creating New Issue in Jira via Jenkins  - CI_CD_CT :DA-15-->
+   <!-- DA-15 Jinkins Jira Issue Creation  - CI_CD_CT :DA-15-->
   
   <!--   <parameter name="browser" value="FF"/>  
    <parameter name="url" value="https://qalive.circuitcity.com/ " /> -->
