@@ -12,7 +12,7 @@
     <parameter name="url" value="sample url" />
   
   
-  <!-- DA-3 PUSHING JIRA STATUS TO NEXT FOR DA-3 ISSUE - CI_CD_CT :DA-3-->
+  <!-- DA-3 Changing for testing JIRA Status  DA-3 ISSUE - CI_CD_CT :DA-3-->
   
   
   <!--   <parameter name="browser" value="FF"/>  
