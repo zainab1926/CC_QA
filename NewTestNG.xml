@@ -12,13 +12,10 @@
     <parameter name="url" value="sample url" />
   
   
-<<<<<<< HEAD
-  <!-- DEV COMPLETE TO PUSH TO REVIEW --> 
-=======
+ <!--CHECKING AS REVIEWER-->
   <!-- From ToDo to Dev Started for DA-23 -->  
    <!-- DA-23 CREATING PULL REQUEST AGAIN CREATE A PULL REQUEST- CI_CD_CT :DA-23-->
->>>>>>> branch 'master' of https://RC_MaheshNVS@bitbucket.org/RC_MaheshNVS/test.git
-  
+ 
   <!--<parameter name="browser" value="FF"/>  
    <parameter name="url" value="https://qalive.circuitcity.com/ " /> -->
     <!-- <parameter name="url" value="172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/" />-->
