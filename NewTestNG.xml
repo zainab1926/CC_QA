@@ -12,8 +12,8 @@
     <parameter name="url" value="sample url" />
   
   
-  <!-- From ToDo to Dev Started for DA-24 -->  
-   <!-- DA-24 CREATE A PULL REQUEST- CI_CD_CT :DA-24-->
+  <!-- From ToDo to Dev Started for DA-23 -->  
+   <!-- DA-23 CREATE A PULL REQUEST- CI_CD_CT :DA-23-->
   
   <!--<parameter name="browser" value="FF"/>  
    <parameter name="url" value="https://qalive.circuitcity.com/ " /> -->
