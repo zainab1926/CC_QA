@@ -12,9 +12,7 @@
     <parameter name="url" value="sample url" />
   
   
- <!--CHECKING AS REVIEWER-->
-  <!-- From ToDo to Dev Started for DA-20-->  
-   <!-- DA-20 AGAIN CREATING PULL REQUEST AGAIN FOR DA-20- CI_CD_CT :DA-20-->
+ <!--DA-20 PULL AND MERGE-->
  	
  
   <!--<parameter name="browser" value="FF"/>  
