@@ -12,9 +12,8 @@
     <parameter name="url" value="sample url" />
   
   
-  <!-- DA-3 InProgress to Dev Started  - CI_CD_CT :DA-3-->
-  
-   <!-- DA-26 Developer trying to pull from jira again 27 for testing- CI_CD_CT :DA-26-->
+  <!-- From ToDo to Dev Started for DA-26 -->  
+   <!-- DA-26 Developer trying to pull from jira again 26 for testing- CI_CD_CT :DA-26-->
   
   <!--<parameter name="browser" value="FF"/>  
    <parameter name="url" value="https://qalive.circuitcity.com/ " /> -->
