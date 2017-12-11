@@ -32,7 +32,7 @@ public class Registration extends Browser
 		InvalidPassword();
 		Invalid_Cnfm_Pwd();
 		Reg_Success();
-		verifyEmailid();
+		//verifyEmailid();
 	}
 	 
 //	public  void chk_Login() throws Exception
