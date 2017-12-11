@@ -56,10 +56,10 @@ public class Initiate {
 		//test.log(Status.PASS,"Browser Opened As Expected");
 		//br.captureScreenShot("HomePage");
 		checkRegistration();
-		chkAddress_Book();
-		Thread.sleep(3000);
-		chkPersonalInfo();
-		chkSearch();
+//		chkAddress_Book();
+//		Thread.sleep(3000);
+//		chkPersonalInfo();
+//		chkSearch();
 		//skipTest();
 		//checkFail();
 //		extent.flush();

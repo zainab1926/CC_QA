@@ -16,7 +16,7 @@
   
    <!-- DA-15 Reviewer trying to pull from jira- CI_CD_CT :DA-15-->
   
-  <!--   <parameter name="browser" value="FF"/>  
+  <!--<parameter name="browser" value="FF"/>  
    <parameter name="url" value="https://qalive.circuitcity.com/ " /> -->
     <!-- <parameter name="url" value="172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/" />-->
     <test name="RC Test" verbose="2">
