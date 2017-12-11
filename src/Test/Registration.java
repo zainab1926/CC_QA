@@ -32,7 +32,7 @@ public class Registration extends Browser
 		InvalidPassword();
 		Invalid_Cnfm_Pwd();
 		Reg_Success();
-		verifyEmailid();//Review Complete sending to QA
+		verifyEmailid();//Review Complete sending to QA - second level of regression for testing
 	}
 	 
 //	public  void chk_Login() throws Exception
