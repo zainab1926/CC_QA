@@ -32,6 +32,7 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+				<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
@@ -45,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Dec 11, 2017 08:04:26 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Dec 11, 2017 01:56:18 PM</span>
 				</a>
 			</li>
 			<li>
@@ -71,6 +72,9 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='error'><a href='#!'>Error <i class='material-icons red-text lighten-2'>error</i></a></li>
+						<li status='warning'><a href='#!'>Warning <i class='material-icons orange-text'>warning</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -84,6 +88,11 @@
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>CIRCUIT_CITY:Regression</a></li>
+					<li><a href='#'>CC_Registration_ValidationFields</a></li>
+					<li><a href='#'>CC_Registration-InvalidName</a></li>
+					<li><a href='#'>CC_Registration-InvalidEmailId</a></li>
+					<li><a href='#'>CC_Registration-InvalidPassword</a></li>
+					<li><a href='#'>CC_Registration-InvalidConfirmPassword</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -131,10 +140,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='8.696%'><span class='strong'>2</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='65.217%'>15</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='26.087%'>6</span> others
 				</div>
 			</div>
 		</div>
@@ -146,10 +155,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='15.625%'><span class='strong'>15</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='31.25%'>30</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='53.125%'>51</span> others
 				</div>
 			</div>
 		</div>
@@ -167,14 +176,14 @@
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>CIRCUIT CITY</span>
-						<span class='test-time'>Dec 11, 2017 08:04:27 AM</span>
+						<span class='test-time'>Dec 11, 2017 01:56:18 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Dec 11, 2017 08:04:27 AM</span>
-	<span class='label end-time'>Dec 11, 2017 08:04:39 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+719ms</span>
+	<span class='label start-time'>Dec 11, 2017 01:56:18 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:56:54 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 35s+692ms</span>
 </div>
 	<div class='test-desc'>Verify HomePage </div>
 	<div class='test-attributes'>
@@ -195,12 +204,12 @@
 			<tbody>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>8:04:39 AM</td>
+					<td class='timestamp'>1:56:54 PM</td>
 					<td class='step-details'>Browser that is passed as parameter from Jenkins is :FF</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>8:04:39 AM</td>
+					<td class='timestamp'>1:56:54 PM</td>
 					<td class='step-details'>URL that is passed as parameter from Jenkins is :https://qalive.circuitcity.com/</td>
 				</tr>
 			</tbody>
@@ -213,14 +222,14 @@
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
 					<div class='test-heading'>
 						<span class='test-name'>Checking Application Title - HomePage</span>
-						<span class='test-time'>Dec 11, 2017 08:04:39 AM</span>
+						<span class='test-time'>Dec 11, 2017 01:56:54 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Dec 11, 2017 08:04:39 AM</span>
-	<span class='label end-time'>Dec 11, 2017 08:04:39 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+29ms</span>
+	<span class='label start-time'>Dec 11, 2017 01:56:54 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:56:54 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+13ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -234,8 +243,1247 @@
 			<tbody>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>8:04:39 AM</td>
-					<td class='step-details'>Application Title :500 Internal Server Error is Matching</td>
+					<td class='timestamp'>1:56:54 PM</td>
+					<td class='step-details'>Application Title :Welcome to CircuitCityB2C is Matching</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  error' status='error' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Field Validation</span>
+						<span class='test-time'>Dec 11, 2017 01:57:02 PM</span>
+						<span class='test-status right error'>error</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:57:02 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:57:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+10ms</span>
+</div>
+	<div class='test-desc'>Error Message :Create Account Displayed - For Field Validation </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration_ValidationFields</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Mahesh</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:02 PM</td>
+					<td class='step-details'>Error Message :Create Account Displayed - For Field Validation</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:03 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage1.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage1.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage1.png'></td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:57:03 PM</td>
+					<td class='step-details'>CC_Registration_Validation Fields</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  error' status='error' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Field Validation</span>
+						<span class='test-time'>Dec 11, 2017 01:57:03 PM</span>
+						<span class='test-status right error'>error</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:57:03 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:57:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+637ms</span>
+</div>
+	<div class='test-desc'>Error Message :Confirm Password Displayed - For Field Validation </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration_ValidationFields</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Mahesh</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:03 PM</td>
+					<td class='step-details'>Error Message :Confirm Password Displayed - For Field Validation</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:03 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage2.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage2.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage2.png'></td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:57:03 PM</td>
+					<td class='step-details'>CC_Registration_Validation Fields</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  error' status='error' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Field Validation</span>
+						<span class='test-time'>Dec 11, 2017 01:57:04 PM</span>
+						<span class='test-status right error'>error</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:57:04 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:57:04 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+234ms</span>
+</div>
+	<div class='test-desc'>Error Message :First Name Displayed - For Field Validation </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration_ValidationFields</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Mahesh</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:04 PM</td>
+					<td class='step-details'>Error Message :First Name Displayed - For Field Validation</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:04 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage3.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage3.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage3.png'></td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:57:04 PM</td>
+					<td class='step-details'>CC_Registration_Validation Fields</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  error' status='error' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Field Validation</span>
+						<span class='test-time'>Dec 11, 2017 01:57:04 PM</span>
+						<span class='test-status right error'>error</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:57:04 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:57:04 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+285ms</span>
+</div>
+	<div class='test-desc'>Error Message :Email id Displayed - For Field Validation </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration_ValidationFields</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Mahesh</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:04 PM</td>
+					<td class='step-details'>Error Message :Email id Displayed - For Field Validation</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:04 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage4.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage4.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage4.png'></td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:57:04 PM</td>
+					<td class='step-details'>CC_Registration_Validation Fields</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  error' status='error' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Field Validation</span>
+						<span class='test-time'>Dec 11, 2017 01:57:04 PM</span>
+						<span class='test-status right error'>error</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:57:04 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:57:04 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+88ms</span>
+</div>
+	<div class='test-desc'>Error Message :Last Name Displayed - For Field Validation </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration_ValidationFields</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Mahesh</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:04 PM</td>
+					<td class='step-details'>Error Message :Last Name Displayed - For Field Validation</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:04 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage5.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage5.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage5.png'></td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:57:04 PM</td>
+					<td class='step-details'>CC_Registration_Validation Fields</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  error' status='error' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Field Validation</span>
+						<span class='test-time'>Dec 11, 2017 01:57:05 PM</span>
+						<span class='test-status right error'>error</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:57:05 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:57:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+105ms</span>
+</div>
+	<div class='test-desc'>Error Message :Password Displayed - For Field Validation </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration_ValidationFields</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Mahesh</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:05 PM</td>
+					<td class='step-details'>Error Message :Password Displayed - For Field Validation</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:05 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage6.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage6.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\ValidMessage6.png'></td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:57:05 PM</td>
+					<td class='step-details'>CC_Registration_Validation Fields</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Name</span>
+						<span class='test-time'>Dec 11, 2017 01:57:47 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:57:47 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:57:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+159ms</span>
+</div>
+	<div class='test-desc'>Message Error: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Name </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidName</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:57:47 PM</td>
+					<td class='step-details'>Expected Message  Invalid nameNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:57:47 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:57:47 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:57:47 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:57:53 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage7.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage7.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage7.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Name</span>
+						<span class='test-time'>Dec 11, 2017 01:57:54 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:57:54 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:58:00 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+142ms</span>
+</div>
+	<div class='test-desc'>Message Error: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Name </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidName</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:57:54 PM</td>
+					<td class='step-details'>Expected Message  Invalid nameNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:57:54 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:57:54 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:57:54 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:00 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage8.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage8.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage8.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Name</span>
+						<span class='test-time'>Dec 11, 2017 01:58:00 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:58:00 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:58:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+111ms</span>
+</div>
+	<div class='test-desc'>Message Error: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Name </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidName</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:00 PM</td>
+					<td class='step-details'>Expected Message  Invalid nameNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:00 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:58:00 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:58:00 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:06 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage9.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage9.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage9.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Name</span>
+						<span class='test-time'>Dec 11, 2017 01:58:07 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:58:07 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:58:13 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+133ms</span>
+</div>
+	<div class='test-desc'>Message Error: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Name </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidName</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:07 PM</td>
+					<td class='step-details'>Expected Message  Invalid nameNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:07 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:58:07 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:58:07 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:13 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage10.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage10.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage10.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Name</span>
+						<span class='test-time'>Dec 11, 2017 01:58:14 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:58:14 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:58:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+138ms</span>
+</div>
+	<div class='test-desc'>Message Error: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Name </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidName</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:14 PM</td>
+					<td class='step-details'>Expected Message  Invalid nameNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:14 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:58:14 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:58:14 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:20 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage11.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage11.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage11.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Name</span>
+						<span class='test-time'>Dec 11, 2017 01:58:20 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:58:20 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:58:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+191ms</span>
+</div>
+	<div class='test-desc'>Message Error: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Name </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidName</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:20 PM</td>
+					<td class='step-details'>Expected Message  Invalid nameNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:20 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:58:20 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:58:20 PM</td>
+					<td class='step-details'>MessageInvalid name NOT Displayed- For Invalid Name</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:27 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage12.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage12.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage12.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Email Id</span>
+						<span class='test-time'>Dec 11, 2017 01:58:37 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:58:37 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:58:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+82ms</span>
+</div>
+	<div class='test-desc'>MessageError: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Email Id </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidEmailId</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:37 PM</td>
+					<td class='step-details'>Expected Message Invalid Email IdNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:37 PM</td>
+					<td class='step-details'>Message Invalid Email Id NOT Displayed- For Invalid Email Id</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:58:37 PM</td>
+					<td class='step-details'>Message Invalid Email Id NOT Displayed- For Invalid Email Id</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:58:37 PM</td>
+					<td class='step-details'>Message Invalid Email Id NOT Displayed- For Invalid Email Id</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:37 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage13.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage13.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage13.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Email Id</span>
+						<span class='test-time'>Dec 11, 2017 01:58:38 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:58:38 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:58:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+89ms</span>
+</div>
+	<div class='test-desc'>MessageError: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Email Id </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidEmailId</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:38 PM</td>
+					<td class='step-details'>Expected Message Invalid Email IdNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:38 PM</td>
+					<td class='step-details'>Message Invalid Email Id NOT Displayed- For Invalid Email Id</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:58:38 PM</td>
+					<td class='step-details'>Message Invalid Email Id NOT Displayed- For Invalid Email Id</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:58:38 PM</td>
+					<td class='step-details'>Message Invalid Email Id NOT Displayed- For Invalid Email Id</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:38 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage14.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage14.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage14.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Email Id</span>
+						<span class='test-time'>Dec 11, 2017 01:58:39 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:58:39 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:58:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+164ms</span>
+</div>
+	<div class='test-desc'>MessageError: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Email Id </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidEmailId</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:39 PM</td>
+					<td class='step-details'>Expected Message Invalid Email IdNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:39 PM</td>
+					<td class='step-details'>Message Invalid Email Id NOT Displayed- For Invalid Email Id</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:58:39 PM</td>
+					<td class='step-details'>Message Invalid Email Id NOT Displayed- For Invalid Email Id</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:58:39 PM</td>
+					<td class='step-details'>Message Invalid Email Id NOT Displayed- For Invalid Email Id</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:39 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage15.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage15.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage15.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Password</span>
+						<span class='test-time'>Dec 11, 2017 01:59:03 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:59:03 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:59:04 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+326ms</span>
+</div>
+	<div class='test-desc'>MessageError: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Password </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidPassword</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:03 PM</td>
+					<td class='step-details'>Expected Message Invalid PasswordNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:03 PM</td>
+					<td class='step-details'>Message Invalid Password NOT Displayed- For Invalid Password</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:59:03 PM</td>
+					<td class='step-details'>Message Invalid Password NOT Displayed- For Invalid Password</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:59:03 PM</td>
+					<td class='step-details'>Message Invalid Password NOT Displayed- For Invalid Password</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:04 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage16.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage16.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage16.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Password</span>
+						<span class='test-time'>Dec 11, 2017 01:59:06 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:59:06 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:59:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+871ms</span>
+</div>
+	<div class='test-desc'>MessageError: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Password </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidPassword</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:06 PM</td>
+					<td class='step-details'>Expected Message Invalid PasswordNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:06 PM</td>
+					<td class='step-details'>Message Invalid Password NOT Displayed- For Invalid Password</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:59:06 PM</td>
+					<td class='step-details'>Message Invalid Password NOT Displayed- For Invalid Password</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:59:06 PM</td>
+					<td class='step-details'>Message Invalid Password NOT Displayed- For Invalid Password</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:07 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage17.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage17.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage17.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Password</span>
+						<span class='test-time'>Dec 11, 2017 01:59:09 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:59:09 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:59:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+173ms</span>
+</div>
+	<div class='test-desc'>MessageError: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid Password </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidPassword</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:09 PM</td>
+					<td class='step-details'>Expected Message Invalid PasswordNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:09 PM</td>
+					<td class='step-details'>Message Invalid Password NOT Displayed- For Invalid Password</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:59:09 PM</td>
+					<td class='step-details'>Message Invalid Password NOT Displayed- For Invalid Password</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:59:09 PM</td>
+					<td class='step-details'>Message Invalid Password NOT Displayed- For Invalid Password</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:10 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage18.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage18.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage18.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Confirm Password</span>
+						<span class='test-time'>Dec 11, 2017 01:59:26 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:59:26 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:59:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+111ms</span>
+</div>
+	<div class='test-desc'>Message Error: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid  Confirm Password </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidConfirmPassword</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:26 PM</td>
+					<td class='step-details'>Expected Message Invalid confirm passwordNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:26 PM</td>
+					<td class='step-details'>Message Invalid confirm password NOT Displayed- For Invalid Confirm Password</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:59:26 PM</td>
+					<td class='step-details'>Message Invalid confirm password NOT Displayed- For Invalid Confirm Password</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:59:26 PM</td>
+					<td class='step-details'>Message Invalid confirm password NOT Displayed- For Invalid Confirm Password</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:26 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage19.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage19.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage19.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Confirm Password</span>
+						<span class='test-time'>Dec 11, 2017 01:59:27 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:59:27 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:59:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+209ms</span>
+</div>
+	<div class='test-desc'>Message Error: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid  Confirm Password </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidConfirmPassword</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:27 PM</td>
+					<td class='step-details'>Expected Message Invalid confirm passwordNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:27 PM</td>
+					<td class='step-details'>Message Invalid confirm password NOT Displayed- For Invalid Confirm Password</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:59:27 PM</td>
+					<td class='step-details'>Message Invalid confirm password NOT Displayed- For Invalid Confirm Password</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:59:27 PM</td>
+					<td class='step-details'>Message Invalid confirm password NOT Displayed- For Invalid Confirm Password</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:27 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage20.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage20.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage20.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>CC-Registration-Invalid Confirm Password</span>
+						<span class='test-time'>Dec 11, 2017 01:59:27 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 11, 2017 01:59:27 PM</span>
+	<span class='label end-time'>Dec 11, 2017 01:59:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+129ms</span>
+</div>
+	<div class='test-desc'>Message Error: The logon ID you entered already exists. Type a different logon ID and try again. Displayed- For Invalid  Confirm Password </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>CIRCUIT_CITY:Regression</span>
+				<span class='category label white-text'>CC_Registration-InvalidConfirmPassword</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:27 PM</td>
+					<td class='step-details'>Expected Message Invalid confirm passwordNot Matching with Error: The logon ID you entered already exists. Type a different logon ID and try again.Message</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:27 PM</td>
+					<td class='step-details'>Message Invalid confirm password NOT Displayed- For Invalid Confirm Password</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>1:59:27 PM</td>
+					<td class='step-details'>Message Invalid confirm password NOT Displayed- For Invalid Confirm Password</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>1:59:27 PM</td>
+					<td class='step-details'>Message Invalid confirm password NOT Displayed- For Invalid Confirm Password</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:59:28 PM</td>
+					<td class='step-details'>ScreenShot<img data-featherlight='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage21.png' width='10%' src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage21.png' data-src='C:\Users\madhusudhan\workspace\CC\Screenshots\InvalidMessage21.png'></td>
 				</tr>
 			</tbody>
 		</table>
@@ -297,12 +1545,212 @@
 						<span class='category-name'>CIRCUIT_CITY:Regression</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
+							<span class='label fail'>15</span>
+							<span class='label others'>6</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
 							<span class='label green accent-4 white-text'>Passed: 1</span>
+							<span class='label red lighten-1 white-text'>Failed: 15</span>
+							<span class='label yellow darken-2 white-text'>Others: 6</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 11, 2017 01:56:18 PM</td>
+										<td class='linked' test-id='1'>CIRCUIT CITY</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:02 PM</td>
+										<td class='linked' test-id='3'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:03 PM</td>
+										<td class='linked' test-id='4'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:04 PM</td>
+										<td class='linked' test-id='5'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:04 PM</td>
+										<td class='linked' test-id='6'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:04 PM</td>
+										<td class='linked' test-id='7'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:05 PM</td>
+										<td class='linked' test-id='8'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:47 PM</td>
+										<td class='linked' test-id='9'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:54 PM</td>
+										<td class='linked' test-id='10'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:00 PM</td>
+										<td class='linked' test-id='11'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:07 PM</td>
+										<td class='linked' test-id='12'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:14 PM</td>
+										<td class='linked' test-id='13'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:20 PM</td>
+										<td class='linked' test-id='14'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:37 PM</td>
+										<td class='linked' test-id='15'>CC-Registration-Invalid Email Id</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:38 PM</td>
+										<td class='linked' test-id='16'>CC-Registration-Invalid Email Id</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:39 PM</td>
+										<td class='linked' test-id='17'>CC-Registration-Invalid Email Id</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:03 PM</td>
+										<td class='linked' test-id='18'>CC-Registration-Invalid Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:06 PM</td>
+										<td class='linked' test-id='19'>CC-Registration-Invalid Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:09 PM</td>
+										<td class='linked' test-id='20'>CC-Registration-Invalid Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:26 PM</td>
+										<td class='linked' test-id='21'>CC-Registration-Invalid Confirm Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:27 PM</td>
+										<td class='linked' test-id='22'>CC-Registration-Invalid Confirm Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:27 PM</td>
+										<td class='linked' test-id='23'>CC-Registration-Invalid Confirm Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>CC_Registration_ValidationFields</span>
+						<span class='category-status right'>
+							<span class='label others'>6</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
 							
+							
+							<span class='label yellow darken-2 white-text'>Others: 6</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 11, 2017 01:57:02 PM</td>
+										<td class='linked' test-id='3'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:03 PM</td>
+										<td class='linked' test-id='4'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:04 PM</td>
+										<td class='linked' test-id='5'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:04 PM</td>
+										<td class='linked' test-id='6'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:04 PM</td>
+										<td class='linked' test-id='7'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:05 PM</td>
+										<td class='linked' test-id='8'>CC-Registration-Field Validation</td>
+										<td><span class='test-status error'>error</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>CC_Registration-InvalidName</span>
+						<span class='category-status right'>
+							<span class='label fail'>6</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 6</span>
 							
 						</div>
 					
@@ -317,9 +1765,166 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Dec 11, 2017 08:04:27 AM</td>
-										<td class='linked' test-id='1'>CIRCUIT CITY</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>Dec 11, 2017 01:57:47 PM</td>
+										<td class='linked' test-id='9'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:57:54 PM</td>
+										<td class='linked' test-id='10'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:00 PM</td>
+										<td class='linked' test-id='11'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:07 PM</td>
+										<td class='linked' test-id='12'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:14 PM</td>
+										<td class='linked' test-id='13'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:20 PM</td>
+										<td class='linked' test-id='14'>CC-Registration-Invalid Name</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>CC_Registration-InvalidEmailId</span>
+						<span class='category-status right'>
+							<span class='label fail'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 3</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 11, 2017 01:58:37 PM</td>
+										<td class='linked' test-id='15'>CC-Registration-Invalid Email Id</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:38 PM</td>
+										<td class='linked' test-id='16'>CC-Registration-Invalid Email Id</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:58:39 PM</td>
+										<td class='linked' test-id='17'>CC-Registration-Invalid Email Id</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>CC_Registration-InvalidPassword</span>
+						<span class='category-status right'>
+							<span class='label fail'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 3</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 11, 2017 01:59:03 PM</td>
+										<td class='linked' test-id='18'>CC-Registration-Invalid Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:06 PM</td>
+										<td class='linked' test-id='19'>CC-Registration-Invalid Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:09 PM</td>
+										<td class='linked' test-id='20'>CC-Registration-Invalid Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>CC_Registration-InvalidConfirmPassword</span>
+						<span class='category-status right'>
+							<span class='label fail'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 3</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 11, 2017 01:59:26 PM</td>
+										<td class='linked' test-id='21'>CC-Registration-Invalid Confirm Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:27 PM</td>
+										<td class='linked' test-id='22'>CC-Registration-Invalid Confirm Password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 11, 2017 01:59:27 PM</td>
+										<td class='linked' test-id='23'>CC-Registration-Invalid Confirm Password</td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -338,6 +1943,100 @@
 	</div>
 </div>
 <!-- category view -->
+<div id='author-view' class='view hide'>
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Authors' title='Search Authors'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Authors...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Authors</h5>
+                <ul id='author-collection' class='author-collection'>
+
+                        <li class='author displayed active'>
+                            <div class='author-heading'>
+                                <span class='author-name'>Mahesh</span>
+                                <span class='author-status right'>
+                                        <span class='label others'>6</span>
+						        </span>
+                            </div>
+                            <div class='author-content hide'>
+                                <div class='author-status-counts'>
+                                    
+                                    
+                                    <span class='label yellow darken-2 white-text'>Others: 6</span>
+                                </div>
+
+                                <div class='author-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Dec 11, 2017 01:57:02 PM</td>
+                                                <td class='linked' test-id='3'>CC-Registration-Field Validation</td>
+                                                <td><span class='test-status error'>error</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dec 11, 2017 01:57:03 PM</td>
+                                                <td class='linked' test-id='4'>CC-Registration-Field Validation</td>
+                                                <td><span class='test-status error'>error</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dec 11, 2017 01:57:04 PM</td>
+                                                <td class='linked' test-id='5'>CC-Registration-Field Validation</td>
+                                                <td><span class='test-status error'>error</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dec 11, 2017 01:57:04 PM</td>
+                                                <td class='linked' test-id='6'>CC-Registration-Field Validation</td>
+                                                <td><span class='test-status error'>error</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dec 11, 2017 01:57:04 PM</td>
+                                                <td class='linked' test-id='7'>CC-Registration-Field Validation</td>
+                                                <td><span class='test-status error'>error</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dec 11, 2017 01:57:05 PM</td>
+                                                <td class='linked' test-id='8'>CC-Registration-Field Validation</td>
+                                                <td><span class='test-status error'>error</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='author-name'></h5>
+        </div>
+    </div>
+</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -347,31 +2046,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>23</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>96</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Dec 11, 2017 08:04:26 AM</div>
+					<div class='panel-lead'>Dec 11, 2017 01:56:18 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Dec 11, 2017 08:04:50 AM</div>
+			 		<div class='panel-lead'>Dec 11, 2017 02:00:42 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>23,591ms</div>
+					<div class='panel-lead'>264,417ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -388,7 +2087,37 @@
 						<tr>
 							<td>CIRCUIT_CITY:Regression</td>
 							<td>1</td>
+							<td>15</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>CC_Registration_ValidationFields</td>
 							<td>0</td>
+							<td>0</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>CC_Registration-InvalidName</td>
+							<td>0</td>
+							<td>6</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>CC_Registration-InvalidEmailId</td>
+							<td>0</td>
+							<td>3</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>CC_Registration-InvalidPassword</td>
+							<td>0</td>
+							<td>3</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>CC_Registration-InvalidConfirmPassword</td>
+							<td>0</td>
+							<td>3</td>
 							<td>0</td>
 						</tr>
 					</table>
@@ -405,21 +2134,21 @@
 		<script>
 			var statusGroup = {
 				passParent: 2,
-				failParent: 0,
+				failParent: 15,
 				fatalParent: 0,
-				errorParent: 0,
+				errorParent: 6,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 21,
 				
-				passChild: 3,
-				failChild: 0,
+				passChild: 15,
+				failChild: 30,
 				fatalChild: 0,
-				errorChild: 0,
-				warningChild: 0,
+				errorChild: 21,
+				warningChild: 15,
 				skipChild: 0,
-				infoChild: 0,
-				exceptionsChild: 0,
+				infoChild: 15,
+				exceptionsChild: 66,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,
