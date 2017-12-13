@@ -12,12 +12,7 @@
     <parameter name="url" value="sample url" />
   
   
-<<<<<<< HEAD
- <!--DA-31 dev completed and uploading latest code into REP-->
-=======
- <!--DA-31 PULL AND MERGE NOW SENDING TO QA - COMMITING AS TESTER INTO REPOSITORY-->
->>>>>>> branch 'master' of https://RC_MaheshNVS@bitbucket.org/RC_MaheshNVS/test.git
- <!-- Reviewer adding review comments --111-->
+<!-- Making changes for check Jenkins New UI -->
  	
  
   <!--<parameter name="browser" value="FF"/>  
