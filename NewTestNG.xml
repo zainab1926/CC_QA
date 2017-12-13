@@ -12,7 +12,7 @@
     <parameter name="url" value="sample url" />
   
   
-<!-- Making changes for check Jenkins New UI -->
+<!-- Making changes for check Jenkins New UI  - making changes to check New Jenkins UI-->
  	
  
   <!--<parameter name="browser" value="FF"/>  
