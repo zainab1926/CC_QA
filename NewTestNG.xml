@@ -12,7 +12,7 @@
     <parameter name="url" value="sample url" />
   
   
-<!-- DA-34 mAKING CHANGES TO CHECK JENKINS - Create pull request-->
+<!-- DA-34 Making changes as DEVELOPER and commiting-->
  	
  
   <!--<parameter name="browser" value="FF"/>  
