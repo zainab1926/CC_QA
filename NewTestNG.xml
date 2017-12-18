@@ -12,7 +12,7 @@
     <parameter name="url" value="sample url" />
   
   
-<!-- Making changes for check Jenkins New UI  - making changes to check New Jenkins UI-->
+<!-- DA-34 checking workflow again-->
  	
  
   <!--<parameter name="browser" value="FF"/>  
