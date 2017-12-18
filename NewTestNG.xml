@@ -12,7 +12,7 @@
     <parameter name="url" value="sample url" />
   
   
-<!-- DA-34 Making changes as DEVELOPER and commiting-->
+<!-- DA-34 Checking in as Reviewer and sending to QA-->
  	
  
   <!--<parameter name="browser" value="FF"/>  
