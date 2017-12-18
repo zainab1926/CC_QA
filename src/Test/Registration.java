@@ -206,7 +206,7 @@ public class Registration extends Browser
 
 			}
 			
-			sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']", "zainab.fff@royalcyber.com");
+			sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']", "zainab.firdaus@royalcyber.com");
 			click("xpath=//*[@id='WC_UserRegistrationAddForm_links_1']");
 		}
 		
@@ -317,15 +317,15 @@ public class Registration extends Browser
 		
 		//email id
 		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']");
-		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']", "zainab.fff@royalcyber.com");
+		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1']", "zainab.firdaus@royalcyber.com");
 		
 		//password
 		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonPassword_In_Register_1']");
-		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonPassword_In_Register_1']", "zainab123");
+		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonPassword_In_Register_1']", "zainab@1926");
 		
 		//confirm password
 		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonPasswordVerify_In_Register_1']");
-		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonPasswordVerify_In_Register_1']", "zainab123");
+		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_logonPasswordVerify_In_Register_1']", "zainab@1926");
 		
 		//mobile number
 		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']");
@@ -346,12 +346,13 @@ public class Registration extends Browser
 		Thread.sleep(3000);
 		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']/span");
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']");
-		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.fff@royalcyber.com");
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.firdaus@royalcyber.com");
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']");
-		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab123");
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab@1926");
 		
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
-		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a"); //my acc
-
+		Thread.sleep(8000);
+		click("xpath=html/body/div[2]/div[2]/div[2]/div[2]/div[4]/ul/li[3]/div/div/div/div/div/div[2]/div[3]/div[1]/a"); //my acc
+		
  }
 }
