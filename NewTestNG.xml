@@ -8,15 +8,15 @@
     <!-- <parameter name="url" value="http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c" /> -->
     
     
-    <parameter name="browser" value="sample browser"/>
-    <parameter name="url" value="sample url" />
+    <!-- <parameter name="browser" value="sample browser"/>
+    <parameter name="url" value="sample url" /> -->
   
   
-<!-- DA-34 Reopening and sending it to INprogress again-->
+<!-- DA-35 Adding New code as Developer-->
  	
  
-  <!--<parameter name="browser" value="FF"/>  
-   <parameter name="url" value="https://qalive.circuitcity.com/ " /> -->
+  <parameter name="browser" value="FF"/>  
+   <parameter name="url" value="https://qalive.circuitcity.com/ " />
     <!-- <parameter name="url" value="172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/" />-->
     <test name="RC Test" verbose="2">
         <classes>

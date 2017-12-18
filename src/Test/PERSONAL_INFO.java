@@ -51,15 +51,15 @@ public class PERSONAL_INFO extends Browser
 	
 	public void executeAllTestcase()throws Exception
 	{
-//		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']/span");
-//		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']");
-//		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.fff@royalcyber.com");
-//		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']");
-//		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab123");
+		/*click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']/span");
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']");
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.firdaus@royalcyber.com");
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']");
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab@1926");
 		
-//		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
-//		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a");
-		verify_myAcc();
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
+		click("xpath=html/body/div[2]/div[2]/div[2]/div[2]/div[4]/ul/li[3]/div/div/div/div/div/div[2]/div[3]/div[1]/a");*/
+		//verify_myAcc();
 		//verify_edit();
 		verify_displayedInfo();
 		fieldValidation();
@@ -78,9 +78,10 @@ public class PERSONAL_INFO extends Browser
 		 ids.put("Quick Checkout Profile", "WC_MyAccountSidebarDisplayf_links_3");
 		 ids.put("Saved Cards","WC_MyAccountSidebarDisplayf_links_0");
 		 ids.put("Tax Exemption","WC_MyAccountSidebarDisplayf_links_0");
-		 
+		 Thread.sleep(10000);
 		 for(Map.Entry<String, String> id : ids.entrySet() )
-		 {
+		 {  
+			 Thread.sleep(12000);
 			 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
 			 {
 				 //System.out.println(id.getKey() + " is displayed ");
@@ -151,6 +152,7 @@ public class PERSONAL_INFO extends Browser
 	
 	public void verify_displayedInfo()throws Exception
 	{
+		Thread.sleep(5000);
 		click("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_0']");
 		 Map<String,String> ids= new HashMap<String,String>();
 		 ids.put("First Name", "WC_UserRegistrationUpdateForm_NameEntryForm_FormInput_firstName_1");
@@ -212,22 +214,22 @@ public class PERSONAL_INFO extends Browser
 		click("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_address1_1']");//street address
 		sendKeys("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_address1_1']","349 US-1");
 		
-		/*click("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_city_1']");//city
+		click("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_city_1']");//city
 		sendKeys("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_city_1']","Mumbai");
 		
-		click("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_country_1-button']/span[1]");//country
+		/*click("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_country_1-button']/span[1]");//country
 		sendKeys("xpath=//*[@id='WC_UserRegistrationUpdateForm_NameEntryForm_FormInput_firstName_1']","India");
 		
 		
 		click("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_state_1']");//state
-		sendKeys("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_state_1']","WA");
+		sendKeys("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_state_1']","WA");/*
 	
 		
 		click("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_zipCode_1']");//zip code
 		sendKeys("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_zipCode_1']","400057");
 		
-		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_email1_In_Register_1']");//e mail
-		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_email1_In_Register_1']","zzz@gmail.com");
+		/*click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_email1_In_Register_1']");//e mail
+		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_email1_In_Register_1']","zzz@gmail.com");/*
 		
 		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']");//phone no
 		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']","9090900099");
@@ -238,12 +240,16 @@ public class PERSONAL_INFO extends Browser
 		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput__preferredCurrency_In_Register_1-button']/span[1]");//preferred currency
 		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput__preferredCurrency_In_Register_1-button']/span[1]","US Dollar");*/
 		
+		click("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_zipCode_1']");//zip code
+		sendKeys("xpath=//*[@id='WC_UserRegistrationUpdateForm_AddressEntryForm_FormInput_zipCode_1']","400057");
+		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']");//phone no
+		sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']","9090900099");
 		
-		
-		click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_gender_In_Register_1-button']");//gender
+		/*click("xpath=html/body/div[2]/div[3]/div/div[2]/div/div[2]/div/div/div[2]/div/form/div[14]/span/span[1]");//gender
 		Screen s  = new Screen();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		Pattern img=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\Gender_CC.png");
+		Thread.sleep(5000);
 		s.click(img);
 		
 		click("xpath=//*[@id='WC_PersonalInfoExtension_birth_year-button']");//birthday year
@@ -263,7 +269,7 @@ public class PERSONAL_INFO extends Browser
 		Screen scrr  = new Screen();
 		Pattern ima=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\Birthdate_CC.png");
 		Thread.sleep(3000);
-		scrr.click(ima);
+		scrr.click(ima);*/
 		
 		/*click("xpath=//*[@id='WC_PersonalInfoExtension_mobile_div_mobileCountryCode']");*/ //mobile no extension
 		
