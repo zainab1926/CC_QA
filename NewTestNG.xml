@@ -4,23 +4,24 @@
     <listeners>
         <listener class-name="Test.EnvReaderListener"/>
     </listeners>
-    <!-- <parameter name="url" value="http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c" /> -->
-          
-	<!-- DA-37 mAKING CHAGNES AS DEVELPER AND COMMITING-->
     
-    <parameter name="browser" value="sample browser"/>
-    <parameter name="url" value="sample url" /> 
-    <parameter name="module" value="sample module" />
+    <!-- <parameter name="url" value="http://cct-live.qa.coc.ibmcloud.com/webapp/wcs/stores/servlet/en/circuitcityb2c" /> -->
+    
+    
+    <!-- <parameter name="browser" value="sample browser"/>
+    <parameter name="url" value="sample url" /> -->
   
-<!-- da-37 CHECKIGN IN AS DEVELOPER -->
+  
+<!-- DA-37 Adding new comment for statring workflow editning again for testing again-->
+ 	
  
   <parameter name="browser" value="FF"/>  
    <parameter name="url" value="https://qalive.circuitcity.com/ " />
-   <parameter name="module" value="All Modules" />
     <!-- <parameter name="url" value="172.125.38.144/webapp/wcs/stores/servlet/en/circuitcityb2c/" />-->
     <test name="RC Test" verbose="2">
         <classes>
             <class name="Test.Initiate"/>
         </classes>
     </test>
+    
 </suite>
