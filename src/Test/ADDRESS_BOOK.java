@@ -26,7 +26,7 @@ public class ADDRESS_BOOK extends Browser
 	/*public void first()throws Exception
 	{
 		//changing again to check the status of issue -DA-5
-		chkLogin("zzz@gmail.com","zainab123");
+		chkLogin("zzz@gmail.com","zainab@1926");
 		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a"); //my acc
 	}
 	
@@ -49,15 +49,16 @@ public class ADDRESS_BOOK extends Browser
 		//first();
 		//chk_details();
 		//lines added
-		/*  click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']");
+		  click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']");
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']");
-		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.fff@royalcyber.com");
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.firdaus@royalcyber.com");
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']");
-		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab123");
-		
-		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
-		click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown']/div/div/div/div[2]/div[1]/div[2]/a"); //my acc
-	*/
+		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab@1926");
+		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");//sign in
+		//click("xpath=html/body/div[2]/div[1]/div[2]/div[2]/div[4]/ul/li[3]/a[1]");
+		Thread.sleep(6000);
+		click("xpath=html/body/div[2]/div[2]/div[2]/div[2]/div[4]/ul/li[3]/div/div/div/div/div/div[2]/div[3]/div[1]/a"); //my acc
+	
 		 
 		chk_AccSection();
 		chk_Sections();
@@ -384,7 +385,7 @@ public class ADDRESS_BOOK extends Browser
      Thread.sleep(4000);
 	 for(Map.Entry<String, String> id : ids.entrySet() )
 	 {
-		 //Thread.sleep(4000);
+		 Thread.sleep(4000);
 		 if(findTheElement("xpath=//*[@id='"+id.getValue()+"']").isDisplayed())
 		 {
 			 //System.out.println(id.getKey() + " is displayed ");
@@ -672,7 +673,8 @@ public class ADDRESS_BOOK extends Browser
 							
 				click("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']");//phone no
 				sendKeys("xpath=//*[@id='WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1']", "9898989890");
-				click("xpath=//*[@id='WC_AjaxAddressBookForm_links_4a']");								
+				click("xpath=//*[@id='WC_AjaxAddressBookForm_links_4a']");	
+				Thread.sleep(6000);
       }
    
    
@@ -767,13 +769,21 @@ public class ADDRESS_BOOK extends Browser
 	  
 	  click("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_2']");
 	  Thread.sleep(4000);
-	  //click("xpath=//*[@id='WC_AjaxAddressBookForm_links_2']");
+	  if(findTheElement("xpath=//*[@id='WC_AjaxAddressBookForm_links_2']").isEnabled())
+	  {
+		  System.out.println("delete");
+	  click("xpath=//*[@id='WC_AjaxAddressBookForm_links_2']");
+	  }
+	  else
+	  {
 	  Screen s = new Screen();
-	  Pattern img=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\RemoveAdd_CC.png");
 	  Thread.sleep(4000);
+	  Pattern img=new Pattern("C:\\CI_CD_CT\\Sikuli\\Images\\RemoveAdd_CC.png");
+	  Thread.sleep(6000);
 	  s.click(img);
+	  }
 	  Thread.sleep(2000); 
-	  /*String actualRadd= findTheElement("xpath=//*[@id='ErrorMessageText']").getText();
+	  String actualRadd= findTheElement("xpath=//*[@id='ErrorMessageText']").getText();
 	  Boolean strMessage = findTheElement("xpath=//*[@id='ErrorMessageText']").isDisplayed();//remove msg
 	  String expectedRadd="The selected address has been removed from the address list";
 		if(actualRadd == expectedRadd )
@@ -797,9 +807,12 @@ public class ADDRESS_BOOK extends Browser
 		    rpt.Category("CC_Address Book-Remove Address");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 	         rpt.imgPathFail(path);
-		}*/
+		}
 	  
-	  
+	  click("xpath=//*[@id='Header_GlobalLogin_signOutQuickLink']"); //my acc
+	   Thread.sleep(5000);
+
+	   click("xpath=html/body/div[2]/div[1]/div[2]/div[2]/div[4]/ul/li[3]/div/div/div/div/div/div[1]/div[1]/a/span"); //sign out
   }
   
   

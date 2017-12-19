@@ -352,7 +352,9 @@ public class Registration extends Browser
 		
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
 		Thread.sleep(8000);
-		click("xpath=html/body/div[2]/div[2]/div[2]/div[2]/div[4]/ul/li[3]/div/div/div/div/div/div[2]/div[3]/div[1]/a"); //my acc
+		//click("xpath=html/body/div[2]/div[2]/div[2]/div[2]/div[4]/ul/li[3]/div/div/div/div/div/div[2]/div[3]/div[1]/a"); //my acc
+		Thread.sleep(6000); 
+		click("xpath=html/body/div[2]/div[2]/div[2]/div[2]/div[4]/ul/li[3]/div/div/div/div/div/div[1]/div[1]/a/span"); //sign out
 		
  }
 }

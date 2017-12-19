@@ -51,15 +51,19 @@ public class PERSONAL_INFO extends Browser
 	
 	public void executeAllTestcase()throws Exception
 	{
-		/*click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']/span");
+		Thread.sleep(6000);
+		click("xpath=//*[@id='Header_GlobalLogin_signInQuickLink']");
+		Thread.sleep(6000);
+
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']");
 		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']", "zainab.firdaus@royalcyber.com");
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']");
 		sendKeys("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']", "zainab@1926");
 		
 		click("xpath=//*[@id='Header_GlobalLogin_WC_AccountDisplay_links_2']");
-		click("xpath=html/body/div[2]/div[2]/div[2]/div[2]/div[4]/ul/li[3]/div/div/div/div/div/div[2]/div[3]/div[1]/a");*/
-		//verify_myAcc();
+		Thread.sleep(10000);
+		click("xpath=html/body/div[2]/div[2]/div[2]/div[2]/div[4]/ul/li[3]/div/div/div/div/div/div[2]/div[3]/div[2]/a");
+		verify_myAcc();
 		//verify_edit();
 		verify_displayedInfo();
 		fieldValidation();
@@ -580,7 +584,7 @@ public class PERSONAL_INFO extends Browser
 		         rpt.imgPathFail(path);
 			 }
 	}
-}
+
 	/*public void verify_details()throws Exception
 	{
 		System.out.println("in verify_details");
@@ -601,4 +605,9 @@ public class PERSONAL_INFO extends Browser
 		click("xpath=//*[@id='WC_UserRegistrationUpdateForm_links_1']");//update
 		
 	}*/
+	click("xpath=//*[@id='Header_GlobalLogin_signOutQuickLink']"); //my acc
+	   Thread.sleep(5000);
+
+	   click("xpath=//*[@id='Header_GlobalLogin_loggedInDropdown_SignOut']"); //sign out
 }	
+}

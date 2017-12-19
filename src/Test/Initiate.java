@@ -21,6 +21,7 @@ import org.testng.annotations.Test;
 
 
 
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -45,9 +46,9 @@ public class Initiate {
 		
 	}
 	@SuppressWarnings("static-access")
-	@Parameters({"browser","url"})
+	@Parameters({"browser","url","module"})
 	@Test
-	public void checkHome(String Browser, String Url)throws Exception
+	public void checkHome(String Browser, String Url,String Module)throws Exception
 	{
 		rpt.createTest("CIRCUIT CITY", "Verify HomePage");
 		br.getBrowser(Browser, Url);
@@ -55,14 +56,38 @@ public class Initiate {
 		rpt.Pass("URL that is passed as parameter from Jenkins is :"+Url);
 		//test.log(Status.PASS,"Browser Opened As Expected");
 		//br.captureScreenShot("HomePage");
-		checkRegistration();
-      	chkAddress_Book();
-//		Thread.sleep(3000);
-		chkPersonalInfo();
-		chkSearch();
+		
+//		checkRegistration();
+//      	chkAddress_Book();
+//		chkPersonalInfo();
+//		chkSearch();
+		
 		//skipTest();
 		//checkFail();
 //		extent.flush();
+		
+		if (Module != null) 
+		{
+			
+			if ("Registration".equalsIgnoreCase(Module)) {
+				checkRegistration();
+			} else if ("AddressBook".equalsIgnoreCase(Module)) {
+				chkAddress_Book();
+			} else if ("PersonalInfo".equalsIgnoreCase(Module)) {
+				chkPersonalInfo();
+			} 
+			else if("Search".equalsIgnoreCase(Module)){
+				chkSearch();
+			}	
+			else if("All Modules".equalsIgnoreCase(Module))
+			{
+				checkRegistration();
+		      	chkAddress_Book();
+				chkPersonalInfo();
+				chkSearch();
+			}
+				
+		}
 	}
 	
 		
