@@ -13,7 +13,7 @@
     <parameter name="module" value="sample module" /> 
   
   
-<!-- DA-33 commiti review comments test-->
+<!-- DA-33 commiti review comments test  --Jenkins -->
 
  
   <!--  <parameter name="browser" value="FF"/>  
