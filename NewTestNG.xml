@@ -12,7 +12,7 @@
     <parameter name="url" value="sample url" /> -->
   
   
-<!-- DA-33 commiti review comments TEST COMMIT-->
+<!-- DA-33 commiti review comments test-->
 
  
   <parameter name="browser" value="FF"/>  
