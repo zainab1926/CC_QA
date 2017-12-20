@@ -50,6 +50,7 @@ public class Initiate {
 	@Test
 	public void checkHome(String Browser, String Url,String Module)throws Exception
 	{
+		
 		rpt.createTest("CIRCUIT CITY", "Verify HomePage");
 		br.getBrowser(Browser, Url);
 		rpt.Pass("Browser that is passed as parameter from Jenkins is :"+Browser);
@@ -65,6 +66,7 @@ public class Initiate {
 		//skipTest();
 		//checkFail();
 //		extent.flush();
+		
 		
 		if (Module != null) 
 		{
@@ -88,6 +90,7 @@ public class Initiate {
 			}
 				
 		}
+		
 	}
 	
 		
