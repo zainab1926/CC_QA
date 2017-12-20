@@ -13,8 +13,6 @@
     <parameter name="module" value="sample module" /> 
   
   
-<!-- DA-33 commiti review comments test  --Jenkins -->
-
  
   <!--  <parameter name="browser" value="FF"/>  
    <parameter name="url" value="https://qalive.circuitcity.com/ " />-->
