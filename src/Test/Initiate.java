@@ -81,18 +81,26 @@ public class Initiate {
 			else if("Search".equalsIgnoreCase(Module)){
 				chkSearch();
 			}	
+			else if("SignIn & Forgot Password".equalsIgnoreCase(Module)){
+				chkSignIn();
+			}	
 			else if("All Modules".equalsIgnoreCase(Module))
 			{
 				checkRegistration();
 		      	chkAddress_Book();
 				chkPersonalInfo();
 				chkSearch();
+				chkSignIn();
 			}
 				
 		}
 		
 	}
-	
+	public void chkSignIn()throws Exception
+	{
+		SignIn_Forgot_Password reg  = new SignIn_Forgot_Password();
+		reg.executeAllTest();
+	}
 		
 	public void checkRegistration()throws Exception
 	{
