@@ -20,8 +20,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
-
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -106,16 +104,19 @@ public class Initiate {
 				chkHomePage();
 			}
 			else if("CheckoutFlow".equalsIgnoreCase(Module)){
-				chk_CheckoutFlow();
+				chkCheckoutFlow();
 			}
-			else if("Modules".equalsIgnoreCase(Module))
-			{
+			else if("Modules".equalsIgnoreCase(Module)){
 				checkRegistration();
+				chkSignIn();
+				chkSearch();
 		      	chkAddress_Book();
 				chkPersonalInfo();
-				chkSignIn();
-				chkchangePassword();
+//				chkchangePassword(); no access to write in notepad line no 549
 				chkWishList();
+				
+				chkshoppingCart();
+				chkCheckoutFlow();
 				chksavedPaymentMehods();
 			}
 			
@@ -141,7 +142,7 @@ public class Initiate {
 			}	
 		}
 	}
-	public void chk_CheckoutFlow()throws Exception
+	public void chkCheckoutFlow()throws Exception
 	{
 		CheckoutFlow sc=new CheckoutFlow();
 		sc.executeAll();
