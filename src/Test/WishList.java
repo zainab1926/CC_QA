@@ -3,6 +3,9 @@ package Test;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -41,9 +44,10 @@ public class WishList extends Browser
 		newWishlist();
 		changeWishlist();
 		deleteWishlist();
-//		removeProduct(); dynamic xpath
+
 		emailWishlist();
-//		addProduct(); dynamic xpath
+		removeProduct();
+		addProduct(); 
 //		verifyWishlist(); dynamic xpath
 	}
 	
@@ -345,49 +349,53 @@ public class WishList extends Browser
 	{
 		click("id=allDepartmentsButton");
 		Thread.sleep(2000);
-		click("id=departmentLink_3074457345616682169_alt");
+		click("link=Audio");//categories
 		Thread.sleep(2000);
-		click("xpath=//li[1]/.//div[@class='product_image']");
+		//click("xpath=//a[contains(text(),'Creative')]"); //product
+		click("xpath=//li[1]/.//div[@class='product_name']");
+		Thread.sleep(3000);
+		click("css=img.icon.heartIcon"); //love it
+		Thread.sleep(3000);
+		click("id=wishListQuickLink_alt"); //wishlist
+		Thread.sleep(2000);
+		click("id=allDepartmentsButton");
+		Thread.sleep(2000);
+		click("link=Audio");//categories
+		Thread.sleep(2000);
+		//click("xpath=//a[contains(text(),'Creative')]"); //product
+		click("xpath=//li[3]/.//div[@class='product_name']");
+		Thread.sleep(3000);
+		click("css=img.icon.heartIcon"); //love it
+		Thread.sleep(3000);
+		click("id=wishListQuickLink_alt"); //wishlist
+		Thread.sleep(2000);
+//		click("xpath=//span[@id='multipleWishlistController_select-button']/span[2]");
+//		Thread.sleep(2000);
+//		 WebElement monthdd = browser.findElement(By.xpath("//ul[@id='multipleWishlistController_select-menu']/li[9]/div"));
+//	       Select select = new Select(monthdd);
+//			select.selectByVisibleText("Wish List");
 		Thread.sleep(2000);
 		
-		//click("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_4']");
-		if(findTheElement("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_4']").isDisplayed())
-		{		
-		    rpt.createTest("CC - WishList - Verify Remove WishList", " Personal WishList Displayed - For Verify Remove WishList");
-	        rpt.Pass(" Personal WishList  Displayed - For Verify Remove WishList");	
-	        rpt.Category("CC_WishList - Verify Remove WishList");
-           String path = rpt.CaptureScreen(browser, "ValidMessage");
-            rpt.imgPathPass(path);
-    		click("xpath=//*[@id='WC_MyAccountSidebarDisplayf_links_4']"); //personal wishlist
-
-		}
-		else
-		{
-			rpt.createTest("CC - WishList - Verify Remove WishList", " Personal WishList  NOT Displayed - For Verify Remove WishList");
-		    rpt.Fail(" Personal WishList  NOT Displayed - For Verify Remove  WishList");	
-		    rpt.Category("CC_WishList - Verify Remove WishList");
-	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
-	         rpt.imgPathFail(path);
-		}
 		//click("xpath=//*[@id='WC_CatalogEntryDBThumbnailDisplayJSPF_3074457345616677177_links_14']");
-		if(findTheElement("xpath=//*[@id='WC_CatalogEntryDBThumbnailDisplayJSPF_3074457345616677177_links_14']").isDisplayed())
+		if(findTheElement("link=Remove").isDisplayed())
 		{		
-		    rpt.createTest("CC - WishList - Verify Remove WishList", " Remove Button Displayed - For Verify Remove WishList");
-	        rpt.Pass(" Remove Button Displayed - For Verify Remove WishList");	
+		    rpt.createTest("CC - WishList - Verify Remove WishList", " Product is removed from wish list - For Verify Remove WishList");
+	        rpt.Pass(" Product is removed from wish list - For Verify Remove WishList");	
 	        rpt.Category("CC_WishList - Verify Remove WishList");
            String path = rpt.CaptureScreen(browser, "ValidMessage");
             rpt.imgPathPass(path);
-    		click("xpath=//*[@id='WC_CatalogEntryDBThumbnailDisplayJSPF_3074457345616677177_links_14']");
+    		click("link=Remove");
 
 		}
 		else
 		{
-			rpt.createTest("CC - WishList - Verify Remove WishList", " Remove Button NOT Displayed - For Verify Remove WishList");
-		    rpt.Fail(" Remove Button NOT Displayed - For Verify Remove  WishList");	
+			rpt.createTest("CC - WishList - Verify Remove WishList", " Product NOT removed from wish list - For Verify Remove WishList");
+		    rpt.Fail(" Product NOT removed from wish list - For Verify Remove  WishList");	
 		    rpt.Category("CC_WishList - Verify Remove WishList");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 	         rpt.imgPathFail(path);
 		}
+		Thread.sleep(3000);
 		click("xpath=//*[@id='shoppingListCreateSuccessPopup_continue_shopping']");
 	}
 	
@@ -520,34 +528,47 @@ public class WishList extends Browser
 		click("xpath=//*[@id='shoppingListCreateSuccessPopup_continue_shopping']/div[2]"); //continue shopping
 		//for signin out
 		 Thread.sleep(2000);
-		   click("id=myAccountQuickLink");
-		   Thread.sleep(2000);
-		   click("xpath=//a[@id='Header_GlobalLogin_loggedInDropdown_SignOut']/span");
+//		   click("id=myAccountQuickLink");
+//		   Thread.sleep(2000);
+//		   click("xpath=//a[@id='Header_GlobalLogin_loggedInDropdown_SignOut']/span");
 	}
 	
 	public void addProduct()throws Exception
 	{
-		click("xpath=//*[@id='shoppingListCreateSuccessPopup_continue_shopping']/div[2]"); //continue shopping
+		//click("xpath=//*[@id='shoppingListCreateSuccessPopup_continue_shopping']/div[2]"); //continue shopping
 		//click("xpath=//*[@id='listViewAdd2Cart_3074457345616727849']"); //buy now
-		if(findTheElement("xpath=//*[@id='listViewAdd2Cart_3074457345616727849']").isDisplayed())
+		if(findTheElement("link=BUY NOW").isDisplayed())
 		{		
-		    rpt.createTest("CC - WishList - Verify Add Product", " Buy Now Displayed - For Verify Add Product");
-	        rpt.Pass(" Buy Now Displayed - For Verify Add Product");	
+		    rpt.createTest("CC - WishList - Verify Add Product", " Product is added to cart from wish list - For Verify Add Product");
+	        rpt.Pass(" Product is added to cart from wish list - For Verify Add Product");	
 	        rpt.Category("CC_WishList - Verify Add Product");
            String path = rpt.CaptureScreen(browser, "ValidMessage");
             rpt.imgPathPass(path);
-    		click("xpath=//*[@id='listViewAdd2Cart_3074457345616727849']"); //buy now
+    		click("link=BUY NOW"); //buy now
 
 		}
 		else
 		{
-			rpt.createTest("CC - WishList - Verify Add Product", " Buy Now NOT Displayed - For Verify Add Product");
-		    rpt.Fail(" Buy Now NOT Displayed - For Verify Add Product");	
+			rpt.createTest("CC - WishList - Verify Add Product", " Product NOT added to cart from wish list - For Verify Add Product");
+		    rpt.Fail(" Product NOT added to cart from wish list - For Verify Add Product");	
 		    rpt.Category("CC_WishList - Verify Add Product");
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 	         rpt.imgPathFail(path);
 		}
-		click("xpath=//*[@id='WC_BreadCrumbTrailDisplay_links_2a']/div[2]"); //continue shopping
+		Thread.sleep(3000);
+		click("id=GotoCartButton2"); //view cart
+		Thread.sleep(3000);
+		click("id=WC_OrderItemDetailsf_links_2_1");
+		Thread.sleep(2000);
+		click("id=wishListQuickLink_alt"); //wishlist
+		Thread.sleep(2000);
+		click("css=img.icon.heartIconFilled");
+		Thread.sleep(2000);
+		click("id=shoppingListCreateSuccessPopup_continue_shopping");
+		Thread.sleep(2000);
+		 click("id=myAccountQuickLink");
+		   Thread.sleep(2000);
+		   click("xpath=//a[@id='Header_GlobalLogin_loggedInDropdown_SignOut']/span");
 	}
 	
 	public void verifyWishlist()throws Exception

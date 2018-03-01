@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="RC Suite" duration-ms="133290" started-at="2018-03-01T09:44:04Z" finished-at="2018-03-01T09:46:17Z">
+  <suite name="RC Suite" duration-ms="205265" started-at="2018-03-01T14:39:29Z" finished-at="2018-03-01T14:42:54Z">
     <groups>
     </groups>
-    <test name="RC Test" duration-ms="133290" started-at="2018-03-01T09:44:04Z" finished-at="2018-03-01T09:46:17Z">
+    <test name="RC Test" duration-ms="205265" started-at="2018-03-01T14:39:29Z" finished-at="2018-03-01T14:42:54Z">
       <class name="Test.Initiate">
-        <test-method status="PASS" signature="Ini()[pri:0, instance:Test.Initiate@490ab905]" name="Ini" is-config="true" duration-ms="448" started-at="2018-03-01T15:14:04Z" finished-at="2018-03-01T15:14:04Z">
+        <test-method status="PASS" signature="Ini()[pri:0, instance:Test.Initiate@dc24521]" name="Ini" is-config="true" duration-ms="423" started-at="2018-03-01T20:09:29Z" finished-at="2018-03-01T20:09:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Ini -->
-        <test-method status="FAIL" signature="checkHome(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Test.Initiate@490ab905]" name="checkHome" duration-ms="132345" started-at="2018-03-01T15:14:04Z" finished-at="2018-03-01T15:16:17Z">
+        <test-method status="PASS" signature="checkHome(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Test.Initiate@dc24521]" name="checkHome" duration-ms="204063" started-at="2018-03-01T20:09:29Z" finished-at="2018-03-01T20:12:53Z">
           <params>
             <param index="0">
               <value>
@@ -25,54 +25,14 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Promotions]]>
+                <![CDATA[WishList]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for Test.Browser$4@24976ada (tried for 60 second(s) with 5 MILLISECONDS interval)
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'RCCHN0080', ip: '10.22.175.180', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\user\AppData\Local\Temp\rust_mozprofile.OGljBcRRsw4v, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, moz:headless=false, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=56.0.2, platformVersion=10.0, moz:processID=17940.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: d6fd2885-f550-4b85-9ae7-e213f10dbb92]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Test.Browser$4@24976ada (tried for 60 second(s) with 5 MILLISECONDS interval)
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'RCCHN0080', ip: '10.22.175.180', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\user\AppData\Local\Temp\rust_mozprofile.OGljBcRRsw4v, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, moz:headless=false, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=56.0.2, platformVersion=10.0, moz:processID=17940.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: d6fd2885-f550-4b85-9ae7-e213f10dbb92
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1116)
-	at Test.Browser.waitForPageElementToLoad(Browser.java:1098)
-	at Test.Browser.findTheElement(Browser.java:237)
-	at Test.Promotions.executeAll(Promotions.java:93)
-	at Test.Initiate.chkPromotions(Initiate.java:152)
-	at Test.Initiate.checkHome(Initiate.java:110)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkHome -->
-        <test-method status="PASS" signature="publishReport()[pri:0, instance:Test.Initiate@490ab905]" name="publishReport" is-config="true" duration-ms="381" started-at="2018-03-01T15:16:17Z" finished-at="2018-03-01T15:16:17Z">
+        <test-method status="PASS" signature="publishReport()[pri:0, instance:Test.Initiate@dc24521]" name="publishReport" is-config="true" duration-ms="760" started-at="2018-03-01T20:12:53Z" finished-at="2018-03-01T20:12:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- publishReport -->

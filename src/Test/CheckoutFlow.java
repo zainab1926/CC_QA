@@ -288,7 +288,7 @@ public class CheckoutFlow extends Browser
 		               rpt.imgPathFail(path);
 		        }
 		       }
-			//paypal checkout
+			
 		       Thread.sleep(5000);
 		       //click("xpath=/html/body/div");
 		       Thread.sleep(3000);
