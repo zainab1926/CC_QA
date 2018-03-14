@@ -109,18 +109,27 @@ public class Initiate {
 			else if("Promotions".equalsIgnoreCase(Module)){
 				chkPromotions();
 			}
+			else if("productComparison".equalsIgnoreCase(Module)){
+				chkproductComparison();
+			}
+			else if("CustomRooms".equalsIgnoreCase(Module)){
+				chkCustomRooms();
+			}
 			else if("Modules".equalsIgnoreCase(Module)){
+				chkHomePage();
 				checkRegistration();
 				chkSignIn();
 				chkSearch();
+				
 		      	chkAddress_Book();
 				chkPersonalInfo();
-//				chkchangePassword(); no access to write in notepad line no 549
+				//chkchangePassword(); //no access to write in notepad line no 549
 				chkWishList();
 				
 				chkshoppingCart();
 				chkCheckoutFlow();
 				chkPromotions();
+				chkproductComparison();
 				chksavedPaymentMehods();
 			}
 			
@@ -145,6 +154,16 @@ public class Initiate {
 				chkPromotions();
 			}	
 		}
+	}
+	public void chkCustomRooms()throws Exception
+	{
+		CustomRooms sc=new CustomRooms();
+		sc.executeAll();
+	}
+	public void chkproductComparison()throws Exception
+	{
+		productComparison sc=new productComparison();
+		sc.executeAll();
 	}
 	public void chkPromotions()throws Exception
 	{

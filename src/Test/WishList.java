@@ -43,9 +43,9 @@ public class WishList extends Browser
 		wishListDisplay();
 		newWishlist();
 		changeWishlist();
-		deleteWishlist();
-
 		emailWishlist();
+		deleteWishlist();
+		
 		removeProduct();
 		addProduct(); 
 //		verifyWishlist(); dynamic xpath
@@ -347,14 +347,17 @@ public class WishList extends Browser
 	
 	public void removeProduct()throws Exception
 	{
+		Thread.sleep(2000);
 		click("id=allDepartmentsButton");
 		Thread.sleep(2000);
 		click("link=Audio");//categories
 		Thread.sleep(2000);
 		//click("xpath=//a[contains(text(),'Creative')]"); //product
-		click("xpath=//li[1]/.//div[@class='product_name']");
+		//click("xpath=//li[1]/.//div[@class='product_name']");
+		click("xpath=//div[@class='product_listing_container']//li[1]/.//div[@class='product_image']");
 		Thread.sleep(3000);
-		click("css=img.icon.heartIcon"); //love it
+		//click("css=img.icon.heartIcon"); //love it
+		click("xpath=//div[@id='contentWrapper']//span[contains(text(),'Love It')]");
 		Thread.sleep(3000);
 		click("id=wishListQuickLink_alt"); //wishlist
 		Thread.sleep(2000);
@@ -363,9 +366,10 @@ public class WishList extends Browser
 		click("link=Audio");//categories
 		Thread.sleep(2000);
 		//click("xpath=//a[contains(text(),'Creative')]"); //product
-		click("xpath=//li[3]/.//div[@class='product_name']");
+		click("xpath=//div[@class='product_listing_container']//li[2]/.//div[@class='product_image']");
 		Thread.sleep(3000);
-		click("css=img.icon.heartIcon"); //love it
+		//click("css=img.icon.heartIcon"); //love it
+		click("xpath=//div[@id='contentWrapper']//span[contains(text(),'Love It')]");
 		Thread.sleep(3000);
 		click("id=wishListQuickLink_alt"); //wishlist
 		Thread.sleep(2000);
@@ -537,14 +541,14 @@ public class WishList extends Browser
 	{
 		//click("xpath=//*[@id='shoppingListCreateSuccessPopup_continue_shopping']/div[2]"); //continue shopping
 		//click("xpath=//*[@id='listViewAdd2Cart_3074457345616727849']"); //buy now
-		if(findTheElement("link=BUY NOW").isDisplayed())
+		if(findTheElement("xpath=//div[@class='productListingWidget wishlist']//a[contains(text(),'BUY NOW')]").isDisplayed())
 		{		
 		    rpt.createTest("CC - WishList - Verify Add Product", " Product is added to cart from wish list - For Verify Add Product");
 	        rpt.Pass(" Product is added to cart from wish list - For Verify Add Product");	
 	        rpt.Category("CC_WishList - Verify Add Product");
            String path = rpt.CaptureScreen(browser, "ValidMessage");
             rpt.imgPathPass(path);
-    		click("link=BUY NOW"); //buy now
+    		click("xpath=//div[@class='productListingWidget wishlist']//a[contains(text(),'BUY NOW')]"); //buy now
 
 		}
 		else
@@ -562,7 +566,9 @@ public class WishList extends Browser
 		Thread.sleep(2000);
 		click("id=wishListQuickLink_alt"); //wishlist
 		Thread.sleep(2000);
-		click("css=img.icon.heartIconFilled");
+		//click("css=img.icon.heartIconFilled");
+		//click("css=div.love_it_drop");
+		click("link=Remove");
 		Thread.sleep(2000);
 		click("id=shoppingListCreateSuccessPopup_continue_shopping");
 		Thread.sleep(2000);

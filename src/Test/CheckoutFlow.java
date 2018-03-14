@@ -187,6 +187,8 @@ public class CheckoutFlow extends Browser
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 	         rpt.imgPathFail(path);
 		}
+		Thread.sleep(2000);
+		click("id=change");
 		//invalid address
 		 sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_firstName_1",name);
 			Thread.sleep(3000);
@@ -328,7 +330,8 @@ public class CheckoutFlow extends Browser
 		click("link=Audio");//categories
 		Thread.sleep(2000);
 		//click("xpath=//a[contains(text(),'Creative')]"); //product
-		click("xpath=//li[1]/.//div[@class='product_name']");
+		//click("xpath=//li[1]/.//div[@class='product_name']");
+		click("xpath=//div[@class='product_listing_container']//li[1]/.//div[@class='product_name']");
 		Thread.sleep(8000);
 		click("id=add2CartBtn");//add to cart
 		Thread.sleep(3000);
@@ -339,7 +342,8 @@ public class CheckoutFlow extends Browser
 		click("link=Appliances");//categories
 		Thread.sleep(2000);
 		//click("xpath=//a[contains(text(),'Panasonic')]"); //product
-		click("xpath=//li[2]/.//div[@class='product_name']");
+		//click("xpath=//li[2]/.//div[@class='product_name']");
+		click("xpath=//div[@class='product_listing_container']//li[2]/.//div[@class='product_name']");
 		Thread.sleep(8000);
 		click("id=add2CartBtn");//add to cart
 		Thread.sleep(2000);
@@ -350,7 +354,8 @@ public class CheckoutFlow extends Browser
 		click("link=Cell Phones");//categories
 		Thread.sleep(2000);
 		//click("xpath=//a[contains(text(),'CTA')]"); //product
-		click("xpath=//li[3]/.//div[@class='product_name']");
+		//click("xpath=//li[3]/.//div[@class='product_name']");
+		click("xpath=//div[@class='product_listing_container']//li[3]/.//div[@class='product_name']");
 		Thread.sleep(8000);
 		click("id=add2CartBtn");//add to cart
 		Thread.sleep(2000);
@@ -361,7 +366,8 @@ public class CheckoutFlow extends Browser
 		click("link=Movies & Music");//categories
 		Thread.sleep(2000);
 		//click("xpath=//a[contains(text(),'Panasonic')]"); //product
-		click("xpath=//li[4]/.//div[@class='product_name']");
+		//click("xpath=//li[4]/.//div[@class='product_name']");
+		click("xpath=//div[@class='product_listing_container']//li[4]/.//div[@class='product_name']");
 		Thread.sleep(8000);
 		click("id=add2CartBtn");//add to cart
 		Thread.sleep(2000);
@@ -468,26 +474,36 @@ public class CheckoutFlow extends Browser
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 	         rpt.imgPathFail(path);
 		}
+		Thread.sleep(2000);
+		click("id=change");
 		//invalid address
+		findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_firstName_1").clear();
 		 sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_firstName_1",name);
 			Thread.sleep(3000);
+			findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_lastName_1").clear();
 			sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_lastName_1",name);
 			Thread.sleep(3000);
+			findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_address1_1").clear();
 			sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_address1_1","Qr 88, B.H.Area Kadma");
 			Thread.sleep(3000);
 			click("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_lastName_1");
 			Thread.sleep(3000);
+			findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_city_1").clear();
 			sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_city_1","Jamshedpur");
 			Thread.sleep(3000);
+			findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_state_1").clear();
 			sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_state_1","Jharkhand");
 			Thread.sleep(3000);
+			findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_zipCode_1").clear();
 			sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_zipCode_1","831005");
 			Thread.sleep(2000);
+			findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_email1_1").clear();
 			sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_email1_1",emailid);
 			Thread.sleep(2000);
+			findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_phone1_1").clear();
 			sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_phone1_1",phoneNo);
 			Thread.sleep(2000);
-			click("id=summaryButton"); //continue
+			click("id=shippingButton"); //continue
 			Thread.sleep(2000);
 			String chkoutpage1=findTheElement("id=errorToSuggestedAddressDiv_ShippingAddressForm").getText();
 			System.out.println(chkoutpage1);
@@ -540,7 +556,7 @@ public class CheckoutFlow extends Browser
 			findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_phone1_1").clear();
 			sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_phone1_1",phoneNo);
 			Thread.sleep(2000);
-			click("id=summaryButton"); //continue
+			click("id=shippingButton"); //continue
 			
 			//billing method
 			Map<String,String> fields= new HashMap<String,String>();
@@ -569,7 +585,7 @@ public class CheckoutFlow extends Browser
 		               rpt.imgPathFail(path);
 		        }
 		       }
-			//paypal checkout
+			
 		       Thread.sleep(5000);
 		       //click("xpath=/html/body/div");
 		       Thread.sleep(3000);

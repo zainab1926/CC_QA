@@ -39,9 +39,11 @@ public class Report {
 	private static ExtentTest test;
 	private static ExtentHtmlReporter htmlReporter;
 		
-	private static String filePath = "D:\\CC_QA\\test-output\\myReport.html";
+	//private static String filePath = "D:\\CC_QA\\test-output\\myReport.html";
+	private static final String filePath = new File("test-output/myReport.html").getAbsolutePath();
 	public static WebDriver browser = BrowserFactory.getBrowser("browser","URL");
-	static String imagePath="D:\\CC_QA\\Screenshots\\";
+	//static String imagePath="D:\\CC_QA\\Screenshots\\";
+	private String imagePath = new File("Screenshots").getAbsolutePath();
 	
 		
 	private static long counter =0;
@@ -150,7 +152,7 @@ public class Report {
 	
 	
 		
-	public static String CaptureScreen(WebDriver driver,String imgName)
+	public  String CaptureScreen(WebDriver driver,String imgName)
 	{
 
 		TakesScreenshot oScn = (TakesScreenshot) driver;
