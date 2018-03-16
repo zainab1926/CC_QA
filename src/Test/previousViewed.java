@@ -291,7 +291,7 @@ public class previousViewed extends Browser {
 		Thread.sleep(2000);
 		click("xpath=//a[@id='WC_OrderItemDetailsf_links_2_1']/b");
 		Thread.sleep(2000);
-		 click("id=myAccountQuickLink");
+		 click("id=Header_GlobalLogin_signOutQuickLink");
 		   Thread.sleep(2000);
 		   click("xpath=//a[@id='Header_GlobalLogin_loggedInDropdown_SignOut']/span");
 	}

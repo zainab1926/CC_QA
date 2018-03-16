@@ -1,6 +1,7 @@
 package Test;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -34,7 +35,7 @@ public class CheckoutFlow extends Browser
 	{
      	placeOrder_flow(); //for qa environment
 //		checkout_flow(); //for prod environment
-		//paypalCheckout(); //for qa environment
+//		paypalCheckout(); //for qa environment
 	}
 	
 	//for prod environment
@@ -46,10 +47,11 @@ public class CheckoutFlow extends Browser
 		click("link=Audio");//categories
 		Thread.sleep(2000);
 		//click("xpath=//a[contains(text(),'Creative')]"); //product
-		click("xpath=//li[1]/.//div[@class='product_image']");
+		//click("xpath=//li[1]/.//div[@class='product_image']");
+		click("xpath=//div[@class='product_listing_container']//li[1]/.//div[@class='product_name']");
 		Thread.sleep(8000);
 		click("id=add2CartBtn");//add to cart
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		click("xpath=//a[@id='WC_BreadCrumbTrailDisplay_links_2a']/div[2]"); //continue shopping
 		Thread.sleep(2000);
 		click("id=allDepartmentsButton");
@@ -60,7 +62,8 @@ public class CheckoutFlow extends Browser
 //		     JavascriptExecutor jse = (JavascriptExecutor)browser;
 //		      jse.executeScript("arguments[0].scrollIntoView();", Element);
 //		      Thread.sleep(3000);
-		click("xpath=//li[2]/.//div[@class='product_image']"); //product
+		//click("xpath=//li[2]/.//div[@class='product_image']"); //product
+		click("xpath=//div[@class='product_listing_container']//li[2]/.//div[@class='product_name']");
 		Thread.sleep(8000);
 		click("id=add2CartBtn");//add to cart
 		Thread.sleep(2000);
@@ -70,7 +73,8 @@ public class CheckoutFlow extends Browser
 		Thread.sleep(2000);
 		click("link=Cell Phones");//categories
 		Thread.sleep(4000);
-		click("xpath=//li[3]/.//div[@class='product_image']"); //product
+		//click("xpath=//li[3]/.//div[@class='product_image']"); //product
+		click("xpath=//div[@class='product_listing_container']//li[3]/.//div[@class='product_name']");
 		Thread.sleep(8000);
 		click("id=add2CartBtn");//add to cart
 		Thread.sleep(2000);
@@ -80,7 +84,8 @@ public class CheckoutFlow extends Browser
 		Thread.sleep(2000);
 		click("link=Movies & Music");//categories
 		Thread.sleep(4000);
-		click("xpath=//li[4]/.//div[@class='product_image']"); //product
+		//click("xpath=//li[4]/.//div[@class='product_image']"); //product
+		click("xpath=//div[@class='product_listing_container']//li[4]/.//div[@class='product_name']");
 		Thread.sleep(8000);
 		click("id=add2CartBtn");//add to cart
 		Thread.sleep(2000);
@@ -342,7 +347,7 @@ public class CheckoutFlow extends Browser
 		click("link=Appliances");//categories
 		Thread.sleep(2000);
 		//click("xpath=//a[contains(text(),'Panasonic')]"); //product
-		//click("xpath=//li[2]/.//div[@class='product_name']");
+		//click("xpath=//div[@class='product_listing_container']//li[2]/.//div[@class='product_name']");
 		click("xpath=//div[@class='product_listing_container']//li[2]/.//div[@class='product_name']");
 		Thread.sleep(8000);
 		click("id=add2CartBtn");//add to cart
@@ -421,7 +426,7 @@ public class CheckoutFlow extends Browser
 	         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 	         rpt.imgPathFail(path);
 	}
-	Thread.sleep(2000);
+	Thread.sleep(5000);
 		
 		
 		click("link=READY TO CHECKOUT");
@@ -475,7 +480,7 @@ public class CheckoutFlow extends Browser
 	         rpt.imgPathFail(path);
 		}
 		Thread.sleep(2000);
-		click("id=change");
+		//click("id=change");
 		//invalid address
 		findTheElement("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_firstName_1").clear();
 		 sendKeys("id=WC_ShippingAddressForm_AddressEntryForm_FormInput_firstName_1",name);
@@ -622,8 +627,8 @@ public class CheckoutFlow extends Browser
 				if(chkoutpage11!=null)
 		       {
 					//System.out.println("Mini Cart Button displayed");
-					rpt.createTest("CIRCUIT CITY - CHECKOUT", "Order is placed" );
-			         rpt.Pass("Order is placed");
+					rpt.createTest("CIRCUIT CITY - CHECKOUT", "Order is placed via Credit Card" );
+			         rpt.Pass("Order is placed via Credit Card");
 			         rpt.Category("CIRCUIT CITY - CHECKOUT");
 			         String path = rpt.CaptureScreen(browser, "ValidMessage");
 			         rpt.imgPathPass(path);
@@ -631,8 +636,8 @@ public class CheckoutFlow extends Browser
 				else
 				{
 					//System.out.println("Mini Cart Button NOT displayed");
-					 rpt.createTest("CIRCUIT CITY - CHECKOUT", "Order is NOT placed");
-			         rpt.Fail("Order is NOT placed");
+					 rpt.createTest("CIRCUIT CITY - CHECKOUT", "Order is NOT placed via Credit Card");
+			         rpt.Fail("Order is NOT placed via Credit Card");
 			         rpt.Category("CIRCUIT CITY - CHECKOUT");
 			         String path = rpt.CaptureScreen(browser, "InvalidMessage");
 			         rpt.imgPathFail(path);
@@ -659,7 +664,7 @@ public class CheckoutFlow extends Browser
 				click("link=Appliances");//categories
 				Thread.sleep(2000);
 				//click("xpath=//a[contains(text(),'Panasonic')]"); //product
-				click("xpath=//li[2]/.//div[@class='product_name']");
+				click("xpath=//div[@class='product_listing_container']//li[2]/.//div[@class='product_name']");
 				Thread.sleep(8000);
 				click("id=add2CartBtn");//add to cart
 				Thread.sleep(2000);
@@ -698,31 +703,125 @@ public class CheckoutFlow extends Browser
 				Thread.sleep(2000);
 				click("id=summaryButton"); //continue
 				Thread.sleep(5000);
-				 WebElement Element = findTheElement("id=submit");
-			     JavascriptExecutor jse = (JavascriptExecutor)browser;
-			      jse.executeScript("arguments[0].scrollIntoView();", Element);
+//				 WebElement Element = findTheElement("id=submit");
+//			     JavascriptExecutor jse = (JavascriptExecutor)browser;
+//			      jse.executeScript("arguments[0].scrollIntoView();", Element);
 			      Thread.sleep(3000);
 			      
 			   // Store the current window handle
 			      String winHandleBefore = browser.getWindowHandle();
-			      
-			      click("id=paypal-button"); //paypal button
+			      Thread.sleep(3000);
+			      //click("id=paypal-button"); //paypal button
+			      if(findTheElement("id=paypal-button").isDisplayed())
+			        {
+						//System.out.println("Mini Cart Button displayed");
+						rpt.createTest("CIRCUIT CITY - CHECKOUT", "PayPal button is displayed on Shopping cart page");
+				         rpt.Pass("PayPal button is displayed on Shopping cart page");
+				         rpt.Category("CIRCUIT CITY - CHECKOUT");
+				         String path = rpt.CaptureScreen(browser, "ValidMessage");
+				         rpt.imgPathPass(path);
+				         Thread.sleep(3000);
+				         click("id=paypal-button"); //paypal button
+					  }
+					else
+					{
+						//System.out.println("Mini Cart Button NOT displayed");
+						 rpt.createTest("CIRCUIT CITY - CHECKOUT", "PayPal button NOT displayed on Shopping cart page");
+				         rpt.Fail("PayPal button NOT displayed on Shopping cart page");
+				         rpt.Category("CIRCUIT CITY - CHECKOUT");
+				         String path = rpt.CaptureScreen(browser, "InvalidMessage");
+				         rpt.imgPathFail(path);
+				}
+					Thread.sleep(2000);
 			      //browser.switchTo().frame(browser.findElement(By.css("div.xcomponent-component-frame xcomponent-visible")));
 				//click("xpath=html/body/div/div[1]");
 			      //click("xpath=/html/body/div/div[1]/img[1]");
-				Thread.sleep(12000);
+				Thread.sleep(2000);
 				
-				//		 String winHandleBefore = driver.getWindowHandle();
+				//		 String winHandleBefore = browser.getWindowHandle();
 			    // Perform the click operation that opens new window
-		//	    driver.findElement(GetPageObject.OR_GetElement("AvailableJobs_Link")).click();
-		//	    driver.close();
+		//	    browser.findElement(GetPageObject.OR_GetElement("AvailableJobs_Link")).click();
+		//	    browser.close();
 			    // Switch to new window opened
-			    for(String winHandle : browser.getWindowHandles()){
-			    	browser.switchTo().window(winHandle);
-			    }
+				String parent=browser.getWindowHandle();
+				Set<String>s1=browser.getWindowHandles();
+				Iterator<String> I1= s1.iterator();
+				 
+				while(I1.hasNext())
+				{
+				   String child_window=I1.next();
+				   if(!parent.equals(child_window))
+				   {
+				   browser.switchTo().window(child_window);
+				   Thread.sleep(2000);
+				   System.out.println(getTitle());
+				   Thread.sleep(2000);
+				   browser.switchTo().frame("injectedUl");
+				   Thread.sleep(2000);
+				    click("id=email");
+//				    click("xpath=//div[@id='passwordSection']//input[@id='email']");
+				    sendKeys("id=email",paypalid);
+				    Thread.sleep(2000);
+//					sendKeys("xpath=//div[@id='passwordSection']//input[@id='password']",paypalpwd);
+				    sendKeys("id=password", paypalpwd);
+					Thread.sleep(2000);
+					click("id=btnLogin"); //submit
+					browser.switchTo().defaultContent();
+					Thread.sleep(5000);
+					//click("id=confirmButtonTop"); //agree n continue
+					click("xpath=//div[@id='button']/input");
+					Thread.sleep(6000);
+				  // browser.close();
+				   browser.switchTo().window(parent);
+				   }
+				}
+				//browser.switchTo().window(parent);
+				Thread.sleep(2000);
+				//click("id=placeOrder"); //place order
+				 if(findTheElement("id=placeOrder").isDisplayed())
+			        {
+						rpt.createTest("CIRCUIT CITY - CHECKOUT", "Place Order is displayed on Shopping cart page");
+				         rpt.Pass("Place Order is displayed on Shopping cart page");
+				         rpt.Category("CIRCUIT CITY - CHECKOUT");
+				         String path = rpt.CaptureScreen(browser, "ValidMessage");
+				         rpt.imgPathPass(path);
+				         click("id=placeOrder"); //place order
+					  }
+					else
+					{
+						 rpt.createTest("CIRCUIT CITY - CHECKOUT", "Place Order NOT displayed on Shopping cart page");
+				         rpt.Fail("Place Order NOT displayed on Shopping cart page");
+				         rpt.Category("CIRCUIT CITY - CHECKOUT");
+				         String path = rpt.CaptureScreen(browser, "InvalidMessage");
+				         rpt.imgPathFail(path);
+				}
+			       Thread.sleep(3000);
+			       
+			       String chkoutpage11=findTheElement("css=div.logo-bar").getText();
+					System.out.println(chkoutpage11);
+					//String actualtxt11="The Address you have entered is not valid. Please enter a valid address";
+					if(chkoutpage11!=null)
+			       {
+						//System.out.println("Mini Cart Button displayed");
+						rpt.createTest("CIRCUIT CITY - CHECKOUT", "Order is placed via paypal" );
+				         rpt.Pass("Order is placed via paypal");
+				         rpt.Category("CIRCUIT CITY - CHECKOUT");
+				         String path = rpt.CaptureScreen(browser, "ValidMessage");
+				         rpt.imgPathPass(path);
+					  }
+					else
+					{
+						//System.out.println("Mini Cart Button NOT displayed");
+						 rpt.createTest("CIRCUIT CITY - CHECKOUT", "Order is NOT placed via paypal");
+				         rpt.Fail("Order is NOT placed via paypal");
+				         rpt.Category("CIRCUIT CITY - CHECKOUT");
+				         String path = rpt.CaptureScreen(browser, "InvalidMessage");
+				         rpt.imgPathFail(path);
+					}
+				
 			    // Perform the actions on new window
 
-			    Thread.sleep(9000);
+			/*    Thread.sleep(9000);
 //			    click("id=email");
 			    click("xpath=//div[@id='passwordSection']//input[@id='email']");
 			    sendKeys("xpath=//div[@id='passwordSection']//input[@id='email']",paypalid);
@@ -732,12 +831,12 @@ public class CheckoutFlow extends Browser
 				click("id=btnLogin"); //submit
 				Thread.sleep(5000);
 				click("id=confirmButtonTop"); //agree n continue
-				Thread.sleep(8000);
+				Thread.sleep(8000);*/
 			    
 			    // Close the new window, if that window no more required
-	//		    driver.close();
+	//		    browser.close();
 			    // Switch back to original browser (first window)
-	//		    driver.switchTo().window(winHandleBefore);  
+	//		    browser.switchTo().window(winHandleBefore);  
 			    
 				
 				
@@ -797,5 +896,5 @@ public class CheckoutFlow extends Browser
 			         rpt.imgPathFail(path);
 				}*/
 	    }
-}
+	    }
 

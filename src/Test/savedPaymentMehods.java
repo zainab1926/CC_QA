@@ -675,7 +675,7 @@ public class savedPaymentMehods extends Browser
 		         rpt.imgPathFail(path);
 			 }
 		  Thread.sleep(2000);
-		   click("id=myAccountQuickLink");
+		   click("id=Header_GlobalLogin_signOutQuickLink");
 		   Thread.sleep(2000);
 		   click("xpath=//a[@id='Header_GlobalLogin_loggedInDropdown_SignOut']/span");
 		  }

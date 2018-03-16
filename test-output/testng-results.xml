@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="RC Suite" duration-ms="423550" started-at="2018-03-14T10:57:51Z" finished-at="2018-03-14T11:04:55Z">
+  <suite name="RC Suite" duration-ms="769143" started-at="2018-03-16T14:36:45Z" finished-at="2018-03-16T14:49:34Z">
     <groups>
     </groups>
-    <test name="RC Test" duration-ms="423550" started-at="2018-03-14T10:57:51Z" finished-at="2018-03-14T11:04:55Z">
+    <test name="RC Test" duration-ms="769143" started-at="2018-03-16T14:36:45Z" finished-at="2018-03-16T14:49:34Z">
       <class name="Test.Initiate">
-        <test-method status="PASS" signature="Ini()[pri:0, instance:Test.Initiate@dc24521]" name="Ini" is-config="true" duration-ms="401" started-at="2018-03-14T16:27:51Z" finished-at="2018-03-14T16:27:52Z">
+        <test-method status="PASS" signature="Ini()[pri:0, instance:Test.Initiate@dc24521]" name="Ini" is-config="true" duration-ms="502" started-at="2018-03-16T20:06:45Z" finished-at="2018-03-16T20:06:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Ini -->
-        <test-method status="PASS" signature="checkHome(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Test.Initiate@dc24521]" name="checkHome" duration-ms="422709" started-at="2018-03-14T16:27:52Z" finished-at="2018-03-14T16:34:54Z">
+        <test-method status="PASS" signature="checkHome(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Test.Initiate@dc24521]" name="checkHome" duration-ms="768128" started-at="2018-03-16T20:06:45Z" finished-at="2018-03-16T20:19:33Z">
           <params>
             <param index="0">
               <value>
@@ -20,19 +20,19 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[https://prodlive.circuitcity.com/]]>
+                <![CDATA[https://cct-auth.qa.coc.ibmcloud.com/]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[CustomRooms]]>
+                <![CDATA[PDPModule]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkHome -->
-        <test-method status="PASS" signature="publishReport()[pri:0, instance:Test.Initiate@dc24521]" name="publishReport" is-config="true" duration-ms="413" started-at="2018-03-14T16:34:54Z" finished-at="2018-03-14T16:34:55Z">
+        <test-method status="PASS" signature="publishReport()[pri:0, instance:Test.Initiate@dc24521]" name="publishReport" is-config="true" duration-ms="484" started-at="2018-03-16T20:19:33Z" finished-at="2018-03-16T20:19:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- publishReport -->
